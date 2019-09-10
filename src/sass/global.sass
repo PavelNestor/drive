@@ -24,7 +24,6 @@ body
       width: 100%
 
 section
-
 a
   border: none
   outline: none
@@ -123,7 +122,15 @@ input[type='number']
 .container
   overflow: hidden
   margin: 0 auto
-  width: 80%
+  padding: 0 $padding-navbar
+
+  &__left
+    padding-left: 0
+
+  &__right
+    padding-right: 0
+
+  
 
   @media #{$media-sm}
     padding-left: 1rem
