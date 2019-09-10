@@ -26,7 +26,7 @@ function prewSlides(id) {
 
 function showSlides(index, slideId) {
   const currentSlides = $$(`.${slidesId[slideId]}`);
-  const currentLinks = $$(`.${linksId[slideId]}`);
+  // const currentLinks = $$(`.${linksId[slideId]}`);
   
   if (index > currentSlides.length) {
     slidesIndex[slideId] = 1;
@@ -37,13 +37,13 @@ function showSlides(index, slideId) {
   }
 
   currentSlides.forEach(slide => slide.classList.add('hidden'));
-  currentLinks.forEach(link => link.classList.remove(`${linksId[slideId]}_active`));
+  // currentLinks.forEach(link => link.classList.remove(`${linksId[slideId]}_active`));
   
-  currentLinks.forEach((carLink, index) => carLink.addEventListener('click', () => currentSlide(index + 1, slideId)));
+  // currentLinks.forEach((carLink, index) => carLink.addEventListener('click', () => currentSlide(index + 1, slideId)));
 
   currentSlides[slidesIndex[slideId] - 1].classList.remove('hidden');
-  currentLinks[slidesIndex[slideId] - 1].classList.add(`${linksId[slideId]}_active`);
-  currentLinks[slidesIndex[slideId] - 1].removeEventListener('click', currentSlide)
+  // currentLinks[slidesIndex[slideId] - 1].classList.add(`${linksId[slideId]}_active`);
+  // currentLinks[slidesIndex[slideId] - 1].removeEventListener('click', currentSlide);
 }
 
 prevSlide.addEventListener('click', () => prewSlides(0));
