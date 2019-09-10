@@ -1,4 +1,14 @@
-block vars
-  //- - var navigation = 'home'
 block navigation
-  .navbar
+  nav.navbar
+    img.navbar__logo(src="img/icons/logo.png",, alt="logo")
+    .navbar__contact-info
+      a.navbar__item(href="/")
+        img(src="img/icons/facebook.png", alt="facebook")
+      a.navbar__item(href="/")
+        img(src="img/icons/twitter.png", alt="twitter")
+      a.navbar__item(href="/")
+        img(src="img/icons/telegram.png", alt="telegram")
+      a.navbar__item(href="/")
+        img(src="img/icons/viber.png", alt="viber")
+      a.navbar__tel(href="tel:+380976543210")
+        | +38 097 6543 210
