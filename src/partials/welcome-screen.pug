@@ -1,10 +1,10 @@
 block vars
   - var title = "A-Drive"
 
-block welcome-screen
+.welcome-screen
   .container.container__right.content
 
-    .slide
+    .slide.main-slides.fade
       .slide__info
         h1 Ощутить мощность сверх-автомобиля, теперь можно в Украине.
         h3.slide__info-text Что вы знаете о суперкарах - сверх мощные и невероятно дорогие, они всегда будут захватывать воображение автолюбителя. Теперь для того, чтобы ощутить всю мощь на себе, вовсе не обязательно становиться его владельцем. Воспользоваться уникальной возможностью ощутить мощность сверх автомобиля, теперь можно в Украине. Свяжитесь с нами уже сейчас!
@@ -16,19 +16,46 @@ block welcome-screen
           .slide__car-name Lamborghini Huracan
           .slide__buy 
             span.slide__buy_text Заказать тест-драйв
-        .slide__wrap.slide__wrap_pagination
-          .slide__pagination.slide__pagination_prev
-          .slide__pagination.slide__pagination_next
+
+    .slide.main-slides.fade
+      .slide__info
+        h1 Ощутить мощность сверх-автомобиля, теперь можно в Украине.
+        h3.slide__info-text Что вы знаете о суперкарах - сверх мощные и невероятно дорогие, они всегда будут захватывать воображение автолюбителя. Теперь для того, чтобы ощутить всю мощь на себе, вовсе не обязательно становиться его владельцем. Воспользоваться уникальной возможностью ощутить мощность сверх автомобиля, теперь можно в Украине. Свяжитесь с нами уже сейчас!
+
+      .slide__picture
+        img.slide__picture-img(src="img/lamb-main-sc.png", alt="lamb")
+        span.slide__picture-bgText Lamborghini Huracan
+        .slide__wrap
+          .slide__car-name  Huracan
+          .slide__buy 
+            span.slide__buy_text Заказать тест-драйв
+
+    .slide.main-slides.fade
+      .slide__info
+        h1 Ощутить мощность сверх-автомобиля, теперь можно в Украине.
+        h3.slide__info-text Что вы знаете о суперкарах - сверх мощные и невероятно дорогие, они всегда будут захватывать воображение автолюбителя. Теперь для того, чтобы ощутить всю мощь на себе, вовсе не обязательно становиться его владельцем. Воспользоваться уникальной возможностью ощутить мощность сверх автомобиля, теперь можно в Украине. Свяжитесь с нами уже сейчас!
+
+      .slide__picture
+        img.slide__picture-img(src="img/lamb-main-sc.png", alt="lamb")
+        span.slide__picture-bgText Lamborghini Huracan
+        .slide__wrap
+          .slide__car-name Lamborghini 
+          .slide__buy 
+            span.slide__buy_text Заказать тест-драйв
+
+    .slide__wrap.slide__wrap_pagination
+      #prev-slide.slide__pagination.slide__pagination_prev
+      #next-slide.slide__pagination.slide__pagination_next
 
     .car-list
       .car-list__wrap
-        .car-list__item
+        .car-list__item.fade
           img.car-list__img(src="img/lamb-main-sc.png", alt="lamb")
           | Lamborghini Huracan
-        .car-list__item
+        .car-list__item.fade
           img.car-list__img(src="img/ford-main-sc.png", alt="lamb")
           | Ford Mustang (1967)
-        .car-list__item
+        .car-list__item.fade
           img.car-list__img(src="img/gtr-main-sc.png", alt="lamb")
           | Nissan GTR
       .car-list__wrap
