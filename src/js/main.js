@@ -2,9 +2,6 @@
 
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
-
-// const slides = $$('.slides');
-// const carLinks = $$('.car-links');
 const prevSlide = $('#prev-slide');
 const nextSlide = $('#next-slide');
 
@@ -28,15 +25,8 @@ function prewSlides(id) {
 }
 
 function showSlides(index, slideId) {
-  console.log('slidesIndex', slidesIndex);
-  
   const currentSlides = $$(`.${slidesId[slideId]}`);
-  console.log('slideId', index);
-  
   const currentLinks = $$(`.${linksId[slideId]}`);
-
-  console.log('index > currentSlides.length', currentSlides.length);
-  
   
   if (index > currentSlides.length) {
     slidesIndex[slideId] = 1;
