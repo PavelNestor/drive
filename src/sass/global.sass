@@ -221,3 +221,19 @@ input[type='number']
 
 .no-wrap
   white-space: nowrap
+
+.main-button
+  padding: 1.3rem 1.5rem
+  background: linear-gradient(90deg, #EB5757 0%, #E62887 100%)
+  box-shadow: 0px 5px 15px rgba(230, 40, 135, 0.5)
+  transform: matrix(0.98, 0, -0.18, 1, 0, 0)
+  color: $white_primary
+  text-transform: uppercase
+
+  &__text
+    display: block
+    transform: matrix(0.98, 0, 0.18, 1, 0, 0)
+    text-align: center
+
+    @media #{$media-sm} 
+      font-size: 18px
