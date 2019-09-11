@@ -28,6 +28,7 @@
 
     @media #{$media-lg-down}
       padding-top: 0
+      margin-bottom: 3rem
 
     @media #{$media-sm}
       padding-top: 0
@@ -96,14 +97,14 @@
     &_pagination
       display: flex
       flex-direction: row
-      justify-content: center
-      padding-left: 35%
+      justify-content: flex-end
+      padding-right: 36.6%
       position: relative
-      bottom: 7px
+      bottom: 0
 
       @media #{$media-sm}
-        justify-content: flex-end
         bottom: 6rem
+        padding-right: 0
 
   &__car-name
     font-size: 30px
@@ -138,10 +139,9 @@
 
       @media #{$media-sm} 
         display: block
-        margin: 70px auto
+        margin: 7rem auto
         position: relative
-        left: -5%
-        padding: 15px 30px;
+        padding: 1.5rem 3rem
 
 
     &_text

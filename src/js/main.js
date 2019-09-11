@@ -12,6 +12,8 @@ var linksId = ['main-links', 'lamb-links']
 showSlides(1, 0);
 
 function nextSlides(id) {
+  console.log('next ->', slidesIndex[id] )
+
   showSlides((slidesIndex[id] += 1), id);
 }
 
@@ -21,6 +23,7 @@ function currentSlide(index, id) {
 }
 
 function prewSlides(id) {
+  console.log('prew ->', slidesIndex[id] )
   showSlides((slidesIndex[id] += -1), id);
 }
 
@@ -31,7 +34,7 @@ function showSlides(index, slideId) {
   if (index > currentSlides.length) {
     slidesIndex[slideId] = 1;
   } else if (index < 1){
-    slidesIndex[slideId] = currentSlides.length -1;
+    slidesIndex[slideId] = currentSlides.length;
   } else {
     slidesIndex[slideId] = index;
   }
