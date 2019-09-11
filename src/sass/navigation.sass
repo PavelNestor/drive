@@ -10,9 +10,15 @@
   position: fixed
   width: 100%
 
+  @media #{$media-sm}
+    margin-top: 25px
+    justify-content: center
+
   &__logo
 
   &__contact-info
+    @media #{$media-sm}
+      display: none
 
   &__item
     margin-right: 34px
