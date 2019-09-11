@@ -1,0 +1,32 @@
+.test-drive
+  height: 100vh
+  width: 100%
+  background:url(/img/mask-test-drive.png) center center  no-repeat, url(/img/bg-test-drive.png) center center no-repeat
+  background-size: cover
+  padding-top: 38px
+
+  &__content
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100%
+    width: 100%
+    padding: 10%
+    flex-direction: column
+
+  &__text
+    font-weight: 300
+    font-size: 40px
+    line-height: 110%
+    text-align: center
+    letter-spacing: -0.03em
+    color: $white_primary
+    letter-spacing: -0.5px
+    margin-bottom: 38px
+
+    @media #{$media-sm} 
+      font-size: 30px
+      line-height: 40px
+
+    &_bold
+      font-family: Montserrat-Bold
