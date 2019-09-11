@@ -3,32 +3,67 @@
   display: flex
   flex-direction: column
   height: 100vh
-  padding-top: 125px
+  padding-top: 165px
   width: 100%
 
+  @media #{$media-sm}
+    padding-top: 120px
+
 .slide
-  align-items: center
+  align-items: flex-start
   display: flex
   height: 100%
 
+  @media #{$media-sm-plus-down}
+    flex-direction: column
+  
+  @media #{$media-sm}
+    flex-direction: column
+    justify-content: space-around
+
   &__info
     flex: 0 0 34%
+    padding-top: 35px
+    margin-top: 1px
+
+    @media #{$media-lg-down}
+      padding-top: 0
+
+    @media #{$media-sm}
+      padding-top: 0
+      padding-left: 6%
 
     &-text
       width: 72%
 
+      @media #{$media-sm}
+        display: none
+
   &__picture
     position: relative
-  
+    top: -5px
+    left: -13px
+    width: 100%
+
+    @media #{$media-sm} 
+      display: flex
+      flex-direction: column
+      align-items: flex-end
+      left: 10px
 
     &-img
       position: relative
       z-index: 2
+      width: 100%
+
+      @media #{$media-sm}
+        left: 10.5%
+        transform: scale(1.28)
 
     &-bgText
       position: absolute
-      top: -9rem
-      left: 0
+      top: -8.4rem
+      left: 17px
       font-size: 20rem
       line-height: 25.1rem
       letter-spacing: -0.4rem
@@ -37,21 +72,59 @@
       font-family: 'Source Sans Pro', sans-serif
       font-weight: 900
 
+      @media #{$media-sm}
+        font-size: 100px
+        top: -140px
+
   &__wrap
     display: flex
-    margin-top: 20px
+    margin-top: 12px
+    margin-right: 15.7%
     display: flex
-    justify-content: flex-start
+    justify-content: flex-end
     align-items: center
+
+    @media #{$media-sm}
+      flex-direction: column
+      align-items: flex-end
+      justify-content: center
+      text-align: right
+      margin-right: 0
 
     &_pagination
       justify-content: center
+      padding-left: 35%
+      position: relative
+      bottom: 7px
+
+      @media #{$media-sm-plus-down} 
+        display: none
+
+      &_mobile
+        display: none
+
+        @media #{$media-sm-plus-down} 
+          display: flex
+          flex-direction: row
+          margin: 0
+          margin-left: 25px
+
 
   &__car-name
     font-size: 30px
     color: $primary
-    margin-left: 50px
     letter-spacing: -1px
+
+    @media #{$media-sm-plus-down} 
+      display: flex
+      flex-direction: row
+      text-align: end
+
+    @media #{$media-sm}
+      display: flex
+      align-items: center
+      font-size: 24px
+      line-height: 30px
   
   &__buy
     padding: 1.3rem 1.5rem
@@ -62,9 +135,29 @@
     color: $white_primary
     text-transform: uppercase
 
+    @media #{$media-sm} 
+      display: none
+    
+    &_mobile
+      display: none
+
+      @media #{$media-sm} 
+        display: block
+        margin: 70px auto
+        position: relative
+        left: -5%
+        padding: 15px 30px;
+
+
     &_text
       display: block
       transform: matrix(0.98, 0, 0.18, 1, 0, 0)
+      text-align: center
+
+      @media #{$media-sm} 
+        font-size: 1.8rem
+
+
   &__pagination
     width: 5rem
     height: 5rem
@@ -73,20 +166,27 @@
     cursor: pointer
 
     &_prev
-      background: url(/img/icons/arrow-prev.png) center center no-repeat #333333;
+      background: url(/img/icons/arrow-prev.png) center center no-repeat #333333
     
     &_next
-      background: url(/img/icons/arrow-next.png) center center no-repeat #333333;
-
+      background: url(/img/icons/arrow-next.png) center center no-repeat #333333
 
 .car-list
   display: flex
   justify-content: space-between
   align-items: center
 
+  @media #{$media-sm-plus-down}
+    display: none
+  
+  @media #{$media-sm} 
+    display: none
+
   &__wrap
     display: flex
     flex: 0 0 99%
+    position: relative
+    left: -5px
 
   &__item
     letter-spacing: 0px
@@ -94,11 +194,22 @@
     font-size: 1.6rem
     flex: 0 0 32%
     cursor: pointer
+    position: relative
+    padding: 35px 10px 35px 0px
 
   &__img
     width: 40%
+    margin-right: 10px
   
   &__scroll
     position: relative
-    right: 4.5rem
+    right: 5.7rem
+    top: -3px
     cursor: pointer
+
+.active
+  background: linear-gradient(90deg, #EB5757 0%, #E62887 100%)
+  position: absolute
+  top: 0
+  height: 2px
+  width: 100%
