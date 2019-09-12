@@ -1,5 +1,4 @@
 .lf
-  min-height: 100vh
   background: linear-gradient(90deg, #2F3B47 0%, #435465 100%)
 
   &__top
@@ -19,14 +18,35 @@
 
     &-white
       background: #ffffff
-      width: 100/12*4%
+      width: 100/12*5%
 
   &__content
-    min-height: calc(100vh - 8.3vw*2)
+    display: flex
+    flex-direction: column
+    padding: 7rem 8.33333vw
+
+    @media #{$media-sm-plus-up}
+      align-items: center
+      flex-direction: row
+      padding: 13.5rem 8.33333vw
 
   &__col
     flex-basis: 50%
+    display: flex
+    align-items: center
+
+    &:nth-child(1)
+      padding-right: 8.3333vw
+
+    &:nth-child(2)
+      flex-direction: column
 
   &__title-wrap
 
   &__text-wrap
+  &__image-wrap
+    width: calc(8.333*3vw)
+    margin-right: 1rem
+
+    @media #{$media-sm-plus-up}
+      width: 8.33333vw
