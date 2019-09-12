@@ -3,15 +3,14 @@
   display: flex
   flex-direction: column
   min-height: 100vh
-  padding-top: 165px
+  padding-top: 12rem
   width: 100%
-  justify-content: center
 
-  @media #{$media-sm}
-    padding-top: 120px
+  @media #{$media-sm-plus-up}
+    padding-top: 16.3rem
 
 .slide
-  align-items: flex-start
+  align-items: center
   display: flex
   height: 100%
 
@@ -23,35 +22,33 @@
     justify-content: space-around
 
   &__info
+    margin-bottom: 6.6rem
+    padding: 0 6%
     flex: 0 0 34%
-    padding-top: 35px
-    margin-top: 1px
 
-    @media #{$media-lg-down}
-      padding-top: 0
-      margin-bottom: 3rem
-
-    @media #{$media-sm}
-      padding-top: 0
-      padding-left: 6%
+    @media #{$media-sm-plus-up}
+      padding: 2.3rem 0 0 0
+      margin-bottom: 4rem
 
     &-text
-      width: 72%
+      display: none
 
-      @media #{$media-sm}
-        display: none
+      @media #{$media-sm-up}
+        display: block
+        margin-top: 3.4rem
+        width: 71%
 
   &__picture
     position: relative
-    top: -5px
-    left: -13px
-    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    left: 1rem
 
-    @media #{$media-sm} 
-      display: flex
-      flex-direction: column
-      align-items: flex-end
-      left: 10px
+    @media #{$media-sm-plus-up}
+      top: -5px
+      left: -13px
+      width: 100%
 
     &-img
       position: relative
@@ -79,38 +76,43 @@
         top: -140px
 
   &__wrap
-    display: flex
-    margin-top: 12px
-    margin-right: 15.7%
-    display: flex
-    justify-content: flex-end
     align-items: center
+    display: flex
+    flex-direction: column
+    justify-content: center
+    margin-top: 3.3rem
     min-height: 6rem
+    padding-right: 12rem
+    text-align: right
 
-    @media #{$media-sm}
-      flex-direction: column
-      align-items: flex-end
-      justify-content: center
-      text-align: right
-      margin-right: 0
-      padding-right: 14rem
-
-    &_pagination
+    @media #{$media-sm-up}
       display: flex
       flex-direction: row
       justify-content: flex-end
-      padding-right: 36.6%
-      position: relative
-      bottom: 0
+      margin-top: 1rem
+      padding-right: 7.1vw
+      width: 100%
+      
 
-      @media #{$media-sm}
-        bottom: 6rem
+    &_pagination
+      bottom: 5.5rem
+      display: flex
+      flex-direction: row
+      justify-content: flex-end
+      margin-right: -1rem
+      padding-right: 0
+      position: relative
+
+      @media #{$media-sm-plus-up}
+        bottom: 0
+        margin-right: 0
         padding-right: 0
+        padding-right: 36.6%
 
   &__car-name
     font-size: 30px
     color: $primary
-    letter-spacing: -1px
+    letter-spacing: -0.03em
 
     @media #{$media-sm-plus-down} 
       display: flex
@@ -121,30 +123,32 @@
       display: flex
       align-items: center
       font-size: 24px
-      line-height: 30px
+      line-height: 1.1em
   
   &__buy
-    background: linear-gradient(90deg, $grad-start 0%, $grad-end 100%)
-    box-shadow: 0px 5px 15px $grad-end
-    color: $white_primary
-    font-size: 1.8rem
-    margin-left: 5rem
-    padding: 1.3rem 1.5rem
-    text-transform: uppercase
-    transform: matrix(0.98, 0, -0.18, 1, 0, 0)
+    display: none
 
-    @media #{$media-sm} 
-      display: none
+    @media #{$media-sm-plus-up}
+      background: linear-gradient(90deg, #EB5757 0%, #E62887 100%)
+      box-shadow: 0px 5px 15px rgba(230, 40, 135, 0.5)
+      color: $white_primary
+      display: block
+      font-size: 1.8rem
+      margin-left: 5rem
+      // max-width: 22vw
+      padding: 1.3rem 3.5rem
+      text-transform: uppercase
+      transform: matrix(0.98, 0, -0.18, 1, 0, 0)
+      // width: 100%
     
     &_mobile
-      display: none
+      display: block
+      margin: 1.8rem auto 7rem
+      padding: 0.9rem 3rem
+      position: relative
 
-      @media #{$media-sm} 
-        display: block
-        margin: 0 auto
-        position: relative
-        padding: 1.5rem 3rem
-
+      @media #{$media-sm-plus-up}
+        display: none
 
     &_text
       display: block
