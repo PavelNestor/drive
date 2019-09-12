@@ -66,7 +66,7 @@
       font-size: 20rem
       line-height: 25.1rem
       letter-spacing: -0.4rem
-      color: #F2F2F2
+      color: $white_secondary
       white-space: nowrap
       font-family: 'Source Sans Pro', sans-serif
       font-weight: 900
@@ -167,10 +167,10 @@
     cursor: pointer
 
     &_prev
-      background: url(/img/icons/arrow-prev.png) center center no-repeat #333333
+      background: url(/img/icons/arrow-prev.png) center center no-repeat $primary
     
     &_next
-      background: url(/img/icons/arrow-next.png) center center no-repeat #333333
+      background: url(/img/icons/arrow-next.png) center center no-repeat $primary
 
 .car-list
   display: flex
@@ -212,7 +212,7 @@
     cursor: pointer
 
 .active
-  background: linear-gradient(90deg, #EB5757 0%, #E62887 100%)
+  background: linear-gradient(90deg, $grad-start 0%, $grad-end 100%)
   position: absolute
   top: 0
   height: 2px

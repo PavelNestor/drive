@@ -39,7 +39,7 @@ span
 img
   border: none
   outline: none
-  max-width: 100%
+  // max-width: 100%
   vertical-align: middle
 
 ul
@@ -223,7 +223,7 @@ input[type='number']
   white-space: nowrap
 
 .main-button
-  background: linear-gradient(90deg, #EB5757 0%, #E62887 100%)
+  background: linear-gradient(90deg, $grad-start 0%, $grad-end 100%)
   box-shadow: 0px 5px 15px rgba(230, 40, 135, 0.5)
   color: $white_primary
   font-size: 1.8rem
@@ -239,4 +239,5 @@ input[type='number']
     display: block
     transform: matrix(0.98, 0, 0.18, 1, 0, 0)
     text-align: center
-
+.w-100
+  width: 100%
