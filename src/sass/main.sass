@@ -30,3 +30,42 @@ body
 
 .mb-1
   margin-bottom: 1rem
+
+
+.preloader
+  background: linear-gradient(360deg, #2F3B47 0%, #2F3B47 100%)
+  bottom: 0
+  left: 0
+  position: fixed
+  right: 0
+  top: 0
+  z-index: 9999
+  transition: transform 400ms
+
+  &::after
+    background: center no-repeat url('/img/logo.svg')
+    content: ''
+    position: absolute
+    right: 0
+    top: 0
+    bottom: 0
+    left: 0
+    z-index: 99999
+
+  &_loaded
+    transform: translateX(100%)
+    pointer-events: none
+
+  .preloaderBar
+    background: #FAFAFA
+    left: 0
+    position: absolute
+    right: 0
+    top: 0
+    bottom: 0
+
+.cache-images
+  position: absolute
+  opacity: .01
+  height: 0
+  width: 0
