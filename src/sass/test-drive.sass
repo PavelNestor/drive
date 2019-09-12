@@ -5,17 +5,17 @@
   background-size: cover
   padding-top: 3.8rem
 
+  @media #{$media-sm-plus-up}
+    padding: 0 percentage(2/12)
+
   &__content
     display: flex
     justify-content: center
     align-items: center
     height: 100%
     width: 100%
-    padding: 30vh 5.3vw
+    padding: 30vh 0
     flex-direction: column
-
-    @media #{$media-sm-plus-up}
-      padding: 30vh 9vw
 
   &__text
     font-weight: 300
