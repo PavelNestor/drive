@@ -31,8 +31,25 @@ a
   text-decoration: none
 
 p
-  font-size: 2rem
-  line-height: 2.5rem
+  color: #4F4F4F
+  font-size: 1.6rem
+  font-weight: normal
+  line-height: 1.4em
+
+  @media #{$media-sm-plus-up}
+    font-size: 1.4rem
+
+.small
+  font-size: 1.6rem
+  line-height: 1.1em
+  color: #4F4F4F
+
+  @media #{$media-sm-plus-up}
+    font-size: 1.3rem
+
+.bold
+  font-weight: bold
+
 
 span
 
@@ -131,8 +148,21 @@ input[type='number']
   &__right
     padding-right: 0
 
-  @media #{$media-sm}
+  @media #{$media-sm-plus-up}
     width: 100%
+
+.car-container
+  display: flex
+  justify-content: space-between
+
+.container__col
+  flex-basis: 50vw
+
+  &:nth-child(2)
+    display: flex
+    flex-basis: 41.6vw
+    flex-direction: column
+    justify-content: center
 
 .hidden
   display: none !important
@@ -141,9 +171,20 @@ input[type='number']
   @media #{$media-sm}
     display: none !important
 
+.sm-plus-down-hidden
+  @media #{$media-sm-plus-down}
+    display: none !important
+
+.sm-plus-up-hidden
+  @media #{$media-sm-plus-up}
+    display: none !important
+
 .xs-hidden
   @media #{$media-xs}
     display: none !important
+
+.p-static
+  position: static !important
 
 // image-holder
 .image-holder
@@ -223,6 +264,7 @@ input[type='number']
   background: linear-gradient(90deg, $grad-start 0%, $grad-end 100%)
   box-shadow: 0px 5px 15px rgba(230, 40, 135, 0.5)
   color: $white_primary
+  display: inline-block
   font-size: 1.8rem
   padding: 1.3rem 3rem
   text-transform: uppercase

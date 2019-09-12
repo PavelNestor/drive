@@ -58,9 +58,9 @@ function showSlides(index, slideId) {
   mainLinks[slidesIndex[slideId] - 1].classList.add('active');
   // currentLinks[slidesIndex[slideId] - 1].removeEventListener('click', currentSlide);
 
-  // timer = setTimeout(() => {
-  //   showSlides(slidesIndex[slideId] + 1, slideId);
-  // }, 6000);
+  timer = setTimeout(() => {
+    showSlides(slidesIndex[slideId] + 1, slideId);
+  }, 6000);
   
 }
 
