@@ -131,14 +131,21 @@ input[type='number']
   &__right
     padding-right: 0
 
-  @media #{$media-sm}
+  @media #{$media-sm-plus-up}
     width: 100%
+
+.container__col
+  flex-basis: 50%
 
 .hidden
   display: none !important
 
 .sm-hidden
   @media #{$media-sm}
+    display: none !important
+
+.sm-plus-up-hidden
+  @media #{$media-sm-plus-up}
     display: none !important
 
 .xs-hidden

@@ -2,19 +2,20 @@
   min-height: 100vh
   background-color: $white_secondary
   display: flex
-  padding: 3.1rem
+  padding-top: 3.1rem
   padding-bottom: 6.8rem
   flex-direction: column
-  padding-left: 0
-  padding-right: 0
 
-  @media #{$media-sm-up} 
-    padding-top: 10.5rem 
+  @media #{$media-sm-plus-up} 
+    padding-top: 10.5rem
+    flex-direction: row-reverse
 
   .info
-    flex: 0 0 37%
     padding-left: 8.4%
     padding-right: 8.4%
+
+    @media #{$media-sm-plus-up}
+      padding-left: 0
 
     &__title
       margin-bottom: 3rem
