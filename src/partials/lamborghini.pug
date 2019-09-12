@@ -1,0 +1,45 @@
+include mixins
+
+.container.container__right.lamborghini
+  .slide
+    .slide__item.slide__main
+      +picture('/img/lamb/main-slide', 'lamb', 'cover')(id="1", class="")
+    .slide__item.slide__secondary
+      +picture('/img/lamb/lamb-slide1', 'lamb', 'cover')(id="1", class="")
+      +picture('/img/lamb/lamb-slide2', 'lamb', 'cover')(id="1", class="")
+      +picture('/img/lamb/lamb-slide3', 'lamb', 'cover')(id="1", class="")
+    +control-btn('idPre', 'idNext')(class='asd')
+  
+
+  .info
+    h1.info__title Lamborghini Huracan
+    
+    h3.info__text Ламборгини (Lamborghini) это особое наследие мире спортивных автомобилей. Буря эмоций, многообразие деталей, китч, а главное, это праздник, - праздник скорости! В 1963 году Фурруччио Ламборгини основывает компанию, которая станет достойным конкурентом Феррари. С тех пор имя Ламборгини прочно входит в историю, как производитель дорогих спортивных авто. Наиболее желанная и востребованная машина нашего времени. очень востребована т.к. легко поддается тюнингу. 610 сильный двигатель, робот, с двумя сцеплениями - этой коробке можно довериться. 3.4 секунды нужно Ламборгини, чтобы разогнаться до 100 км/ч. Бесшумно меняют друг друга не короткие передачи - с такой динамикой это не езда, это полет!
+    
+    .info__specifications.col-6
+      .info__specifications-wrap
+        .info__specifications-item
+          .info__specifications-title год выпуска
+          | 2015
+
+        .info__specifications-item
+          .info__specifications-title трансмиссия
+          | полный привод
+
+        .info__specifications-item
+          .info__specifications-title разгон до 100 км/ч
+          | 3.4 сек
+      div
+        .info__specifications-item
+          .info__specifications-title двигатель
+          | 5.2 литра
+
+        .info__specifications-item
+          .info__specifications-title мощность двигателя
+          | 610 л/с
+
+        .info__specifications-item
+          .info__specifications-title разгон от 100 до 200 км/ч
+          | 6.3 сек
+
+    +gradient-btn()
