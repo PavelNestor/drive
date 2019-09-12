@@ -134,14 +134,28 @@ input[type='number']
   @media #{$media-sm-plus-up}
     width: 100%
 
+.car-container
+  display: flex
+  justify-content: space-between
+
 .container__col
-  flex-basis: 50%
+  flex-basis: 50vw
+
+  &:nth-child(2)
+    display: flex
+    flex-basis: 41.6vw
+    flex-direction: column
+    justify-content: center
 
 .hidden
   display: none !important
 
 .sm-hidden
   @media #{$media-sm}
+    display: none !important
+
+.sm-plus-down-hidden
+  @media #{$media-sm-plus-down}
     display: none !important
 
 .sm-plus-up-hidden
@@ -151,6 +165,9 @@ input[type='number']
 .xs-hidden
   @media #{$media-xs}
     display: none !important
+
+.p-static
+  position: static !important
 
 // image-holder
 .image-holder
@@ -230,6 +247,7 @@ input[type='number']
   background: linear-gradient(90deg, $grad-start 0%, $grad-end 100%)
   box-shadow: 0px 5px 15px rgba(230, 40, 135, 0.5)
   color: $white_primary
+  display: inline-block
   font-size: 1.8rem
   padding: 1.3rem 3rem
   text-transform: uppercase

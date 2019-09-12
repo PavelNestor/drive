@@ -1,5 +1,4 @@
 .lamborghini
-  min-height: 100vh
   background-color: $white_secondary
   display: flex
   padding-top: 3.1rem
@@ -8,14 +7,11 @@
 
   @media #{$media-sm-plus-up} 
     padding-top: 10.5rem
+    padding-bottom: 0
     flex-direction: row-reverse
 
   .info
-    padding-left: 8.4%
-    padding-right: 8.4%
-
-    @media #{$media-sm-plus-up}
-      padding-left: 0
+    padding-right: 8.4vw
 
     &__title
       margin-bottom: 3rem
@@ -26,7 +22,7 @@
     &__text
       margin-bottom: 3rem
 
-      @media #{$media-sm-up} 
+      @media #{$media-sm-plus-up} 
         margin-bottom: 3.7rem
 
     &__specifications
@@ -57,10 +53,12 @@
       width: 97%
 
     &__secondary
-      display: none !important
+      display: none
+
+      @media #{$media-sm-plus-up}
+        display: flex
 
     &__item
-      width: 97%
       display: flex
       justify-content: flex-end
       margin-bottom: 60px

@@ -5,9 +5,10 @@ mixin picture(path, alt='', style='cover')
     img.w-100(srcset=`${path}.jpg`)
 
 mixin gradient-btn()
-  .main-button
-    span.main-button__text Заказать 
-      span.no-wrap тест-драйв
+  .text-center
+    .main-button
+      span.main-button__text Заказать 
+        span.no-wrap тест-драйв
 
 mixin control-btn(idPrev, idNext)
   .slide__wrap_pagination(class!=attributes.class)
