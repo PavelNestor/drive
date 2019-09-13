@@ -1,17 +1,38 @@
 .services
+  background: #F2F2F2
   &__title-wrap
     padding-top: 10.5rem
     padding-left: $padding-navbar
 
   &__card-wrap
     display: flex
+    flex-direction: column
+
+    @media #{$media-sm-plus-up}
+      flex-direction: row
+
+  &__button
+    position: relative
+    height: 6rem
+    z-index: 102
 
 .card
-  width: 24.7vw
+  width: auto
   min-height: 72rem
+  z-index: 101
+  
+  @media #{$media-sm-plus-up}
+    width: 25vw
 
-  &:hover
-    width: 33vw
+  &:nth-child(1)
+    @media #{$media-sm-plus-up}
+      width: 33.333vw
+
+  // &:hover
+  //   width: 33vw
+
+  //   .card__content
+  //     transform: translateX($padding-navbar/2)
 
   &__image-wrap
     min-height: 36rem
@@ -20,8 +41,21 @@
     height: 36rem
 
   &__content
-    padding: 0 4.2rem
-    max-width: 24.7vw
+    padding: 0 0 0 8.333vw
+    max-width: auto
+
+    @media #{$media-sm-up}
+      padding: 0 4.2rem
+      max-width: 24.7vw
+
+    &-test
+      background: #FFFFFF
+
+    &-foto
+      background: #FAFAFA
+
+    &-gift
+      background: #F4F4F4
 
   &__title
     font-size: 2.5rem
@@ -38,3 +72,8 @@
     font-size: 1.4rem
     line-height: 1.5em
 
+.test-btn
+  position: absolute
+  right: 0
+  text-align: right
+  top: -47rem

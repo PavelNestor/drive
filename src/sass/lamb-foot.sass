@@ -3,8 +3,11 @@
 
   &__top
     background: linear-gradient(90deg, #2F3B47 0%, #435465 100%)
-    height: 8.4vw
+    height: 5rem
     display: flex
+
+    @media #{$media-sm-plus-up}
+      height: 11.5rem
 
     &-white
       background: #F2F2F2
@@ -12,9 +15,13 @@
 
   &__bottom
     background: linear-gradient(90deg, #2F3B47 0%, #435465 100%)
-    height: 8.4vw
+    height: 5rem
     display: flex
     justify-content: flex-end
+
+    @media #{$media-sm-plus-up}
+      height: 11.5rem
+
 
     &-white
       background: #F2F2F2

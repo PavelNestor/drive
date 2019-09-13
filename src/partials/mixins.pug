@@ -4,6 +4,12 @@ mixin picture(path, alt='', style='cover')
     source.w-100(srcset=`${path}.jpg` type="image/jpeg")
     img.w-100(srcset=`${path}.jpg`)
 
+mixin picture-png(path, alt='', style='cover')
+  picture.w-100(id!=attributes.id)&attributes(attributes)
+    source.w-100(srcset=`${path}.webp` type="image/webp")
+    source.w-100(srcset=`${path}.png` type="image/png")
+    img.w-100(srcset=`${path}.png`)
+
 mixin picture-card(path, alt='', style='cover')
   picture(id!=attributes.id)&attributes(attributes)
     source.image-cover(srcset=`${path}.webp` type="image/webp")
@@ -11,7 +17,7 @@ mixin picture-card(path, alt='', style='cover')
     img.image-cover(srcset=`${path}.jpg`)
 
 mixin gradient-btn()
-  .text-center
+  div(class!=attributes.class)
     .main-button
       span.main-button__text Заказать 
         span.no-wrap тест-драйв
@@ -22,7 +28,7 @@ mixin control-btn(idPrev, idNext)
     .slide__pagination.slide__pagination_next(id= idNext)
 
 mixin card(item)
-  .card
+  .card(class= item.class)
     .card__image-wrap
       +picture-card(item.src, item.title)(class!=attributes.class)
     .card__content
