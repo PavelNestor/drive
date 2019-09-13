@@ -36,7 +36,10 @@
     align-items: center
 
     &:nth-child(1)
-      padding-right: 8.3333vw
+      padding-right: 0
+
+      @media #{$media-sm-plus-up}
+        padding-right: 8.3333vw
 
     &:nth-child(2)
       flex-direction: column
