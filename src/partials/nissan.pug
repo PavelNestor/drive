@@ -1,0 +1,48 @@
+include mixins
+
+.container.container__right.car-container.lamborghini
+  .container__col
+    //- .slide__item.slide__main
+    div
+      +picture('/img/nissan/main-slide', 'Nissan GTR', 'cover')(id="1", class="")
+    .slide__item.slide__secondary.sm-plus-down-hidden
+      +picture('/img/nissan/nissan-slide2', 'Nissan GTR', 'cover')(id="1", class="")
+      +picture('/img/nissan/nissan-slide3', 'Nissan GTR', 'cover')(id="1", class="")
+      +picture('/img/nissan/nissan-slide4', 'Nissan GTR', 'cover')(id="1", class="")
+      +picture('/img/nissan/nissan-slide5', 'Nissan GTR', 'cover')(id="1", class="")
+    +control-btn('idPre', 'idNext')(class='sm-plus-up-hidden p-static')
+
+  .container__col.info
+    h1.info__title Nissan GTR
+    
+    p.info__text В конце 2007 года один из крупнейших автопроизводителей в мире, компания Nissan Motor представила новинку, заставившую нервничать производителей суперкаров всего мира, - Nissan GT-R. Этот автомобиль стал гордостью компании  Nissan. Разрабатывался GT-R инженерами, которые использовали не стандартные технологические решения в процессе разработки. Так, например, впервые в мире в полноприводном автомобиле было принято решение расположить раздаточную коробку и коробку передач в задней части авто. Так же, для улучшения развесовкти и улучшения управляемости инженеры отошли от традиций сдвинув двигатель назад. В результате получился автомобиль универсальный автомобиль, который одинаково хорош как на обычной дороге, так и на гоночном треке.
+
+    .info__specifications.col-6
+      .info__specifications-wrap
+        .info__specifications-item
+          p.small.bold.info__specifications-title год выпуска
+          p.small 2009
+
+        .info__specifications-item
+          p.small.bold.info__specifications-title трансмиссия
+          p.small полный привод
+
+        .info__specifications-item
+          p.small.bold.info__specifications-title разгон до 100 км/ч
+          p.small 2.6 сек 
+
+      .info__specifications-wrap
+        .info__specifications-item
+          p.small.bold.info__specifications-title двигатель
+          p.small 3.8 литра
+
+        .info__specifications-item
+          p.small.bold.info__specifications-title мощность двигателя
+          p.small 700-800 л/с
+
+        .info__specifications-item
+          p.small.bold.info__specifications-title разгон от 100 до 200 км/ч
+          p.small 3.1 сек
+
+
+    +gradient-btn()

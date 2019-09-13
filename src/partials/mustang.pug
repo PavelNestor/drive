@@ -1,0 +1,48 @@
+include mixins
+
+.container.container__left.car-container.lamborghini.mustang
+  .container__col
+    //- .slide__item.slide__main
+    div
+      +picture('/img/mustang/main-slide', 'Ford Mustang 67 coupe', 'cover')(id="1", class="")
+    .slide__item.slide__secondary.sm-plus-down-hidden
+      +picture('/img/mustang/mustang-slide2', 'Ford Mustang 67 coupe', 'cover')(id="1", class="")
+      +picture('/img/mustang/mustang-slide3', 'Ford Mustang 67 coupe', 'cover')(id="1", class="")
+      +picture('/img/mustang/mustang-slide4', 'Ford Mustang 67 coupe', 'cover')(id="1", class="")
+      +picture('/img/mustang/mustang-slide5', 'Ford Mustang 67 coupe', 'cover')(id="1", class="")
+    +control-btn('idPre', 'idNext')(class='sm-plus-up-hidden p-static slide__wrap_pagination-reverse')
+  
+
+  .container__col.info
+    h1.info__title Ford Mustang 67 coupe
+    
+    p.info__text Культовый автомобиль Ford Mustang,  который был создан концерном Ford в стремлении обогнать своего главного конкурента Chevrolet и склонить симпатии клиентов на свою сторону. И уже за первые полтора года на рынке концерну удалось продать более миллиона авто под маркой Mustang. Автомобиль со спортивными чертами но рассчитанный на широкого потребителя, который пришелся по вкусу не только американскому, но и европейскому рынкам, и по праву считается гордостью Американского автопрома.
+
+    .info__specifications.col-6
+      .info__specifications-wrap
+        .info__specifications-item
+          p.small.bold.info__specifications-title год выпуска
+          p.small 1967
+
+        .info__specifications-item
+          p.small.bold.info__specifications-title трансмиссия
+          p.small полный привод
+
+        .info__specifications-item
+          p.small.bold.info__specifications-title Коробка передач
+          p.small механическая
+
+      .info__specifications-wrap
+        .info__specifications-item
+          p.small.bold.info__specifications-title двигатель
+          p.small 347сi
+
+        .info__specifications-item
+          p.small.bold.info__specifications-title мощность двигателя
+          p.small 420 л/с
+
+        //- .info__specifications-item
+        //-   p.small.bold.info__specifications-title разгон от 100 до 200 км/ч
+        //-   p.small 6.3 сек
+
+    +gradient-btn()
