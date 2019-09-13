@@ -2,14 +2,17 @@ include mixins
 
 .container.container__right.car-container.lamborghini
   .container__col
-    //- .slide__item.slide__main
     div
-      +picture('/img/nissan/main-slide', 'Nissan GTR', 'cover')(id="1", class="")
+      +picture('/img/nissan/main-slide2', 'Nissan GTR', 'cover')(id="1", class="")
     .slide__item.slide__secondary.sm-plus-down-hidden
-      +picture('/img/nissan/nissan-slide2', 'Nissan GTR', 'cover')(id="1", class="")
-      +picture('/img/nissan/nissan-slide3', 'Nissan GTR', 'cover')(id="1", class="")
-      +picture('/img/nissan/nissan-slide4', 'Nissan GTR', 'cover')(id="1", class="")
-      +picture('/img/nissan/nissan-slide5', 'Nissan GTR', 'cover')(id="1", class="")
+      .slide-hover
+        +picture('/img/nissan/nissan-slide2', 'Nissan GTR', 'cover')(id="1", class="")
+      .slide-hover
+        +picture('/img/nissan/nissan-slide3', 'Nissan GTR', 'cover')(id="1", class="")
+      .slide-hover
+        +picture('/img/nissan/nissan-slide4', 'Nissan GTR', 'cover')(id="1", class="")
+      .slide-hover
+        +picture('/img/nissan/nissan-slide5', 'Nissan GTR', 'cover')(id="1", class="")
     +control-btn('idPre', 'idNext')(class='sm-plus-up-hidden p-static')
 
   .container__col.info

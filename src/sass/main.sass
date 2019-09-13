@@ -79,3 +79,22 @@ body
   @media #{$media-sm-plus-up}
     font-size: 1.6rem
     line-height: 1.5em
+
+.slide-hover
+  cursor: pointer
+  position: relative
+  width: 100%
+
+  &:after
+    background: #FFFFFF
+    bottom: 0
+    content: ''
+    left: 0
+    opacity: .5
+    position: absolute
+    right: 0
+    top: 0
+
+  &:hover
+    &:after
+      opacity: 0

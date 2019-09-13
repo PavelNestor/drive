@@ -4,12 +4,16 @@ include mixins
   .container__col
     //- .slide__item.slide__main
     div
-      +picture('/img/mustang/main-slide', 'Ford Mustang 67 coupe', 'cover')(id="1", class="")
+      +picture('/img/mustang/main-slide2', 'Ford Mustang 67 coupe', 'cover')(id="1", class="")
     .slide__item.slide__secondary.sm-plus-down-hidden
-      +picture('/img/mustang/mustang-slide2', 'Ford Mustang 67 coupe', 'cover')(id="1", class="")
-      +picture('/img/mustang/mustang-slide3', 'Ford Mustang 67 coupe', 'cover')(id="1", class="")
-      +picture('/img/mustang/mustang-slide4', 'Ford Mustang 67 coupe', 'cover')(id="1", class="")
-      +picture('/img/mustang/mustang-slide5', 'Ford Mustang 67 coupe', 'cover')(id="1", class="")
+      .slide-hover
+        +picture('/img/mustang/mustang-slide2', 'Ford Mustang 67 coupe', 'cover')(id="1", class="")
+      .slide-hover
+        +picture('/img/mustang/mustang-slide3', 'Ford Mustang 67 coupe', 'cover')(id="1", class="")
+      .slide-hover
+        +picture('/img/mustang/mustang-slide4', 'Ford Mustang 67 coupe', 'cover')(id="1", class="")
+      .slide-hover
+        +picture('/img/mustang/mustang-slide5', 'Ford Mustang 67 coupe', 'cover')(id="1", class="")
     +control-btn('idPre', 'idNext')(class='sm-plus-up-hidden p-static slide__wrap_pagination-reverse')
   
 

@@ -101,6 +101,14 @@ button, input, select, textarea, a
   &:active
     outline-color: $main-color
 
+picture
+  display: block
+
+.image-cover
+  height: 100%
+  width: 100%
+  object-fit: cover
+
 //	SELECT
 select
   appearance: none
@@ -134,7 +142,6 @@ input[type='number']
     -webkit-appearance: none
   -moz-appearance: textfield
 //	END INPUTS & TEXTAREA
-
 
 // GRID
 .container
@@ -271,7 +278,8 @@ input[type='number']
   transform: matrix(0.98, 0, -0.18, 1, 0, 0)
 
   @media #{$media-sm-plus-up}
-    padding: 1.3rem 3.4rem
+    padding: 1.3rem 5rem
+    margin-left: 1vw
 
   &__text
     font-size: 1.8rem
