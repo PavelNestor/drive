@@ -100,11 +100,14 @@ body
       opacity: 0
 
 .price-card
+  margin-bottom: 2rem
+
   &__image
     height: 10rem
 
   &__col
     background: white
+    display: flex
     padding: 1rem 0 1rem $padding-navbar
     position: relative
     margin-bottom: 1rem
@@ -112,3 +115,11 @@ body
 
   &__title
     padding-left: $padding-navbar
+
+  &__text
+    &:nth-child(1)
+      flex: 4
+      padding-right: 2rem
+
+    &:nth-child(2)
+      flex: 2
