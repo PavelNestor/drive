@@ -153,12 +153,12 @@
         display: none
 
     &_text
-      display: block
-      transform: matrix(0.98, 0, 0.18, 1, 0, 0)
-      text-align: center
+      font-size: 1.8rem
 
-      @media #{$media-sm} 
-        font-size: 1.8rem
+      @media #{$media-sm-up} 
+        display: block
+        text-align: center
+        transform: matrix(0.98, 0, 0.18, 1, 0, 0)
 
 
   &__pagination
@@ -175,47 +175,46 @@
       background: url(/img/icons/arrow-next.png) center center no-repeat $primary
 
 .car-list
-  display: flex
-  justify-content: space-between
-  align-items: center
+  display: none
 
-  // @media #{$media-sm-plus-down}
-  //   display: none
-  
-  @media #{$media-sm} 
-    display: none
+  @media #{$media-sm-plus-up}
+    display: flex
+    justify-content: space-between
+    align-items: center
 
   &__wrap
     display: flex
     flex: 0 0 99%
-    position: relative
     left: -5px
+    position: relative
 
   &__item
-    letter-spacing: 0px
-    color: $primary
-    font-size: 1.6rem
-    flex: 0 0 32%
-    cursor: pointer
-    position: relative
-    padding: 35px 10px 35px 0px
-    display: flex
-    justify-content: flex-start
     align-items: center
+    color: $primary
+    cursor: pointer
+    display: flex
+    flex: 0 0 32%
+    font-size: 1.6rem
+    font-weight: bold
+    justify-content: flex-start
+    letter-spacing: 0px
+    padding: 35px 10px 35px 0px
+    position: relative
 
   &__img
-    width: 40%
+    height: auto
     margin-right: 10px
+    width: 40%
   
   &__scroll
+    cursor: pointer
     position: relative
     right: 5.7rem
     top: -3px
-    cursor: pointer
 
 .active
   background: linear-gradient(90deg, $grad-start 0%, $grad-end 100%)
+  height: 2px
   position: absolute
   top: 0
-  height: 2px
   width: 100%

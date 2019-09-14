@@ -13,38 +13,46 @@
 
   &__button
     position: relative
-    height: 6rem
+    height: auto
     z-index: 102
+
+    @media #{$media-sm-plus-up}
+      height: 6rem
 
 .card
   width: auto
-  min-height: 72rem
   z-index: 101
+  padding-bottom: 7rem
   
   @media #{$media-sm-plus-up}
+    min-height: 72rem
     width: 25vw
 
-  &:nth-child(1)
-    @media #{$media-sm-plus-up}
-      width: 33.333vw
+  // &:nth-child(1)
+  //   @media #{$media-sm-plus-up}
+  //     width: 33.333vw
 
-  // &:hover
-  //   width: 33vw
+  &:hover
+    width: 33.333vw
 
-  //   .card__content
-  //     transform: translateX($padding-navbar/2)
+    .card__content
+      transform: translateX($padding-navbar/2)
 
   &__image-wrap
-    min-height: 36rem
+    // min-height: rem
+    // @media #{$media-sm-plus-up}
+    //   min-height: 36rem
 
   &__image
-    height: 36rem
+    height: 28rem
+    @media #{$media-sm-plus-up}
+      height: 36rem
 
   &__content
     padding: 0 0 0 8.333vw
     max-width: auto
 
-    @media #{$media-sm-up}
+    @media #{$media-sm-plus-up}
       padding: 0 4.2rem
       max-width: 24.7vw
 
@@ -73,7 +81,12 @@
     line-height: 1.5em
 
 .test-btn
-  position: absolute
-  right: 0
-  text-align: right
-  top: -47rem
+  padding: 3.3rem 0 3.3rem 1rem
+  position: static
+  text-align: center
+
+  @media #{$media-sm-plus-up}
+    position: absolute
+    right: 0
+    text-align: right
+    top: -47rem
