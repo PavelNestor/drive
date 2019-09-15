@@ -26,17 +26,17 @@
   
   @media #{$media-sm-plus-up}
     min-height: 72rem
-    width: 25vw
+    width: 24.7vw
 
   // &:nth-child(1)
   //   @media #{$media-sm-plus-up}
   //     width: 33.333vw
+  @media #{$media-sm-plus-up}
+    &:hover
+      width: 24.7vw + $padding-navbar
 
-  &:hover
-    width: 33.333vw
-
-    .card__content
-      transform: translateX($padding-navbar/2)
+      .card__content
+        transform: translateX($padding-navbar/2)
 
   &__image-wrap
     // min-height: rem
@@ -49,12 +49,15 @@
       height: 36rem
 
   &__content
-    padding: 0 0 0 8.333vw
+    padding: 0 0 0 $padding-navbar
     max-width: auto
 
     @media #{$media-sm-plus-up}
       padding: 0 4.2rem
       max-width: 24.7vw
+
+    &-left
+      padding-left: 0
 
     &-test
       background: #FFFFFF

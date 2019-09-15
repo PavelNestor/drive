@@ -1,0 +1,37 @@
+.price-card-desktop
+  display: flex
+  flex-direction: column
+
+  &__row
+    display: flex
+    background: white
+    margin: 2rem 0
+    padding: 1.8rem 0
+
+    &:nth-child(1)
+      background: #F2F2F2
+      margin: 0
+      padding: 0 0 4rem 0
+
+  &__title
+    align-items: flex-end
+    font-size: 2rem
+    min-height: 10rem
+    padding-left: 0
+
+  &__header
+    margin-bottom: 0
+
+  &__col
+    display: flex
+    width: 16.5vw
+    flex-direction: column
+    justify-content: flex-end
+
+    &:nth-child(1)
+      padding-left: $padding-navbar
+      width: 33vw
+
+.prices__title-wrap
+  @media #{$media-sm-plus-up}
+    padding-top: 0

@@ -98,3 +98,45 @@ body
   &:hover
     &:after
       opacity: 0
+
+.price-card
+  margin-bottom: 2rem
+
+  @media #{$media-sm-plus-up}
+   width: 24vw
+
+  &__image
+    height: 10rem
+
+  &__col
+    background: white
+    display: flex
+    padding: 1rem 0 1rem $padding-navbar
+    position: relative
+    margin-bottom: 1rem
+    z-index: 101
+
+    @media #{$media-sm-plus-up}
+      padding: 1rem 0 1rem 4rem
+
+  &__title
+    padding-left: $padding-navbar
+
+    @media #{$media-sm-plus-up}
+      padding-left: 5rem
+
+  &__content
+    @media #{$media-sm-plus-up}
+      padding: 0 !important
+
+  &__text
+    &:nth-child(1)
+      flex: 4
+      padding-right: 1rem
+
+    &:nth-child(2)
+      flex: 2
+      padding-right: 1rem
+      display: flex
+      align-items: center
+      justify-content: flex-end
