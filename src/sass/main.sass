@@ -99,6 +99,32 @@ body
     &:after
       opacity: 0
 
+.lamb-slides,
+.ford-slides,
+.nissan-slides
+  &_active
+    .slide-hover
+      &:after
+      opacity: 0
+
+  &_main
+    transform: scaleX(1.12)
+
+    @media #{$media-sm-plus-up}
+      transform: scale(1.12)
+
+// .ford-slides
+//   &_active
+//     .slide-hover
+//       &:after
+//       opacity: 0
+
+//   &_main
+//     transform: scaleX(1.12)
+
+//     @media #{$media-sm-plus-up}
+//       transform: scale(1.12)
+
 .price-card
   margin-bottom: 2rem
 

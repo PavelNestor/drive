@@ -6,16 +6,21 @@ const prevSlide = $('#prev-slide');
 const nextSlide = $('#next-slide');
 const prevLambSlide = $('#prev-lamb-slide');
 const nextLambSlide = $('#next-lamb-slide');
+const prevFordSlide = $('#prev-ford-slide');
+const nextNissanSlide = $('#next-nissan-slide');
+const prevNissanSlide = $('#prev-nissan-slide');
+const nextFordSlide = $('#next-ford-slide');
 const mainLinks = $$('.main-links');
 const lambLinks = $$('.lamb-links');
 
-let slidesIndex = [1, 1];
-const slidesId = ['main-slides', 'lamb-slides'];
-const linksId = ['main-links', 'lamb-links'];
+let slidesIndex = [1, 1, 1, 1];
+const slidesId = ['main-slides', 'lamb-slides', 'ford-slides', 'nissan-slides'];
+const linksId = ['main-links', 'lamb-links', 'ford-links', 'nissan-links'];
 let timer = null;
 
-showSlides(1, 0);
-showSlides(1, 1);
+// showSlides(1, 0);
+// showSlides(1, 1);
+slidesIndex.forEach((slide, index) => showSlides(slide, index))
 
 function nextSlides(id) {
   clearTimeout(timer);
@@ -23,7 +28,10 @@ function nextSlides(id) {
 }
 
 function currentSlide(index, id) {
-  let res = slidesIndex[id] = index
+  console.log('id', id);
+  console.log('index', index);
+  
+  let res = slidesIndex[id] = index + 1;
   showSlides(res, id);
 }
 
@@ -47,10 +55,11 @@ function showSlides(index, slideId) {
   mainLinks.forEach(link => link.classList.remove(`active`));
   currentSlides.forEach(slide => slide.classList.add('hidden'));
 
-  mainLinks[slidesIndex[slideId] - 1].classList.add('active');
   currentSlides[slidesIndex[slideId] - 1].classList.remove('hidden');
 
   if(slideId === 0){
+    mainLinks[slidesIndex[slideId] - 1].classList.add('active');
+
     timer = setTimeout(() => {
       showSlides(slidesIndex[slideId] + 1, slideId);
     }, 6000);
@@ -58,17 +67,13 @@ function showSlides(index, slideId) {
 
 
   currentLinks.forEach(link => link.classList.remove(`${linksId[slideId]}_active`));
-  // lambLinks.forEach((carLink, index) => carLink.addEventListener('click', () => currentSlide(index + 1, 1)));
+  currentLinks.forEach((carLink, index) => carLink.addEventListener('click', () => currentSlide(index, slideId)));
 
-  console.log('lambLinks', lambLinks);
+  // console.log('lambLinks', lambLinks);
   
 
   currentLinks[slidesIndex[slideId] - 1].classList.add(`${linksId[slideId]}_active`);
   currentLinks[slidesIndex[slideId] - 1].removeEventListener('click', currentSlide);
-}
-
-for(var i = 0; i < lambLinks.length; i++){
-  lambLinks[i].addEventListener('click', (event) => console.log(event), true)
 }
 
 prevSlide.addEventListener('click', () => prewSlides(0));
@@ -76,6 +81,13 @@ nextSlide.addEventListener('click', () => nextSlides(0));
 
 prevLambSlide.addEventListener('click', () => prewSlides(1));
 nextLambSlide.addEventListener('click', () => nextSlides(1));
+
+prevFordSlide.addEventListener('click', () => prewSlides(2));
+nextFordSlide.addEventListener('click', () => nextSlides(2));
+
+
+prevNissanSlide.addEventListener('click', () => prewSlides(3));
+nextNissanSlide.addEventListener('click', () => nextSlides(3));
 
 
 // loading status
