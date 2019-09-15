@@ -3,18 +3,23 @@ include mixins
 .container.container__left.car-container.lamborghini.mustang
   .container__col
     //- .slide__item.slide__main
-    div
-      +picture('/img/mustang/main-slide2', 'Ford Mustang 67 coupe', 'cover')(id="1", class="")
+    .lamborghini__image-wrap
+      +picture('/img/mustang/main-slide2', 'Ford Mustang 67 coupe', 'cover')(id="1", class="ford-slides lamb-slides_main")
+      +picture('/img/mustang/mustang-slide3', 'Ford Mustang 67 coupe', 'cover')(id="1", class="ford-slides")
+      +picture('/img/mustang/mustang-slide4', 'Ford Mustang 67 coupe', 'cover')(id="1", class="ford-slides")
+      +picture('/img/mustang/mustang-slide5', 'Ford Mustang 67 coupe', 'cover')(id="1", class="ford-slides")
+      .mustang__box
     .slide__item.slide__secondary.sm-plus-down-hidden
-      .slide-hover
+      .slide-hover.ford-links
         +picture('/img/mustang/mustang-slide2', 'Ford Mustang 67 coupe', 'cover')(id="1", class="")
-      .slide-hover
+      .slide-hover.ford-links
         +picture('/img/mustang/mustang-slide3', 'Ford Mustang 67 coupe', 'cover')(id="1", class="")
-      .slide-hover
+      .slide-hover.ford-links
         +picture('/img/mustang/mustang-slide4', 'Ford Mustang 67 coupe', 'cover')(id="1", class="")
-      .slide-hover
+      .slide-hover.ford-links
         +picture('/img/mustang/mustang-slide5', 'Ford Mustang 67 coupe', 'cover')(id="1", class="")
-    +control-btn('idPre', 'idNext')(class='sm-plus-up-hidden p-static slide__wrap_pagination-reverse')
+
+    +control-btn('prev-ford-slide', 'next-ford-slide')(class='sm-plus-up-hidden p-static slide__wrap_pagination-reverse')
   
 
   .container__col.info

@@ -10,6 +10,20 @@
     padding-bottom: 0
     flex-direction: row-reverse
 
+  &__image-wrap
+    position: relative
+
+  &__box
+    display: none
+
+    @media #{$media-sm-plus-up}
+      background-color: $white_secondary
+      bottom: 0
+      display: block
+      height: 6vw
+      position: absolute
+      width: $padding-navbar
+
   .info
     padding-right: 8.4vw
 
