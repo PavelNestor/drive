@@ -102,6 +102,9 @@ body
 .price-card
   margin-bottom: 2rem
 
+  @media #{$media-sm-plus-up}
+   width: 24vw
+
   &__image
     height: 10rem
 
@@ -113,8 +116,18 @@ body
     margin-bottom: 1rem
     z-index: 101
 
+    @media #{$media-sm-plus-up}
+      padding: 1rem 0 1rem 4rem
+
   &__title
     padding-left: $padding-navbar
+
+    @media #{$media-sm-plus-up}
+      padding-left: 5rem
+
+  &__content
+    @media #{$media-sm-plus-up}
+      padding: 0 !important
 
   &__text
     &:nth-child(1)
