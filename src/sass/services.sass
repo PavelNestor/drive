@@ -26,17 +26,17 @@
   
   @media #{$media-sm-plus-up}
     min-height: 72rem
-    width: 25vw
+    width: 24.7vw
 
   // &:nth-child(1)
   //   @media #{$media-sm-plus-up}
   //     width: 33.333vw
+  @media #{$media-sm-plus-up}
+    &:hover
+      width: 24.7vw + $padding-navbar
 
-  &:hover
-    width: 33.333vw
-
-    .card__content
-      transform: translateX($padding-navbar/2)
+      .card__content
+        transform: translateX($padding-navbar/2)
 
   &__image-wrap
     // min-height: rem
