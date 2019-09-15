@@ -22,6 +22,10 @@ mixin gradient-btn()
       span.main-button__text Заказать 
         span.no-wrap тест-драйв
 
+mixin gradient-btn-round(src, alt)
+  .round-button
+    img.round-button__img(src= src, alt= alt)
+
 mixin control-btn(idPrev, idNext)
   .slide__wrap_pagination(class!=attributes.class)
     .slide__pagination.slide__pagination_prev(id= idPrev)
