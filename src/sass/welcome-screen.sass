@@ -3,10 +3,6 @@
   display: flex
   flex-direction: column
   min-height: 100vh
-  padding-top: 12rem
-
-  @media #{$media-sm-plus-up}
-    padding-top: 16.3rem
 
 .slide
   align-items: center
@@ -98,14 +94,12 @@
       display: flex
       flex-direction: row
       justify-content: flex-end
-      margin-right: -1rem
+      margin-bottom: 3rem
       padding-right: 0
       position: relative
 
       @media #{$media-sm-plus-up}
         bottom: 0
-        margin-right: 0
-        padding-right: 0
         padding-right: 36.6%
 
       &-reverse
@@ -167,12 +161,17 @@
     background-color: $primary
     background-position: center center
     cursor: pointer
+    opacity: 1
+    transition: .3s
+
+    &:hover
+      opacity: 0.9
 
     &_prev
-      background: url(/img/icons/arrow-prev.png) center center no-repeat $primary
+      background: url(/img/icons/arrow-prev.svg) center center no-repeat $primary
     
     &_next
-      background: url(/img/icons/arrow-next.png) center center no-repeat $primary
+      background: url(/img/icons/arrow-next.svg) center center no-repeat $primary
 
 .car-list
   display: none

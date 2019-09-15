@@ -1,1 +1,44 @@
 .footer
+  background: #758595
+
+  &__content
+    display: flex
+    flex-direction: column
+    padding: 8rem 0
+
+    @media #{$media-sm-plus-up}
+      flex-direction: row
+      justify-content: center
+
+  &__col
+    flex-basis: 50%
+
+    &:nth-child(1)
+      padding-right: $padding-navbar
+
+    &:nth-child(2)
+      display: flex
+      flex-wrap: wrap
+
+  &__contact-wrap
+    align-items: center
+    display: flex
+    flex-basis: calc(33% - 1rem)
+    flex-direction: row
+    padding-bottom: 1.5rem
+
+    @media #{$media-sm-plus-up}
+      flex-direction: column
+      padding: 0 1rem
+
+  &__subtitle
+    flex-basis: 100%
+
+  &__text
+    font-size: 1.8rem
+    line-height: 1.5em
+    margin-right: 1rem
+    white-space: nowrap
+
+    @media #{$media-sm-plus-up}
+      margin-right: 0
