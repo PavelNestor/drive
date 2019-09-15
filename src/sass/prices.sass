@@ -1,10 +1,11 @@
 .price-card-desktop
   display: flex
   flex-direction: column
+  padding-bottom: 10rem
 
   &__row
-    display: flex
     background: white
+    display: flex
     margin: 2rem 0
     padding: 1.8rem 0
 
@@ -24,9 +25,9 @@
 
   &__col
     display: flex
-    width: 16.5vw
     flex-direction: column
     justify-content: flex-end
+    width: 16.5vw
 
     &:nth-child(1)
       padding-left: $padding-navbar
@@ -35,3 +36,9 @@
 .prices__title-wrap
   @media #{$media-sm-plus-up}
     padding-top: 0
+
+.prices
+  padding-bottom: 4rem
+
+  @media #{$media-sm-plus-up}
+    padding-bottom: 0
