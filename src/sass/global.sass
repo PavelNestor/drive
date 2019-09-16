@@ -3,8 +3,11 @@
 
 html
   color: $color
-  font-size: 10px
+  font-size: 8px
   font-family: Montserrat
+
+  @media #{$media-xxs-up}
+    font-size: 10px
 
   @media #{$media-uhd-up}
     font-size: 20px
@@ -216,9 +219,9 @@ input[type='number']
 
   .img
     background:
-      position: 50% 50%
-      repeat: no-repeat
-      size: cover
+    position: 50% 50%
+    repeat: no-repeat
+    size: cover
     height: 100%
     position: absolute
     left: 0
@@ -275,7 +278,7 @@ input[type='number']
   color: $white_primary
   display: inline-block
   font-size: 1.8rem
-  padding: 0.9rem 2rem
+  padding: 1.3rem 2rem
   position: relative
   text-transform: uppercase
   transform: matrix(0.98, 0, -0.18, 1, 0, 0)
@@ -304,7 +307,7 @@ input[type='number']
     margin: 0 auto
 
   @media #{$media-sm-plus-up}
-    padding: 1.3rem 5rem
+    padding: 2rem 5rem
     margin: 0 0 0 1vw 
 
   &__text
@@ -336,3 +339,6 @@ input[type='number']
 
 .mr-col
   padding-right: 8.33333vw
+
+.cover
+  object-fit: cover

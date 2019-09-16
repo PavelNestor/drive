@@ -29,7 +29,9 @@
 
   .info
     padding-right: 8.4vw
-    padding-top: 3rem
+
+    @media #{$media-sm-plus-up} 
+      padding-top: 3rem
 
     &__title
       margin-bottom: 3rem
@@ -52,6 +54,7 @@
 
       &-wrap
         flex: 0 0 49%
+        padding-right: .5rem
         
       &-item
         margin-bottom: 2rem
