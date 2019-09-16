@@ -18,6 +18,20 @@ const slidesId = ['main-slides', 'lamb-slides', 'ford-slides', 'nissan-slides'];
 const linksId = ['main-links', 'lamb-links', 'ford-links', 'nissan-links'];
 let timer = null;
 
+//Sliders
+// const slidersElements = $$('.sliders');
+// let sliders = [];
+
+// slidersElements.forEach(sliderElem => {
+//   let name = sliderElem.dataset.slider;
+//   sliders.push({
+//     sliderName: `${name}-slides`,
+//     linkName: `${name}-links`,
+//     sliderIndex: 1
+//   });
+// });
+
+
 // showSlides(1, 0);
 // showSlides(1, 1);
 slidesIndex.forEach((slide, index) => showSlides(slide, index))
