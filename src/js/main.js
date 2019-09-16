@@ -116,6 +116,9 @@ function onScroll() {
     if (!isMobie && lambSectionTop < 0) {
       carMenu.classList.add('car-list-menu__active');
     }
+    if (lambSectionTop > 0) {
+      carMenu.classList.remove('car-list-menu__active');
+    }
   } else {
     carMenu.classList.remove('car-list-menu__active');
   }
