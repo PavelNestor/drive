@@ -26,6 +26,32 @@ body
       height: 100%
       width: 100%
 
+  h1
+    font-weight: 600
+    font-size: 3rem
+    line-height: 1.1em
+    letter-spacing: -0.04em
+    color: $primary
+
+    @media #{$media-sm-plus-up}
+      font-size: 4rem
+
+  h2
+    color: $white_primary
+    font-size: 3rem
+    line-height: 1.1em
+
+    @media #{$media-sm-plus-up}
+      font-size: 3.5rem
+
+  h3
+    font-size: 1.4rem
+    line-height: 150%
+    color: $secondary
+
+  h4
+    color: $white_primary
+
 section
 a
   border: none
@@ -53,9 +79,6 @@ p
 .bold
   font-weight: bold
 
-
-span
-
 img
   border: none
   outline: none
@@ -63,46 +86,9 @@ img
   height: 100%
   width: auto
 
-ul
-  padding: 0
-
-  li
-    list-style: none
-
-  &.list-inline
-    & > li
-      display: inline-block
-
 h1, h2, h3, h4, h5, h6
   &:first-child
     margin-top: 0
-
-h1
-h2
-h3
-h4
-h5
-h6
-
-hr
-  border: 0
-  display: block
-  border-top: 1px solid $base-font-color
-  height: 1px
-  margin-top: 1rem
-  margin-bottom: 1rem
-  clear: both
-
-label
-  border-radius: 0
-
-button, input, select, textarea, a
-  font: $font
-  font-size: 1rem
-
-  &:focus,
-  &:active
-    outline-color: $main-color
 
 picture
   display: block
@@ -112,40 +98,6 @@ picture
   width: 100%
   object-fit: cover
   object-position: top
-
-//	SELECT
-select
-  appearance: none
-  border: 1px solid $base-font-color
-  outline-color: $main-color
-
-  &:-moz-focusring
-    color: transparent
-    text-shadow: none
-//	END SELECT
-
-// INPUTS & TEXTAREA
-input,
-textarea
-  outline-color: $main-color
-  font: $font
-  color: $base-font-color
-  font-size: 1rem
-
-  &::placeholder
-    font: $font
-    font-size: 1.6rem
-
-textarea
-
-input
-  appearance: none
-
-input[type='number']
-  &::-webkit-outer-spin-button, &::-webkit-inner-spin-button
-    -webkit-appearance: none
-  -moz-appearance: textfield
-//	END INPUTS & TEXTAREA
 
 // GRID
 .container
@@ -197,48 +149,6 @@ input[type='number']
 .p-static
   position: static !important
 
-// image-holder
-.image-holder
-  overflow: hidden
-  position: relative
-  text-align: center
-  vertical-align: middle
-
-  img
-    object-fit: cover
-    vertical-align: middle
-    height: 100%
-    width: 100%
-
-  .fake-img
-    opacity: 0
-    position: relative
-    height: 100%
-    width: 100%
-    z-index: 1
-
-  .img
-    background:
-    position: 50% 50%
-    repeat: no-repeat
-    size: cover
-    height: 100%
-    position: absolute
-    left: 0
-    right: 0
-    top: 0
-
-.table-holder
-  max-width: 100%
-  overflow: auto
-
-.flex-vertical
-  display: flex
-  height: 100%
-  flex-flow: row wrap
-  align-items: center
-  justify-content: center
-
 //	MARKUP
 .align-center,
 .text-center
@@ -251,11 +161,6 @@ input[type='number']
 .align-left,
 .text-left
   text-align: left !important
-
-.pull-left
-  float: left
-.pull-right
-  float: right
 
 .nowrap
   white-space: nowrap
@@ -278,6 +183,8 @@ input[type='number']
   color: $white_primary
   display: inline-block
   font-size: 1.8rem
+  max-width: 33rem
+  margin: 0 auto
   padding: 1.3rem 2rem
   position: relative
   text-transform: uppercase
@@ -286,15 +193,16 @@ input[type='number']
   z-index: 101
 
   &:before
-    content: ''
-    position: absolute
-    left: 0
-    top: 0
-    right: 0
-    bottom: 0
     background: linear-gradient(90deg, $grad-end 0%, $grad-start 100%)
+    bottom: 0
     box-shadow: 0px 5px 15px rgba(230, 40, 135, 0.5)
+    content: ''
+    left: 0
+    margin: 0
     opacity: 0
+    position: absolute
+    right: 0
+    top: 0
     transition: all .4s ease-in-out
     z-index: 101
 
@@ -342,3 +250,191 @@ input[type='number']
 
 .cover
   object-fit: cover
+
+.margin-auto
+  margin: 0 auto
+
+
+.mb-1
+  margin-bottom: 1rem
+
+.preloader
+  background: linear-gradient(360deg, #2F3B47 0%, #2F3B47 100%)
+  bottom: 0
+  left: 0
+  position: fixed
+  right: 0
+  top: 0
+  z-index: 9999
+  transition: transform 400ms
+
+  &::after
+    background: center no-repeat url('/img/logo.svg')
+    content: ''
+    position: absolute
+    right: 0
+    top: 0
+    bottom: 0
+    left: 0
+    z-index: 99999
+
+  &_loaded
+    transform: translateX(100%)
+    pointer-events: none
+
+  .preloaderBar
+    background: #FAFAFA
+    left: 0
+    position: absolute
+    right: 0
+    top: 0
+    bottom: 0
+    width: 0
+
+.cache-images
+  position: absolute
+  opacity: .01
+  height: 0
+  width: 0
+
+.white
+  color: white
+
+.cars-subtitle
+  font-size: 1.4rem
+  text-transform: uppercase
+  margin-bottom: 0
+
+  @media #{$media-sm-plus-up}
+    font-size: 1.6rem
+    line-height: 1.5em
+
+.slide-hover
+  cursor: pointer
+  position: relative
+  width: 100%
+
+  &:after
+    background: #FFFFFF
+    bottom: 0
+    content: ''
+    left: 0
+    opacity: .5
+    position: absolute
+    right: 0
+    top: 0
+
+  &:hover
+    &:after
+      opacity: 0
+
+.lamb-slides,
+.ford-slides,
+.nissan-slides
+  @media #{$media-sm-plus-up}
+    height: calc(44vw - 17rem)
+
+  &_active
+    .slide-hover
+        &:after
+          opacity: 0
+
+  &_main
+    transform: scaleX(1.12)
+    object-fit: cover
+    height: calc(68.3vw)
+
+    @media #{$media-sm-plus-up}
+      height: calc(44vw - 17rem)
+
+.card
+  width: auto
+  z-index: 101
+  padding-bottom: 7rem
+  
+  @media #{$media-sm-plus-up}
+    min-height: 72rem
+    width: 24.7vw
+
+  @media #{$media-sm-plus-up}
+    &:hover
+      width: 24.7vw + $padding-navbar
+
+      .card__content
+        transform: translateX($padding-navbar/2)
+
+  &__image-wrap
+
+  &__image
+    height: 28rem
+    @media #{$media-sm-plus-up}
+      height: 36rem
+
+  &__content
+    padding: 3rem 0 0 $padding-navbar
+    max-width: auto
+
+    @media #{$media-sm-plus-up}
+      padding: 0 4.2rem
+      max-width: 24.7vw
+
+    &-left
+      padding-left: 0
+
+    &-test
+      background: #FFFFFF
+
+    &-foto
+      background: #FAFAFA
+
+    &-gift
+      background: #F4F4F4
+
+  &__title
+    font-size: 2.5rem
+    line-height: 1.1em
+    margin: 0
+    display: flex
+    align-items: center
+
+    @media #{$media-sm-plus-up}
+      min-height: 13rem
+
+  &__text
+
+  &__link
+    color: #eb5757
+    font-size: 1.4rem
+    line-height: 1.5em
+
+.round-button
+  align-items: center
+  background: linear-gradient(0deg, #3E4E5E, #3E4E5E)
+  border-radius: 3rem
+  display: flex
+  height: 5rem
+  justify-content: center
+  margin-right: 1.5rem
+  margin-bottom: 0
+  transition: background 1s ease-in
+  width: 5rem
+  z-index: 101
+
+
+  &:hover
+    background: linear-gradient(90deg, #3E4E5E95 0%, #3E4E5E95 100%)
+
+  @media #{$media-sm-plus-up}
+    margin-right: 0
+    margin-bottom: 1.5rem
+
+  &__img
+    height: 3rem
+    width: 3rem
+
+  &__tel
+    background: linear-gradient(90deg, #EB5757 0%, #E62887 100%)
+    transition: .3s
+
+    &:hover
+      background: linear-gradient(90deg, #E62887 0%, #EB5757 100%)

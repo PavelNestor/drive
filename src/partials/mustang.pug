@@ -11,13 +11,13 @@ include mixins
       .mustang__box
     .slide__item.slide__secondary.sm-plus-down-hidden
       .slide-hover.ford-links
-        +picture('/img/mustang/mustang-slide2', 'Ford Mustang 67 coupe', 'cover')(class="")
+        +picture('/img/mustang/main-slide', 'Ford Mustang 67 coupe', 'cover')
       .slide-hover.ford-links
-        +picture('/img/mustang/mustang-slide3', 'Ford Mustang 67 coupe', 'cover')(class="")
+        +picture('/img/mustang/mustang-slide3', 'Ford Mustang 67 coupe', 'cover')
       .slide-hover.ford-links
-        +picture('/img/mustang/mustang-slide4', 'Ford Mustang 67 coupe', 'cover')(class="")
+        +picture('/img/mustang/mustang-slide4', 'Ford Mustang 67 coupe', 'cover')
       .slide-hover.ford-links
-        +picture('/img/mustang/mustang-slide5', 'Ford Mustang 67 coupe', 'cover')(class="")
+        +picture('/img/mustang/mustang-slide5', 'Ford Mustang 67 coupe', 'cover')
 
     +control-btn('prev-ford-slide', 'next-ford-slide')(class='sm-plus-up-hidden p-static slide__wrap_pagination-reverse')
   
@@ -50,8 +50,4 @@ include mixins
           p.small.bold.info__specifications-title мощность двигателя
           p.small 420 л/с
 
-        //- .info__specifications-item
-        //-   p.small.bold.info__specifications-title разгон от 100 до 200 км/ч
-        //-   p.small 6.3 сек
-
-    +gradient-btn()(href='/')
+    +gradient-btn()(href='/', class='margin-auto')
