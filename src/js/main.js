@@ -4,18 +4,10 @@ const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 const prevSlide = $('#prev-slide');
 const nextSlide = $('#next-slide');
-const prevLambSlide = $('#prev-lamb-slide');
-const nextLambSlide = $('#next-lamb-slide');
-const prevFordSlide = $('#prev-ford-slide');
-const nextNissanSlide = $('#next-nissan-slide');
-const prevNissanSlide = $('#prev-nissan-slide');
-const nextFordSlide = $('#next-ford-slide');
 const mainLinks = $$('.main-links');
-const lambLinks = $$('.lamb-links');
+const mainSlides = $$('.main-slides');
 
-let slidesIndex = [1, 1, 1, 1];
-const slidesId = ['main-slides', 'lamb-slides', 'ford-slides', 'nissan-slides'];
-const linksId = ['main-links', 'lamb-links', 'ford-links', 'nissan-links'];
+let mainSlideIndex = 1;
 let timer = null;
 
 let scrollPosition = 0;
@@ -25,93 +17,68 @@ let carMenu = $('.car-list-menu');
 let lambSection = $('.lamborghini');
 
 // Sliders
-// const slidersElements = $$('.sliders');
-// let sliders = [];
+const slidersElements = $$('.sliders');
+let sliders = [];
 
-// slidersElements.forEach(sliderElem => {
-//   let name = sliderElem.dataset.slider;
-//   sliders.push({
-//     sliderName: `${name}-slides`,
-//     linkName: `${name}-links`,
-//     sliderIndex: 1
-//   });
-// });
+slidersElements.forEach(sliderElem => {
+  let name = sliderElem.dataset.slider;
+  sliders.push({
+    currentSlide: 0,
+    links: $$(`.${name}-links`),
+    name: name,
+    slides: $$(`.${name}-slides`),
+    prev: $(`#prev-${name}-slide`),
+    next: $(`#next-${name}-slide`)
+  });
+});
 
-slidesIndex.forEach((slide, index) => showSlides(slide, index))
+showSlides(1);
 
-function nextSlides(id) {
+function nextSlides() {
   clearTimeout(timer);
-  showSlides((slidesIndex[id] += 1), id);
+  showSlides(mainSlideIndex += 1);
 }
 
-function currentSlide(index, id) {
-  let res = slidesIndex[id] = index + 1;
-  showSlides(res, id);
+function currentSlide(index) {
+  let res = mainSlideIndex = index + 1;
+  showSlides(res);
 }
 
-function prewSlides(id) {
+function prewSlides() {
   clearTimeout(timer);
-  showSlides((slidesIndex[id] += -1), id);
+  showSlides(mainSlideIndex += -1);
 }
 
-function showSlides(index, slideId) {
-  const currentSlides = $$(`.${slidesId[slideId]}`);
-  const currentLinks = $$(`.${linksId[slideId]}`);
-  
-  if (index > currentSlides.length) {
-    slidesIndex[slideId] = 1;
+function showSlides(index) {
+  if (index > mainLinks.length) {
+    mainSlideIndex = 1;
   } else if (index < 1){
-    slidesIndex[slideId] = currentSlides.length;
+    mainSlideIndex = mainLinks.length;
   } else {
-    slidesIndex[slideId] = index;
+    mainSlideIndex = index;
   }
 
   mainLinks.forEach(link => link.classList.remove(`active`));
-  currentSlides.forEach(slide => slide.classList.add('hidden'));
+  mainLinks[mainSlideIndex - 1].classList.add('active');
 
-  currentSlides[slidesIndex[slideId] - 1].classList.remove('hidden');
+  mainSlides.forEach(slide => slide.classList.add('hidden'));
+  mainSlides[mainSlideIndex - 1].classList.remove('hidden');
 
-  if(slideId === 0){
-    mainLinks[slidesIndex[slideId] - 1].classList.add('active');
-
-    timer = setTimeout(() => {
-      showSlides(slidesIndex[slideId] + 1, slideId);
-    }, 6000);
-  }
-
-
-  currentLinks.forEach(link => link.classList.remove(`${linksId[slideId]}_active`));
-  currentLinks.forEach((carLink, index) => carLink.addEventListener('click', () => currentSlide(index, slideId)));
-
-  currentLinks[slidesIndex[slideId] - 1].classList.add(`${linksId[slideId]}_active`);
-  currentLinks[slidesIndex[slideId] - 1].removeEventListener('click', currentSlide);
+  timer = setTimeout(() => {
+    showSlides(mainSlideIndex + 1);
+  }, 6000);
 }
 
 prevSlide.addEventListener('click', () => prewSlides(0));
 nextSlide.addEventListener('click', () => nextSlides(0));
 
-prevLambSlide.addEventListener('click', () => prewSlides(1));
-nextLambSlide.addEventListener('click', () => nextSlides(1));
-
-prevFordSlide.addEventListener('click', () => prewSlides(2));
-nextFordSlide.addEventListener('click', () => nextSlides(2));
-
-
-prevNissanSlide.addEventListener('click', () => prewSlides(3));
-nextNissanSlide.addEventListener('click', () => nextSlides(3));
-
-
 // show navbar
-
 function onScroll() {
   const scrollPosition = document.body.getBoundingClientRect().top;
   const lambSectionTop = lambSection.getBoundingClientRect().top;
   const isScrollDirectionBackwards = scrollPosition > lastScrollPosition;
 
   if (isScrollDirectionBackwards) {
-    // const slider = new Slider(sliders[1]);
-  
-    // slider.links.forEach(slide => slide.addEventListener('click', () => slider.toSlide(index)));
     // UP SCROLL
     if (!isMobie && lambSectionTop < 0) {
       carMenu.classList.add('car-list-menu__active');
@@ -122,7 +89,6 @@ function onScroll() {
   } else {
     carMenu.classList.remove('car-list-menu__active');
   }
-
   lastScrollPosition = scrollPosition;
 }
 
@@ -231,55 +197,59 @@ ready(() => {
     });
   });
 
-  // const slider = new Slider(sliders[1]);
-
-  // slider.links.forEach(slide => slide.addEventListener('click', () => slider.toSlide(index)));
+  sliders.forEach(sliderItem => {
+    if (sliderItem.name !== 'main') {
+      const slider = new Slider(sliderItem);
+      slider.links.forEach((link, index) => link.addEventListener('click', () => slider.toSlide(index)));
+      slider.prev.addEventListener('click', () => slider.prevSlide());
+      slider.next.addEventListener('click', () => slider.nextSlide());
+      slider.showSlide();
+    }
+  })
 });
 
-// class Slider {
-//   constructor(options) {
-//     const DEFAULT_OPTIONS = {
-//       currentSlide: 0,
-//       links: [],
-//       name: '',
-//       slides: null,
-//     }
-//     options = Object.assign({}, DEFAULT_OPTIONS, options);
-//     Object.assign(this, options);
+// Class for sliders
+class Slider {
+  constructor(options) {
+    const DEFAULT_OPTIONS = {
+      currentSlide: 0,
+      links: [],
+      name: '',
+      slides: null,
+      prev: null,
+      next: null
+    }
+    options = Object.assign({}, DEFAULT_OPTIONS, options);
+    Object.assign(this, options);
+  }
 
-//     console.log('OPTIONS', options);
-    
-//   }
+  prevSlide() {
+    this.currentSlide--
+    if (this.currentSlide < 0){
+      this.currentSlide = this.slides.length - 1;
+    }
+    this.showSlide();
+  }
 
-//   prevSlide() {
-//     this.currentSlide--
+  nextSlide() {
+    this.currentSlide++
+    if (this.currentSlide > this.slides.length - 1) {
+      this.currentSlide = 0;
+    }
+    this.showSlide();
+  }
 
-//     if (this.currentSlide < 0){
-//       this.currentSlide = this.slides.length - 1;
-//     }
+  toSlide(index) {
+    this.currentSlide = index;
+    this.showSlide(this.currentSlide);
+  }
 
-//     this.showSlide();
-//   }
+  showSlide() {
+    this.slides.forEach(slide => slide.classList.add('hidden'));
+    this.slides[this.currentSlide].classList.remove('hidden');
 
-//   nextSlide() {
-//     this.currentSlide++
-
-//     if (currentSlide > slides.length - 1) {
-//       currentSlide = 0;
-//     }
-
-//     this.showSlide();
-//   }
-
-//   toSlide(index) {
-//     this.currentSlide = index;
-//     this.showSlide(currentSlide);
-//   }
-
-//   showSlide() {
-//     this.links.forEach(link => link.classList.remove(`${linkId}_active`));
-
-//     currentLinks[slidesIndex[slideId] - 1].classList.add(`${linksId[slideId]}_active`);
-//     currentLinks[slidesIndex[slideId] - 1].removeEventListener('click', currentSlide);
-//   }
-// }
+    this.links.forEach(link => link.classList.remove(`${this.name}-links_active`));
+    this.links[this.currentSlide].classList.add(`${this.name}-links_active`);
+    this.links[this.currentSlide].removeEventListener('click', this.toSlide);
+  }
+}
