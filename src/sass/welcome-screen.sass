@@ -47,7 +47,6 @@
 
     &-img
       position: relative
-      transform: scale(1)
       z-index: 2
       width: 100%
 
@@ -57,17 +56,18 @@
 
     &-bgText
       position: absolute
-      top: -8.4rem
-      left: 0
-      font-size: 20rem
-      line-height: 25.1rem
-      letter-spacing: -0.4rem
       color: $white_secondary
+      font-size: 20rem
+      font-weight: 900
+      left: 17px
+      letter-spacing: -0.4rem
+      line-height: 25.1rem
+      pointer-events: none
+      top: -8.4rem
       white-space: nowrap
-      font-weight: 600
 
       @media #{$media-sm}
-        font-size: 100px
+        font-size: 10rem
         top: -140px
 
   &__wrap
@@ -94,7 +94,7 @@
       display: flex
       flex-direction: row
       justify-content: flex-end
-      margin-bottom: 0
+      margin-bottom: 3rem
       padding-right: 0
       position: relative
 
@@ -120,7 +120,7 @@
       align-items: center
       font-size: 24px
       line-height: 1.1em
-
+  
   &__buy
     display: none
 
@@ -131,13 +131,15 @@
       display: block
       font-size: 1.8rem
       margin-left: 5rem
+      // max-width: 22vw
       padding: 1.3rem 4.7rem
       text-transform: uppercase
       transform: matrix(0.98, 0, -0.18, 1, 0, 0)
-
+      // width: 100%
+    
     &_mobile
       display: block
-      margin: 0 auto 7rem
+      margin: 1.8rem auto 7rem
       padding: 0.9rem 3rem
       position: relative
 
@@ -154,14 +156,13 @@
 
 
   &__pagination
+    width: 5rem
+    height: 5rem
     background-color: $primary
     background-position: center center
     cursor: pointer
-    height: 5rem
     opacity: 1
     transition: .3s
-    width: 5rem
-    z-index: 101
 
     &:hover
       opacity: 0.9
@@ -216,6 +217,3 @@
   position: absolute
   top: 0
   width: 100%
-
-.slide-conteiner
-  z-index: 101
