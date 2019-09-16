@@ -64,7 +64,6 @@
         position: absolute
 
     &_mobile
-      padding-top: 6rem
 
       &::before
         display: block
@@ -97,9 +96,13 @@
   &__text-wrap
 
   &__btn-wrap
+    align-self: center
     padding: 0
+    z-index: 101
+    width: 100%
 
     @media #{$media-sm-plus-up}
+      align-self: flex-start
       padding: 3.5rem 0 0 $padding-navbar*2
 
   &__col

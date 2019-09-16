@@ -1,22 +1,22 @@
 include mixins
 
-.container.container__right.car-container.lamborghini
+#nissan.container.container__right.car-container.lamborghini
   .container__col
-    .lamborghini__image-wrap
-      +picture('/img/nissan/main-slide2', 'Nissan GTR', 'cover')(id="1", class="nissan-slides lamb-slides_main")
-      +picture('/img/nissan/nissan-slide3', 'Nissan GTR', 'cover')(id="1", class="nissan-slides")
-      +picture('/img/nissan/nissan-slide4', 'Nissan GTR', 'cover')(id="1", class="nissan-slides")
-      +picture('/img/nissan/nissan-slide5', 'Nissan GTR', 'cover')(id="1", class="nissan-slides")
+    .lamborghini__image-wrap.sliders(data-slider='nissan')
+      +picture('/img/nissan/main-slide21', 'Nissan GTR', 'cover')(id="", class="nissan-slides lamb-slides_main")
+      +picture('/img/nissan/nissan-slide3', 'Nissan GTR', 'cover')(id="", class="nissan-slides")
+      +picture('/img/nissan/nissan-slide4', 'Nissan GTR', 'cover')(id="", class="nissan-slides")
+      +picture('/img/nissan/nissan-slide5', 'Nissan GTR', 'cover')(id="", class="nissan-slides")
       .lamborghini__box
     .slide__item.slide__secondary.sm-plus-down-hidden
       .slide-hover.nissan-links
-        +picture('/img/nissan/nissan-slide2', 'Nissan GTR', 'cover')(id="1", class="")
+        +picture('/img/nissan/nissan-slide2', 'Nissan GTR', 'cover')(id="", class="")
       .slide-hover.nissan-links
-        +picture('/img/nissan/nissan-slide3', 'Nissan GTR', 'cover')(id="1", class="")
+        +picture('/img/nissan/nissan-slide3', 'Nissan GTR', 'cover')(id="", class="")
       .slide-hover.nissan-links
-        +picture('/img/nissan/nissan-slide4', 'Nissan GTR', 'cover')(id="1", class="")
+        +picture('/img/nissan/nissan-slide4', 'Nissan GTR', 'cover')(id="", class="")
       .slide-hover.nissan-links
-        +picture('/img/nissan/nissan-slide5', 'Nissan GTR', 'cover')(id="1", class="")
+        +picture('/img/nissan/nissan-slide5', 'Nissan GTR', 'cover')(id="", class="")
 
     +control-btn('next-nissan-slide', 'prev-nissan-slide')(class='sm-plus-up-hidden p-static')
 
@@ -53,4 +53,4 @@ include mixins
           p.small 3.1 сек
 
 
-    +gradient-btn()
+    +gradient-btn()(href='/')

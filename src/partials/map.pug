@@ -6,7 +6,8 @@ include mixins
     .lf__top-white.map__top-white
   .container.lf__content.map
     .lf__col.map__col
-      h2.map__title Маршруты тест-драйва
+      h2.map__title Маршруты 
+       .no-wrap тест-драйва
       .map__text-wrap.map__one
         p.white Бориспольская трасса. Старт от Ресторанного комплекса Crazy BBQ, выезд на трассу. До первого моста (поворот на????) там разворачиваемся по направлению к г.Борисполь. Разворачиваемся на мосту (поворот на Александровку). Возврат в Crazy BBQ.
         p.white Полный маршрут примерно 11-12 км
@@ -21,7 +22,8 @@ include mixins
         p.white Полный маршрут примерно 11-12 км
         p.white время в пути ~ 15 мин
       .map__btn-wrap
-        +gradient-btn()
+        .text-center
+          +gradient-btn()(href='/')
   .lf__bottom.reverse-bottom
     .lf__bottom-white.map__bottom-grey
     .lf__bottom-origin

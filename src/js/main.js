@@ -18,8 +18,25 @@ const slidesId = ['main-slides', 'lamb-slides', 'ford-slides', 'nissan-slides'];
 const linksId = ['main-links', 'lamb-links', 'ford-links', 'nissan-links'];
 let timer = null;
 
-// showSlides(1, 0);
-// showSlides(1, 1);
+let scrollPosition = 0;
+let lastScrollPosition = 0;
+let isMobie = document.documentElement.clientWidth < 1024;
+let carMenu = $('.car-list-menu');
+let lambSection = $('.lamborghini');
+
+// Sliders
+// const slidersElements = $$('.sliders');
+// let sliders = [];
+
+// slidersElements.forEach(sliderElem => {
+//   let name = sliderElem.dataset.slider;
+//   sliders.push({
+//     sliderName: `${name}-slides`,
+//     linkName: `${name}-links`,
+//     sliderIndex: 1
+//   });
+// });
+
 slidesIndex.forEach((slide, index) => showSlides(slide, index))
 
 function nextSlides(id) {
@@ -28,9 +45,6 @@ function nextSlides(id) {
 }
 
 function currentSlide(index, id) {
-  console.log('id', id);
-  console.log('index', index);
-  
   let res = slidesIndex[id] = index + 1;
   showSlides(res, id);
 }
@@ -69,9 +83,6 @@ function showSlides(index, slideId) {
   currentLinks.forEach(link => link.classList.remove(`${linksId[slideId]}_active`));
   currentLinks.forEach((carLink, index) => carLink.addEventListener('click', () => currentSlide(index, slideId)));
 
-  // console.log('lambLinks', lambLinks);
-  
-
   currentLinks[slidesIndex[slideId] - 1].classList.add(`${linksId[slideId]}_active`);
   currentLinks[slidesIndex[slideId] - 1].removeEventListener('click', currentSlide);
 }
@@ -88,6 +99,38 @@ nextFordSlide.addEventListener('click', () => nextSlides(2));
 
 prevNissanSlide.addEventListener('click', () => prewSlides(3));
 nextNissanSlide.addEventListener('click', () => nextSlides(3));
+
+
+// show navbar
+
+function onScroll() {
+  const scrollPosition = document.body.getBoundingClientRect().top;
+  const lambSectionTop = lambSection.getBoundingClientRect().top;
+  const isScrollDirectionBackwards = scrollPosition > lastScrollPosition;
+
+  if (isScrollDirectionBackwards) {
+    // const slider = new Slider(sliders[1]);
+  
+    // slider.links.forEach(slide => slide.addEventListener('click', () => slider.toSlide(index)));
+    // UP SCROLL
+    if (!isMobie && lambSectionTop < 0) {
+      carMenu.classList.add('car-list-menu__active');
+    }
+  } else {
+    carMenu.classList.remove('car-list-menu__active');
+  }
+
+  lastScrollPosition = scrollPosition;
+}
+
+
+function onResize() {
+  isMobie = document.documentElement.clientWidth < 1024;
+}
+
+window.addEventListener('resize', onResize);
+
+window.addEventListener('scroll', onScroll);
 
 
 // loading status
@@ -113,7 +156,10 @@ const loading = {
       return;
     }
     const value = Math.ceil(mult * 100);
-    loading.preloaderBar.style.width = `${value}%`;
+    
+    if (value > 0) {
+      loading.preloaderBar.style.width = `${value}%`;
+    }
   },
 
   restart: function () {
@@ -181,4 +227,56 @@ ready(() => {
       }, 400);
     });
   });
+
+  // const slider = new Slider(sliders[1]);
+
+  // slider.links.forEach(slide => slide.addEventListener('click', () => slider.toSlide(index)));
 });
+
+// class Slider {
+//   constructor(options) {
+//     const DEFAULT_OPTIONS = {
+//       currentSlide: 0,
+//       links: [],
+//       name: '',
+//       slides: null,
+//     }
+//     options = Object.assign({}, DEFAULT_OPTIONS, options);
+//     Object.assign(this, options);
+
+//     console.log('OPTIONS', options);
+    
+//   }
+
+//   prevSlide() {
+//     this.currentSlide--
+
+//     if (this.currentSlide < 0){
+//       this.currentSlide = this.slides.length - 1;
+//     }
+
+//     this.showSlide();
+//   }
+
+//   nextSlide() {
+//     this.currentSlide++
+
+//     if (currentSlide > slides.length - 1) {
+//       currentSlide = 0;
+//     }
+
+//     this.showSlide();
+//   }
+
+//   toSlide(index) {
+//     this.currentSlide = index;
+//     this.showSlide(currentSlide);
+//   }
+
+//   showSlide() {
+//     this.links.forEach(link => link.classList.remove(`${linkId}_active`));
+
+//     currentLinks[slidesIndex[slideId] - 1].classList.add(`${linksId[slideId]}_active`);
+//     currentLinks[slidesIndex[slideId] - 1].removeEventListener('click', currentSlide);
+//   }
+// }

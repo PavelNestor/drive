@@ -3,8 +3,11 @@
 
 html
   color: $color
-  font-size: 10px
+  font-size: 8px
   font-family: Montserrat
+
+  @media #{$media-xxs-up}
+    font-size: 10px
 
   @media #{$media-uhd-up}
     font-size: 20px
@@ -34,7 +37,7 @@ p
   color: #4F4F4F
   font-size: 1.6rem
   font-weight: normal
-  line-height: 1.4em
+  line-height: 1.5em
 
   @media #{$media-sm-plus-up}
     font-size: 1.4rem
@@ -216,9 +219,9 @@ input[type='number']
 
   .img
     background:
-      position: 50% 50%
-      repeat: no-repeat
-      size: cover
+    position: 50% 50%
+    repeat: no-repeat
+    size: cover
     height: 100%
     position: absolute
     left: 0
@@ -269,24 +272,52 @@ input[type='number']
   white-space: nowrap
 
 .main-button
+  background: $grad-start
   background: linear-gradient(90deg, $grad-start 0%, $grad-end 100%)
   box-shadow: 0px 5px 15px rgba(230, 40, 135, 0.5)
   color: $white_primary
   display: inline-block
   font-size: 1.8rem
   padding: 1.3rem 2rem
+  position: relative
   text-transform: uppercase
   transform: matrix(0.98, 0, -0.18, 1, 0, 0)
+  transition: .4s
+  z-index: 101
+
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    background: linear-gradient(90deg, $grad-end 0%, $grad-start 100%)
+    box-shadow: 0px 5px 15px rgba(230, 40, 135, 0.5)
+    opacity: 0
+    transition: all .4s ease-in-out
+    z-index: 101
+
+  &:hover
+    &:before
+      opacity: 1
+
+  &_wrap
+    z-index: 101
+    margin: 0 auto
 
   @media #{$media-sm-plus-up}
-    padding: 1.3rem 5rem
-    margin-left: 1vw
+    padding: 2rem 5rem
+    margin: 0 0 0 1vw 
 
   &__text
     font-size: 1.8rem
+    font-weight: 600
     display: block
+    position: relative
     transform: matrix(0.98, 0, 0.18, 1, 0, 0)
     text-align: center
+    z-index: 102
 
 .w-100
   width: 100%
@@ -296,3 +327,18 @@ input[type='number']
 
 .reverse-bottom
   justify-content: flex-start !important
+
+.m-0
+  margin: 0
+
+.mb-0
+  margin-bottom: 0
+
+.mt-3
+  margin-top: 3rem
+
+.mr-col
+  padding-right: 8.33333vw
+
+.cover
+  object-fit: cover

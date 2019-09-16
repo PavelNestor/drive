@@ -63,6 +63,7 @@ body
     right: 0
     top: 0
     bottom: 0
+    width: 0
 
 .cache-images
   position: absolute
@@ -75,6 +76,8 @@ body
 
 .cars-subtitle
   font-size: 1.4rem
+  text-transform: uppercase
+  margin-bottom: 0
 
   @media #{$media-sm-plus-up}
     font-size: 1.6rem
@@ -102,6 +105,10 @@ body
 .lamb-slides,
 .ford-slides,
 .nissan-slides
+
+  @media #{$media-sm-plus-up}
+    height: calc(44vw - 17rem)
+
   &_active
     .slide-hover
       &:after
@@ -109,9 +116,12 @@ body
 
   &_main
     transform: scaleX(1.12)
+    object-fit: cover
+    height: calc(68.3vw)
 
     @media #{$media-sm-plus-up}
-      transform: scale(1.12)
+      height: calc(44vw - 17rem)
+      // transform: scale(1.12)
 
 // .ford-slides
 //   &_active
@@ -125,47 +135,65 @@ body
 //     @media #{$media-sm-plus-up}
 //       transform: scale(1.12)
 
-.price-card
-  margin-bottom: 2rem
+.card
+  width: auto
+  z-index: 101
+  padding-bottom: 7rem
+  
+  @media #{$media-sm-plus-up}
+    min-height: 72rem
+    width: 24.7vw
 
   @media #{$media-sm-plus-up}
-   width: 24vw
+    &:hover
+      width: 24.7vw + $padding-navbar
+
+      .card__content
+        transform: translateX($padding-navbar/2)
+
+  &__image-wrap
 
   &__image
-    height: 10rem
-
-  &__col
-    background: white
-    display: flex
-    padding: 1rem 0 1rem $padding-navbar
-    position: relative
-    margin-bottom: 1rem
-    z-index: 101
-
+    height: 28rem
     @media #{$media-sm-plus-up}
-      padding: 1rem 0 1rem 4rem
-
-  &__title
-    padding-left: $padding-navbar
-
-    @media #{$media-sm-plus-up}
-      padding-left: 5rem
+      height: 36rem
 
   &__content
+    padding: 3rem 0 0 $padding-navbar
+    max-width: auto
+
     @media #{$media-sm-plus-up}
-      padding: 0 !important
+      padding: 0 4.2rem
+      max-width: 24.7vw
+
+    &-left
+      padding-left: 0
+
+    &-test
+      background: #FFFFFF
+
+    &-foto
+      background: #FAFAFA
+
+    &-gift
+      background: #F4F4F4
+
+  &__title
+    font-size: 2.5rem
+    line-height: 1.1em
+    margin: 0
+    display: flex
+    align-items: center
+
+    @media #{$media-sm-plus-up}
+      min-height: 13rem
 
   &__text
-    &:nth-child(1)
-      flex: 4
-      padding-right: 1rem
 
-    &:nth-child(2)
-      flex: 2
-      padding-right: 1rem
-      display: flex
-      align-items: center
-      justify-content: flex-end
+  &__link
+    color: #eb5757
+    font-size: 1.4rem
+    line-height: 1.5em
 
 .round-button
   align-items: center
@@ -178,16 +206,23 @@ body
   margin-bottom: 0
   transition: background 1s ease-in
   width: 5rem
+  z-index: 101
 
 
   &:hover
-    background: linear-gradient(90deg, #EB5757 0%, #E62887 100%)
+    background: linear-gradient(90deg, #3E4E5E95 0%, #3E4E5E95 100%)
 
   @media #{$media-sm-plus-up}
     margin-right: 0
     margin-bottom: 1.5rem
 
-
   &__img
     height: 3rem
     width: 3rem
+
+  &__tel
+    background: linear-gradient(90deg, #EB5757 0%, #E62887 100%)
+    transition: .3s
+
+    &:hover
+      background: linear-gradient(90deg, #E62887 0%, #EB5757 100%)
