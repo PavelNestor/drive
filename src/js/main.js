@@ -109,14 +109,11 @@ function onScroll() {
   const isScrollDirectionBackwards = scrollPosition > lastScrollPosition;
 
   if (isScrollDirectionBackwards) {
+    // const slider = new Slider(sliders[1]);
+  
+    // slider.links.forEach(slide => slide.addEventListener('click', () => slider.toSlide(index)));
     // UP SCROLL
-
-    console.log('lambSectionTop',lambSectionTop);
-    
-    
-    
     if (!isMobie && lambSectionTop < 0) {
-      console.log('carMenu', carMenu);
       carMenu.classList.add('car-list-menu__active');
     }
   } else {
@@ -159,7 +156,6 @@ const loading = {
       return;
     }
     const value = Math.ceil(mult * 100);
-    console.log('value', value);
     
     if (value > 0) {
       loading.preloaderBar.style.width = `${value}%`;
@@ -231,4 +227,56 @@ ready(() => {
       }, 400);
     });
   });
+
+  // const slider = new Slider(sliders[1]);
+
+  // slider.links.forEach(slide => slide.addEventListener('click', () => slider.toSlide(index)));
 });
+
+// class Slider {
+//   constructor(options) {
+//     const DEFAULT_OPTIONS = {
+//       currentSlide: 0,
+//       links: [],
+//       name: '',
+//       slides: null,
+//     }
+//     options = Object.assign({}, DEFAULT_OPTIONS, options);
+//     Object.assign(this, options);
+
+//     console.log('OPTIONS', options);
+    
+//   }
+
+//   prevSlide() {
+//     this.currentSlide--
+
+//     if (this.currentSlide < 0){
+//       this.currentSlide = this.slides.length - 1;
+//     }
+
+//     this.showSlide();
+//   }
+
+//   nextSlide() {
+//     this.currentSlide++
+
+//     if (currentSlide > slides.length - 1) {
+//       currentSlide = 0;
+//     }
+
+//     this.showSlide();
+//   }
+
+//   toSlide(index) {
+//     this.currentSlide = index;
+//     this.showSlide(currentSlide);
+//   }
+
+//   showSlide() {
+//     this.links.forEach(link => link.classList.remove(`${linkId}_active`));
+
+//     currentLinks[slidesIndex[slideId] - 1].classList.add(`${linksId[slideId]}_active`);
+//     currentLinks[slidesIndex[slideId] - 1].removeEventListener('click', currentSlide);
+//   }
+// }
