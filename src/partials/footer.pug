@@ -1,6 +1,7 @@
 include mixins
 
 .container.footer
+  include grid-view-white
   .footer__content
     .footer__col
       h2 Нас легко найти
@@ -16,7 +17,7 @@ include mixins
       h4.footer__subtitle Присоединяйтесь
 
       .footer__contact-wrap
-        +gradient-btn-round('/img/icons/c-phone.svg', 'phone number')
+        +gradient-btn-round-tel('/img/icons/c-phone.svg', 'phone number')
         a.white.footer__text(href="tel:+380665737232") +380 66 573-72-32
       .footer__contact-wrap
         +gradient-btn-round('/img/icons/c-telegram.svg', 'telegram')

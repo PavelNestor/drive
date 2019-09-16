@@ -17,13 +17,17 @@ mixin picture-card(path, alt='', style='cover')
     img.image-cover(srcset=`${path}.jpg`)
 
 mixin gradient-btn()
-  div(class!=attributes.class)
+  .main-button_wrap(class!=attributes.class)
     .main-button
       span.main-button__text Заказать 
         span.no-wrap тест-драйв
 
 mixin gradient-btn-round(src, alt)
   .round-button
+    img.round-button__img(src= src, alt= alt)
+
+mixin gradient-btn-round-tel(src, alt)
+  .round-button.round-button__tel
     img.round-button__img(src= src, alt= alt)
 
 mixin control-btn(idPrev, idNext)
@@ -35,7 +39,7 @@ mixin card(item)
   .card(class= item.class)
     .card__image-wrap
       +picture-card(item.src, item.title)(class!=attributes.class)
-    .card__content
+    .card__content.pr-col
       h3.card__title= item.title
       p.card__text= item.text1
       p.card__text= item.text2
