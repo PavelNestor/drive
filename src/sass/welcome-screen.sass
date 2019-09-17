@@ -99,19 +99,19 @@
     &-bgText
       position: absolute
       color: $white_secondary
-      font-size: 20rem
+      font-size: 10rem
       font-weight: 900
       left: 1.8vw
       letter-spacing: -0.4rem
       line-height: 25.1rem
       pointer-events: none
-      top: -2rem
+      top: -16rem
       white-space: nowrap
-      z-index: 0
+      z-index: 1
 
-      @media #{$media-sm}
-        font-size: 10rem
-        top: -140px
+      @media #{$media-sm-plus-up}
+        font-size: 20rem
+        top: -5rem
 
   &__wrap
     align-items: center
@@ -130,7 +130,6 @@
       margin-top: 1rem
       padding-right: 8.6vw
       width: 100%
-      
 
     &_pagination
       bottom: 5.5rem
@@ -264,3 +263,7 @@
   width: 100%
 
 .slide-conteiner
+  margin-top: 7rem
+
+  @media #{$media-sm-plus-up}
+    margin-top: 0
