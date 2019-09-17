@@ -9,6 +9,15 @@ html
   @media #{$media-xxs-up}
     font-size: 10px
 
+  @media #{$media-sm-plus-up}
+    font-size: 8px
+
+  @media #{$media-1240-up}
+    font-size: 10px
+
+  @media #{$media-lg-plus-up}
+    font-size: 12px
+
   @media #{$media-uhd-up}
     font-size: 20px
 
@@ -183,9 +192,10 @@ picture
   color: $white_primary
   display: inline-block
   font-size: 1.8rem
+  line-height: 1em
   max-width: 33rem
   margin: 0 auto
-  padding: 1.3rem 2rem
+  padding: 1.4rem 2rem
   position: relative
   text-transform: uppercase
   transform: matrix(0.98, 0, -0.18, 1, 0, 0)
@@ -215,7 +225,7 @@ picture
     margin: 0 auto
 
   @media #{$media-sm-plus-up}
-    padding: 2rem 5rem
+    padding: 2.1rem 5rem
     margin: 0 0 0 1vw 
 
   &__text
@@ -241,6 +251,18 @@ picture
 
 .mb-0
   margin-bottom: 0
+
+.mb-5
+  margin-bottom: 5rem
+
+.mt-0
+  margin-top: 0
+
+.mt-1
+  margin-top: 1rem
+
+.mt-25
+  margin-top: 2.5rem
 
 .mt-3
   margin-top: 3rem
@@ -331,48 +353,52 @@ picture
 .lamb-slides,
 .ford-slides,
 .nissan-slides
-  @media #{$media-sm-plus-up}
-    height: calc(44vw - 17rem)
-
-  &_active
-    .slide-hover
-        &:after
-          opacity: 0
+  &_active.slide-hover
+    &:after
+      opacity: 0
 
   &_main
     transform: scaleX(1.12)
     object-fit: cover
-    height: calc(68.3vw)
-
-    @media #{$media-sm-plus-up}
-      height: calc(44vw - 17rem)
 
 .card
   width: auto
   z-index: 101
   padding-bottom: 7rem
+  transition: .4s
   
   @media #{$media-sm-plus-up}
     min-height: 72rem
     width: 24.7vw
 
   @media #{$media-sm-plus-up}
-    &:hover
-      width: 24.7vw + $padding-navbar
+    // &:hover
+    //   width: 24.7vw + $padding-navbar
 
-      .card__content
-        transform: translateX($padding-navbar/2)
+    //   .card__content
+    //     transform: translateX($padding-navbar/2)
 
   &__image-wrap
 
+  &-over
+    @media #{$media-sm-plus-up}
+      width: 24.7vw + $padding-navbar
+
+      .card__content
+          transform: translateX($padding-navbar/2)
+
+  &-out
+
   &__image
     height: 28rem
+    transition: .4s
     @media #{$media-sm-plus-up}
       height: 36rem
 
   &__content
     padding: 3rem 0 0 $padding-navbar
     max-width: auto
+    transition: .4s
 
     @media #{$media-sm-plus-up}
       padding: 0 4.2rem
@@ -438,3 +464,9 @@ picture
 
     &:hover
       background: linear-gradient(90deg, #E62887 0%, #EB5757 100%)
+
+.zi-3
+  z-index: 3
+
+
+//animation

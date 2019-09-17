@@ -16,6 +16,8 @@ let isMobie = document.documentElement.clientWidth < 1024;
 let carMenu = $('.car-list-menu');
 let lambSection = $('.lamborghini');
 
+const cards = $$('.card');
+
 // Sliders
 const slidersElements = $$('.sliders');
 let sliders = [];
@@ -64,7 +66,20 @@ function showSlides(index) {
   mainSlides.forEach(slide => slide.classList.add('hidden'));
   mainSlides[mainSlideIndex - 1].classList.remove('hidden');
 
+  // mainSlides[mainSlideIndex - 1].classList.add('clipInLeft');
+  // mainSlides[mainSlideIndex - 1].addEventListener("animationend", () => {
+  //   mainSlides.forEach(slide => slide.classList.remove(`clipInLeft`));
+  // }, false);
+  
+
   timer = setTimeout(() => {
+    // mainSlides[mainSlideIndex - 1].classList.add('clipOutRight');
+
+    // mainSlides[mainSlideIndex - 1].addEventListener("animationend", () => {
+    //   mainSlides.forEach(slide => slide.classList.remove(`clipOutRight`));
+    //   showSlides(mainSlideIndex + 1);
+    // }, false);
+
     showSlides(mainSlideIndex + 1);
   }, 6000);
 }
@@ -78,17 +93,13 @@ function onScroll() {
   const lambSectionTop = lambSection.getBoundingClientRect().top;
   const isScrollDirectionBackwards = scrollPosition > lastScrollPosition;
 
-  if (isScrollDirectionBackwards) {
-    // UP SCROLL
-    if (!isMobie && lambSectionTop < 0) {
-      carMenu.classList.add('car-list-menu__active');
+    if (!isMobie && lambSectionTop < 0 ) {
+      // carMenu.classList.add('car-list-menu__active');
     }
     if (lambSectionTop > 0) {
-      carMenu.classList.remove('car-list-menu__active');
+      // carMenu.classList.remove('car-list-menu__active');
     }
-  } else {
-    carMenu.classList.remove('car-list-menu__active');
-  }
+
   lastScrollPosition = scrollPosition;
 }
 
@@ -237,6 +248,10 @@ class Slider {
       this.currentSlide = 0;
     }
     this.showSlide();
+
+    // const incrementedCurrentSlide = this.currentSlide + 1;
+    // const newSlide = incrementedCurrentSlide < this.slides.length - 1 ?
+    //   incrementedCurrentSlide : 0;
   }
 
   toSlide(index) {
@@ -248,8 +263,19 @@ class Slider {
     this.slides.forEach(slide => slide.classList.add('hidden'));
     this.slides[this.currentSlide].classList.remove('hidden');
 
-    this.links.forEach(link => link.classList.remove(`${this.name}-links_active`));
-    this.links[this.currentSlide].classList.add(`${this.name}-links_active`);
+    this.links.forEach(link => link.classList.remove(`${this.name}-slides_active`));
+    this.links[this.currentSlide].classList.add(`${this.name}-slides_active`);
     this.links[this.currentSlide].removeEventListener('click', this.toSlide);
   }
 }
+
+// cards
+cards.forEach((card, index) => card.addEventListener('mouseover', () => cardOnMouseOver(index)));
+cards[0].classList.add('card-over');
+
+function cardOnMouseOver(index) {
+  cards.forEach(card => card.classList.remove('card-over'));
+  cards[index].classList.add('card-over');
+}
+
+// Main Animation

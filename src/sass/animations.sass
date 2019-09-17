@@ -42,6 +42,36 @@
   to
     height: 100%
 
+@keyframes clip-out-down
+  from
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)
+  to
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)
+
+@keyframes clip-out-right
+  from
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)
+  to
+    clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)
+
+@keyframes clip-in-left
+  from
+    clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)
+  to
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)
+
+.clipOutDown
+  animation: clip-out-down 2s
+  animation-fill-mode: both
+
+.clipOutRight
+  animation: clip-out-right 1s
+  animation-fill-mode: both
+
+.clipInLeft
+  animation: clip-in-left 1s
+  animation-fill-mode: both
+
 .fadeIn
   animation: fadeIn 0.3s
   animation-fill-mode: both

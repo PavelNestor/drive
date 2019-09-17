@@ -52,6 +52,7 @@
 
 .price-card
   margin-bottom: 2rem
+  z-index: 3
 
   @media #{$media-sm-plus-up}
    width: 24vw
@@ -60,6 +61,13 @@
     height: 8rem
     margin-top: 2rem
     margin-left: 1rem
+
+    @media #{$media-sm-plus-up}
+      left: -2rem
+      margin-left: 0
+      object-fit: contain
+      position: relative
+      width: 100%
 
   &__col
     background: white
@@ -82,6 +90,8 @@
       margin-top: 0 !important
       min-height: 10rem
       padding-left: 0
+      padding-right: 3rem
+      
 
   &__content
     @media #{$media-sm-plus-up}

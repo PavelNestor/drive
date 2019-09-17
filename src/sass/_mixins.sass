@@ -37,11 +37,13 @@ $screen-sm-plus-min:         $screen-sm
 
 // Medium screen / desktop
 $screen-md:                  1200px
+$screen-1240:                1240px
 $screen-md-min:              $screen-md
 $screen-desktop:             $screen-md-min
 
 // Large screen / wide desktop
 $screen-lg:                  1440px
+$screen-lg-plus:             1700px
 $screen-lg-min:              $screen-lg
 
 // Ultra screen / wide desktop
@@ -62,11 +64,13 @@ $media-uhd: #{$media-uhd-up}
 $media-lg-down: '(max-width: #{$screen-lg})'
 $media-lg: #{$media-lg-down}
 $media-lg-up: '(min-width: #{$screen-lg})'
+$media-lg-plus-up: '(min-width: #{$screen-lg-plus})'
 $media-lg-only: '(min-width: $screen-lg) and (max-width: $screen-lg-max)'
 
 $media-md-down: '(max-width: #{$screen-md})'
 $media-md: #{$media-md-down}
-$media-md-up: '(min-width: $screen-md)'
+$media-md-up: '(min-width: #{$screen-md})'
+$media-1240-up: '(min-width: #{$screen-1240})'
 $media-md-only: '(min-width: $screen-md) and (max-width: $screen-md-max)'
 
 $media-md-sm: '(min-width: $screen-sm) and (max-width: $screen-md-max)'

@@ -22,13 +22,17 @@
       background-color: $white_secondary
       bottom: 0
       display: block
-      height: 6vw
+      height: 4vw
       left: -1px
       position: absolute
       width: $padding-navbar
 
+    @media #{$media-lg-up}
+      height: 6.25vw
+
   .info
     padding-right: 8.4vw
+    justify-content: flex-start
 
     &__title
       margin-bottom: 3rem
@@ -50,7 +54,7 @@
         margin-bottom: 3rem
 
       &-wrap
-        flex: 0 0 49%
+        flex: 0 0 50%
         padding-right: .5rem
         
       &-item
