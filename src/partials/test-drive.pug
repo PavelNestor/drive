@@ -1,9 +1,9 @@
+include mixins
+
 .container.test-drive
   img.sm-hidden.z-3(src="img/logo.svg", alt="logo")
   .test-drive__content
     .test-drive__text Если вы хотите понять, что такое 
       span.test-drive__text_bold роскошный спортивный автомобиль, с невероятной мощностью 
       | - вам, определенно, к нам!
-    a.main-button
-      span.main-button__text Заказать 
-        span.no-wrap тест-драйв
+    +gradient-btn()(href='/')

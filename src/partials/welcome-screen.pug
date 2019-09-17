@@ -5,52 +5,51 @@ block vars
 
 .welcome-screen
   .container.container__right.content
-
     include navigation
-    
+
     .content-wrap.zi-3
       .slide__info
         h1 Ощутить мощность сверх-автомобиля, теперь можно в Украине.
         p.slide__info-text Что вы знаете о суперкарах - сверх мощные и невероятно дорогие, они всегда будут захватывать воображение автолюбителя. Теперь для того, чтобы ощутить всю мощь на себе, вовсе не обязательно становиться его владельцем. Воспользоваться уникальной возможностью ощутить мощность сверх автомобиля, теперь можно в Украине. Свяжитесь с нами уже сейчас!
-          
+
       .slide-conteiner.sliders(data-slider='main')
-        .slide.main-slides
-          .slide__picture
-            +picture-png('/img/lamb', 'Lamborghini Huracan')(class='slide__picture-img')
-            span.slide__picture-bgText Lamborghini Huracan
-            .slide__wrap
-              .slide__car-name Lamborghini Huracan
-              .slide__buy
-                span.slide__buy_text Заказать 
-                  span.no-wrap тест-драйв
+        div
+          .slide.main-slides
+            .slide__picture
+              +picture-png('/img/lamb', 'Lamborghini Huracan')(class='slide__picture-img')
+              span.slide__picture-bgText Lamborghini Huracan
+              .slide__wrap.sm-plus-up-hidden
+                .slide__car-name Lamborghini Huracan
+                //- +gradient-btn()(href='/')
 
-        .slide.main-slides
-         .slide__picture
-            +picture-png('/img/ford', 'Ford Mustang 67 coupe')(class='slide__picture-img')
-            span.slide__picture-bgText Ford Mustang 67 coupe
-            .slide__wrap
-              .slide__car-name  Ford Mustang 67 coupe
-              .slide__buy
-                span.slide__buy_text Заказать 
-                  span.no-wrap тест-драйв
+          .slide.main-slides
+            .slide__picture
+              +picture-png('/img/ford', 'Ford Mustang 67 coupe')(class='slide__picture-img')
+              span.slide__picture-bgText Ford Mustang 67 coupe
+              .slide__wrap.sm-plus-up-hidden
+                .slide__car-name Ford Mustang 67 coupe
+                //- +gradient-btn()(href='/')
 
-        .slide.main-slides
-          .slide__picture
-            +picture-png('/img/nissan', 'Nissan GTR')(class='slide__picture-img')
-            span.slide__picture-bgText Nissan GTR
-            .slide__wrap
-              .slide__car-name Nissan GTR
-              .slide__buy
-                span.slide__buy_text Заказать 
-                  span.no-wrap тест-драйв
+          .slide.main-slides
+            .slide__picture
+              +picture-png('/img/nissan', 'Nissan GTR')(class='slide__picture-img')
+              span.slide__picture-bgText Nissan GTR
+              .slide__wrap.sm-plus-up-hidden
+                .slide__car-name Nissan GTR
 
-    .slide__wrap_pagination.zi-3
-      #prev-slide.slide__pagination.slide__pagination_prev
-      #next-slide.slide__pagination.slide__pagination_next
+        .content__btn
+          .content__car-name Lamborghini Huracan
+          .content__car-name Ford Mustang 67 coupe
+          .content__car-name Nissan GTR
+          +gradient-btn()(href='/' class='')
 
-    .main-button.slide__buy.slide__buy_mobile
-      span.main-button__text Заказать 
-        span.no-wrap тест-драйв
+        .slide__wrap_pagination.zi-3
+          #prev-slide.slide__pagination.slide__pagination_prev
+          #next-slide.slide__pagination.slide__pagination_next
+
+        .main-button.slide__buy.slide__buy_mobile
+          span.main-button__text Заказать 
+            span.no-wrap тест-драйв
 
     .car-list
       .car-list__wrap

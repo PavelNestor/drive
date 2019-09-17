@@ -5,6 +5,38 @@
   justify-content: space-between
   min-height: 100vh
 
+  @media #{$media-sm-plus-up}
+
+  &__btn
+    display: none
+
+    @media #{$media-sm-plus-up}
+      align-items: center
+      display: flex
+      flex-direction: row
+      justify-content: flex-end
+      margin-top: 1rem
+      padding-right: calc(33.4vw - 34rem)
+      width: 100%
+
+  &__car-name
+    font-size: 3rem
+    color: $primary
+    letter-spacing: -0.03em
+    display: flex
+
+    @media #{$media-sm-plus-down} 
+      display: none
+    //   display: flex
+    //   flex-direction: row
+    //   text-align: end
+
+    // @media #{$media-sm}
+    //   display: flex
+    //   align-items: center
+    //   font-size: 2.4rem
+    //   line-height: 1.1em
+
   &-wrap
     display: flex
     flex-direction: column
@@ -26,20 +58,21 @@
     justify-content: space-around
 
   &__info
-    margin-bottom: 6.6rem
     padding: 0 6%
     flex: 0 0 34%
 
     @media #{$media-sm-plus-up}
-      padding: 2.3rem 0 0 0
-      margin-bottom: 4rem
+      padding: 0
+      display: flex
+      flex-direction: column
+      justify-content: center
 
     &-text
       display: none
 
       @media #{$media-sm-up}
         display: block
-        margin-top: 3.4rem
+        margin: 0
         width: 71%
 
   &__picture
@@ -72,8 +105,9 @@
       letter-spacing: -0.4rem
       line-height: 25.1rem
       pointer-events: none
-      top: -8.4rem
+      top: -2rem
       white-space: nowrap
+      z-index: 0
 
       @media #{$media-sm}
         font-size: 10rem
@@ -103,13 +137,12 @@
       display: flex
       flex-direction: row
       justify-content: flex-end
-      margin-bottom: 3rem
       padding-right: 0
       position: relative
 
       @media #{$media-sm-plus-up}
         bottom: 0
-        padding-right: calc(8.6vw + 35rem)
+        padding-right: calc(33.4vw)
 
       &-reverse
         justify-content: flex-start
@@ -209,7 +242,7 @@
     font-weight: bold
     justify-content: flex-start
     letter-spacing: 0px
-    padding: 35px 10px 35px 0px
+    padding: 1rem 1rem 1rem 0
     position: relative
 
   &__img
@@ -231,4 +264,3 @@
   width: 100%
 
 .slide-conteiner
-  padding-top: 5rem
