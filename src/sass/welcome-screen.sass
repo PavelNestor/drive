@@ -267,3 +267,19 @@
 
   @media #{$media-sm-plus-up}
     margin-top: 0
+
+.cars-menu
+  position: static
+  z-index: -1
+  &__active
+    display: none
+
+    @media #{$media-sm-plus-up}
+      display: flex
+      position: fixed
+      left: 0
+      right: 0
+      bottom: 0
+
+.placeholder-welcome
+  height: 11rem
