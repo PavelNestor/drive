@@ -60,11 +60,6 @@ function prewSlides() {
 }
 
 function showSlides(index) {
-
-  console.log('index', index);
-  console.log('mainSlideIndex', mainSlideIndex);
-  console.log('mainLinks.length', mainLinks.length);
-
   if (index > mainSlides.length) {
     mainSlideIndex = 1;
   } else if (index < 1){
@@ -105,14 +100,13 @@ function showSlides(index) {
   timerAnim = setTimeout(() => {
     mainSlides[mainSlideIndex - 1].classList.add('clipOutRight');
     carName[mainSlideIndex - 1].classList.add('clipOutRight');
+
+    mainSlides[mainSlideIndex - 1].addEventListener("animationend", () => {
+      mainSlides[mainSlideIndex - 1].classList.remove(`clipOutRight`);
+      carName[mainSlideIndex - 1].classList.remove(`clipOutRight`);
+    }, false);
   }, 4400);
 
-  mainSlides[mainSlideIndex - 1].addEventListener("animationend", () => {
-    mainSlides[mainSlideIndex - 1].classList.remove(`clipOutRight`);
-    carName[mainSlideIndex - 1].classList.remove(`clipOutRight`);
-  }, false);
-
-  
   timer = setTimeout(() => {
     showSlides(mainSlideIndex + 1);
   }, 6000);
