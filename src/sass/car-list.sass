@@ -1,14 +1,23 @@
+.placeholder
+  height: 10rem
+
 .car-list-menu
   display: none
-  justify-content: space-between
-  align-items: center
-  background-color: $white_secondary
-  position: fixed
-  top: 0
-  z-index: 200
+  
+  @media #{$media-sm-plus-up} 
+    display: flex
+    height: 10rem
+    background-color: $white_secondary
+    position: static
+    justify-content: space-between
+    align-items: center
+    z-index: 200
 
   &__active
-    display: flex
+    position: fixed
+    left: 0
+    right: 0
+    bottom: 0
 
   &__wrap
     display: flex

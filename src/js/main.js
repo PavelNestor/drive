@@ -17,6 +17,9 @@ let lastScrollPosition = 0;
 let isMobie = document.documentElement.clientWidth < 1024;
 let carMenu = $('.car-list-menu');
 let lambSection = $('.lamborghini');
+let welcomeSection = $('.welcome-screen');
+let carsMenu = $('.cars-menu');
+let testSection = $('.test-drive');
 
 const cards = $$('.card');
 
@@ -85,7 +88,7 @@ function showSlides(index) {
 
   timerAnim = setTimeout(() => {
     mainSlides[mainSlideIndex - 1].classList.add('clipOutRight');
-  }, 5000);
+  }, 5400);
 
   mainSlides[mainSlideIndex - 1].addEventListener("animationend", () => {
     mainSlides.forEach(slide => slide.classList.remove(`clipOutRight`));
@@ -102,15 +105,12 @@ nextSlide.addEventListener('click', () => nextSlides(0));
 // show navbar
 function onScroll() {
   const scrollPosition = document.body.getBoundingClientRect().top;
-  const lambSectionTop = lambSection.getBoundingClientRect().top;
-  const isScrollDirectionBackwards = scrollPosition > lastScrollPosition;
+  const testSectionTop = testSection.getBoundingClientRect().top;
 
-    if (!isMobie && lambSectionTop < 0 ) {
-      // carMenu.classList.add('car-list-menu__active');
-    }
-    if (lambSectionTop > 0) {
-      // carMenu.classList.remove('car-list-menu__active');
-    }
+  carMenu.classList.add('car-list-menu__active');
+  if (testSectionTop + 100 < 0) {
+    carMenu.classList.remove('car-list-menu__active');
+  }
 
   lastScrollPosition = scrollPosition;
 }
@@ -228,7 +228,10 @@ ready(() => {
       slider.next.addEventListener('click', () => slider.nextSlide());
       slider.showSlide();
     }
-  })
+  });
+
+  carMenu.classList.add('car-list-menu__active');
+
 });
 
 // Class for sliders
