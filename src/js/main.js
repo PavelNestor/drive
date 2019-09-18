@@ -82,16 +82,18 @@ function showSlides(index) {
     carName[mainSlideIndex - 1].classList.add('clipInLeft');
     setTimeout(() => {
       mainSlides.forEach(slide => slide.classList.remove(`clipInLeft`));
-    carName.forEach(slide => slide.classList.remove(`clipInLeft`));
+      carName.forEach(slide => slide.classList.remove(`clipInLeft`));
     }, 500);
   }, false);
 
   timerAnim = setTimeout(() => {
     mainSlides[mainSlideIndex - 1].classList.add('clipOutRight');
-  }, 5400);
+    carName[mainSlideIndex - 1].classList.add('clipOutRight');
+  }, 4400);
 
   mainSlides[mainSlideIndex - 1].addEventListener("animationend", () => {
     mainSlides.forEach(slide => slide.classList.remove(`clipOutRight`));
+    carName.forEach(slide => slide.classList.remove(`clipOutRight`));
   }, false);
 
   timer = setTimeout(() => {
