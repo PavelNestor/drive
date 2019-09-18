@@ -66,6 +66,17 @@
   to
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)
 
+@keyframes slideInDown
+  from
+    transform: translate3d(0, -100%, 0)
+    visibility: visible
+  to
+    transform: translate3d(0, 0, 0)
+
+.slideInDown
+  animation: slideInDown 1s
+  animation-fill-mode: both
+
 .clipOutDown
   animation: clip-out-down 2s
   animation-fill-mode: both
@@ -104,7 +115,7 @@
   animation-fill-mode: both
 
 .grow
-  animation-name: fade
+  animation-name: grow
   animation-duration: 1.5s
   animation-fill-mode: both
 

@@ -321,4 +321,32 @@ function cardOnMouseOver(index) {
   cards[index].classList.add('card-over');
 }
 
-// Main Animation
+// Price Animation
+const priceEl = $$('.price-anim');
+let windowLastScrollPosition = 0;
+
+function addSlideDownAnimation() {
+  let windowScrollPosition = window.scrollY;
+  const isScrollDirectionBackwards = windowScrollPosition > windowLastScrollPosition;
+
+  if (isScrollDirectionBackwards) {
+    priceEl.forEach(element =>{
+      let top = element.getBoundingClientRect().top;
+      let offset = window.innerHeight/2;
+      element.classList.remove('visible');
+
+      if ( top < offset) {
+        element.classList.add('slideInDown');
+        element.classList.add('visible');
+      } else {
+        element.classList.remove('slideInDown');
+      }
+
+    });
+  } else {
+    priceEl.forEach(element => element.classList.add('visible'));
+  }
+  windowLastScrollPosition = windowScrollPosition;
+};
+
+window.addEventListener('scroll', addSlideDownAnimation);
