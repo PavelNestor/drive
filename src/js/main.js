@@ -21,6 +21,7 @@ let welcomeSection = $('.welcome-screen');
 let carsMenu = $('.cars-menu');
 let testSection = $('.test-drive');
 let animTimerElem = $('.anim-timer');
+const wrappers = $$('.sliders');
 
 const cards = $$('.card');
 
@@ -28,7 +29,7 @@ const cards = $$('.card');
 const slidersElements = $$('.sliders');
 let sliders = [];
 
-slidersElements.forEach(sliderElem => {
+slidersElements.forEach((sliderElem, index) => {
   let name = sliderElem.dataset.slider;
   sliders.push({
     currentSlide: 0,
@@ -36,7 +37,8 @@ slidersElements.forEach(sliderElem => {
     name: name,
     slides: $$(`.${name}-slides`),
     prev: $(`#prev-${name}-slide`),
-    next: $(`#next-${name}-slide`)
+    next: $(`#next-${name}-slide`),
+    wrapper: wrappers[index]
   });
 });
 
@@ -252,11 +254,13 @@ class Slider {
   constructor(options) {
     const DEFAULT_OPTIONS = {
       currentSlide: 0,
+      lastSlide: 0,
       links: [],
       name: '',
       slides: null,
       prev: null,
-      next: null
+      next: null,
+      wrapper: null
     }
     options = Object.assign({}, DEFAULT_OPTIONS, options);
     Object.assign(this, options);
@@ -288,12 +292,23 @@ class Slider {
   }
 
   showSlide() {
+    const url = this.slides[this.lastSlide].querySelector('img').getAttribute('srcset');
+    this.wrapper.style.background  = `url(${url}) no-repeat center center / cover`;
+
     this.slides.forEach(slide => slide.classList.add('hidden'));
     this.slides[this.currentSlide].classList.remove('hidden');
+
+    this.slides[this.currentSlide].classList.add('clipInLeft');
+
+    this.slides[this.currentSlide].addEventListener("animationend", () => {
+      this.slides[this.currentSlide].classList.remove(`clipInLeft`);
+    }, false);
 
     this.links.forEach(link => link.classList.remove(`${this.name}-slides_active`));
     this.links[this.currentSlide].classList.add(`${this.name}-slides_active`);
     this.links[this.currentSlide].removeEventListener('click', this.toSlide);
+
+    this.lastSlide = this.currentSlide;
   }
 }
 
