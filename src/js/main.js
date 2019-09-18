@@ -20,6 +20,7 @@ let lambSection = $('.lamborghini');
 let welcomeSection = $('.welcome-screen');
 let carsMenu = $('.cars-menu');
 let testSection = $('.test-drive');
+let animTimerElem = $('.anim-timer');
 
 const cards = $$('.card');
 
@@ -67,8 +68,8 @@ function showSlides(index) {
     mainSlideIndex = index;
   }
 
-  mainLinks.forEach(link => link.classList.remove(`active`));
-  mainLinks[mainSlideIndex - 1].classList.add('active');
+  // mainLinks.forEach(link => link.classList.remove(`active`));
+  // mainLinks[mainSlideIndex - 1].classList.add('active');
 
   mainSlides.forEach(slide => slide.classList.add('hidden'));
   carName.forEach(slide => slide.classList.add('hidden'));
@@ -76,7 +77,18 @@ function showSlides(index) {
   
   mainSlides[mainSlideIndex - 1].classList.add('clipInLeft');
 
-  
+  //Animation for slide line Start
+  animTimerElem.classList.add('clipInLeftForLine');
+
+  animTimerElem.addEventListener("animationend", () => {
+    animTimerElem.classList.remove(`clipInLeftForLine`);
+    animTimerElem.classList.add('clipOutRightForLine');
+    animTimerElem.addEventListener("animationend", () => {
+      animTimerElem.classList.remove(`clipOutRightForLine`);
+    }, false);
+  }, false);
+  //Animation for slide line End
+
   mainSlides[mainSlideIndex - 1].addEventListener("animationend", () => {
     carName[mainSlideIndex - 1].classList.remove('hidden');
     carName[mainSlideIndex - 1].classList.add('clipInLeft');
