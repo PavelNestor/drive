@@ -60,6 +60,12 @@
   to
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)
 
+@keyframes clip-in-right
+  from
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)
+  to
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)
+
 .clipOutDown
   animation: clip-out-down 2s
   animation-fill-mode: both
@@ -68,8 +74,8 @@
   animation: clip-out-right 3s
   animation-fill-mode: both
 
-.clipInLeftForLine
-  animation: clip-in-left 3s
+.clipInRightForLine
+  animation: clip-in-right 5s
   animation-fill-mode: both
 
 .clipOutRight

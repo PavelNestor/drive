@@ -74,14 +74,9 @@ function showSlides(index) {
   }
 
   //Animation for slide line Start
-  animTimerElem.classList.add('clipInLeftForLine');
-
+  animTimerElem.classList.add('clipInRightForLine');
   animTimerElem.addEventListener("animationend", () => {
-    animTimerElem.classList.remove(`clipInLeftForLine`);
-    animTimerElem.classList.add('clipOutRightForLine');
-    animTimerElem.addEventListener("animationend", () => {
-      animTimerElem.classList.remove(`clipOutRightForLine`);
-    }, false);
+    animTimerElem.classList.remove(`clipInRightForLine`);
   }, false);
   //Animation for slide line End
 
