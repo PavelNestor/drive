@@ -60,22 +60,18 @@ function prewSlides() {
 }
 
 function showSlides(index) {
-  if (index > mainLinks.length) {
+
+  console.log('index', index);
+  console.log('mainSlideIndex', mainSlideIndex);
+  console.log('mainLinks.length', mainLinks.length);
+
+  if (index > mainSlides.length) {
     mainSlideIndex = 1;
   } else if (index < 1){
-    mainSlideIndex = mainLinks.length;
+    mainSlideIndex = mainSlides.length;
   } else {
     mainSlideIndex = index;
   }
-
-  // mainLinks.forEach(link => link.classList.remove(`active`));
-  // mainLinks[mainSlideIndex - 1].classList.add('active');
-
-  mainSlides.forEach(slide => slide.classList.add('hidden'));
-  carName.forEach(slide => slide.classList.add('hidden'));
-  mainSlides[mainSlideIndex - 1].classList.remove('hidden');
-  
-  mainSlides[mainSlideIndex - 1].classList.add('clipInLeft');
 
   //Animation for slide line Start
   animTimerElem.classList.add('clipInLeftForLine');
@@ -89,12 +85,25 @@ function showSlides(index) {
   }, false);
   //Animation for slide line End
 
-  mainSlides[mainSlideIndex - 1].addEventListener("animationend", () => {
+  mainSlides.forEach(slide => slide.classList.add('hidden'));
+  carName.forEach(slide => slide.classList.add('hidden'));
+  mainSlides[mainSlideIndex - 1].classList.remove('hidden');
+  
+  mainSlides[mainSlideIndex - 1].classList.add('clipInLeft');
+
+  setTimeout(() => {
     carName[mainSlideIndex - 1].classList.remove('hidden');
     carName[mainSlideIndex - 1].classList.add('clipInLeft');
+  }, 600);
+
+  carName[mainSlideIndex - 1].addEventListener("animationend", () => {
+    carName[mainSlideIndex - 1].classList.remove(`clipInLeft`);
+  }, false);
+
+  mainSlides[mainSlideIndex - 1].addEventListener("animationend", () => {
+    
     setTimeout(() => {
       mainSlides.forEach(slide => slide.classList.remove(`clipInLeft`));
-      carName.forEach(slide => slide.classList.remove(`clipInLeft`));
     }, 500);
   }, false);
 
@@ -104,10 +113,11 @@ function showSlides(index) {
   }, 4400);
 
   mainSlides[mainSlideIndex - 1].addEventListener("animationend", () => {
-    mainSlides.forEach(slide => slide.classList.remove(`clipOutRight`));
-    carName.forEach(slide => slide.classList.remove(`clipOutRight`));
+    mainSlides[mainSlideIndex - 1].classList.remove(`clipOutRight`);
+    carName[mainSlideIndex - 1].classList.remove(`clipOutRight`);
   }, false);
 
+  
   timer = setTimeout(() => {
     showSlides(mainSlideIndex + 1);
   }, 6000);
