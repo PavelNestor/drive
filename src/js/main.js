@@ -110,12 +110,13 @@ function showSlides(index) {
 
   carName[mainSlideIndex - 1].addEventListener("animationend", () => {
     carName[mainSlideIndex - 1].classList.remove(`clipInLeft`);
+    isMainAnimFinish = true;
   }, false);
 
 
   timerAnim = setTimeout(() => {
     mainSlides.forEach(slide => slide.classList.remove(`clipInLeft`));
-    isMainAnimFinish = true;
+    
 
     mainSlides[mainSlideIndex - 1].classList.add('clipOutRight');
     carName[mainSlideIndex - 1].classList.add('clipOutRight');
@@ -124,13 +125,13 @@ function showSlides(index) {
       mainSlides[mainSlideIndex - 1].classList.remove(`clipOutRight`);
       carName[mainSlideIndex - 1].classList.remove(`clipOutRight`);
     }, false);
-  }, 5400);
+  }, 7000);
 
   
 
   timer = setTimeout(() => {
     showSlides(mainSlideIndex + 1);
-  }, 6000);
+  }, 8000);
 }
 
 prevSlide.addEventListener('click', () => prewSlides(0));
@@ -139,8 +140,10 @@ nextSlide.addEventListener('click', () => nextSlides(0));
 const navEl = $('.navbar');
 // show navbar
 function onScroll() {
+  const winHeight = window.innerHeight;
   const scrollPosition = document.body.getBoundingClientRect().top;
   const testSectionTop = testSection.getBoundingClientRect().top;
+  const testSectionBottom = testSection.getBoundingClientRect().bottom;
   const isScrollDirectionBackwards = lastScrollPosition < scrollPosition;
 
   if (isScrollDirectionBackwards && testSectionTop < 0) {
@@ -151,7 +154,8 @@ function onScroll() {
   
 
   carMenu.classList.add('car-list-menu__active');
-  if (testSectionTop + 100 < 0) {
+  
+  if (testSectionBottom < winHeight) {
     carMenu.classList.remove('car-list-menu__active');
   }
 

@@ -82,6 +82,14 @@
   to
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)
 
+@keyframes clip-in-right-fade
+  from
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)
+    opacity: 1
+  to
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)
+    opacity: 0
+
 @keyframes slideInDown
   from
     transform: translate3d(0, -100%, 0)
@@ -102,7 +110,7 @@
   animation-fill-mode: both
 
 .clipInRightForLine
-  animation: clip-in-right 5s
+  animation: clip-in-right 7s
   animation-fill-mode: both
 
 .clipOutRight
