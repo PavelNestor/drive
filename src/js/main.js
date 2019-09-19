@@ -38,7 +38,8 @@ slidersElements.forEach((sliderElem, index) => {
     slides: $$(`.${name}-slides`),
     prev: $(`#prev-${name}-slide`),
     next: $(`#next-${name}-slide`),
-    wrapper: wrappers[index]
+    wrapper: wrappers[index],
+    animClass: name === 'ford' ? 'clipInLeft': 'clipInRight'
   });
 });
 
@@ -260,7 +261,8 @@ class Slider {
       slides: null,
       prev: null,
       next: null,
-      wrapper: null
+      wrapper: null,
+      animClass: ''
     }
     options = Object.assign({}, DEFAULT_OPTIONS, options);
     Object.assign(this, options);
@@ -292,16 +294,20 @@ class Slider {
   }
 
   showSlide() {
-    const url = this.slides[this.lastSlide].querySelector('img').getAttribute('srcset');
-    this.wrapper.style.background  = `url(${url}) no-repeat center center / cover`;
-
+    const url = this.slides[this.currentSlide].querySelector('img').getAttribute('srcset');
+    
     this.slides.forEach(slide => slide.classList.add('hidden'));
     this.slides[this.currentSlide].classList.remove('hidden');
-
-    this.slides[this.currentSlide].classList.add('clipInLeft');
-
+    
+    this.slides[this.currentSlide].classList.add(this.animClass);
+    
     this.slides[this.currentSlide].addEventListener("animationend", () => {
-      this.slides[this.currentSlide].classList.remove(`clipInLeft`);
+      this.slides[this.currentSlide].classList.remove(this.animClass);
+      if (this.currentSlide === 0) {
+        this.wrapper.style.background  = `url(${url}) no-repeat center center / 112% 100%`;
+      } else {
+        this.wrapper.style.background  = `url(${url}) no-repeat center center / cover`;
+      }
     }, false);
 
     this.links.forEach(link => link.classList.remove(`${this.name}-slides_active`));
