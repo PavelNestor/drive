@@ -105,7 +105,7 @@ picture
 .image-cover
   height: 100%
   width: 100%
-  object-fit: cover
+  object-fit: none
   object-position: top
 
 // GRID
@@ -366,17 +366,21 @@ picture
   width: auto
   z-index: 101
   padding-bottom: 7rem
-  transition: .8s
+  transition: .4s
+  flex-basis: 33%
+  display: flex
+  flex-direction: column
   
   @media #{$media-sm-plus-up}
     min-height: 72rem
-    width: 24.7vw
+    // width: 24.7vw
 
   &__image-wrap
 
   &-over
     @media #{$media-sm-plus-up}
-      width: 24.7vw + $padding-navbar
+      // width: 24.7vw + $padding-navbar
+      flex-basis: 43%      
 
       .card__content
           transform: translateX($padding-navbar/2)

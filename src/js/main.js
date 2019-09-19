@@ -112,15 +112,11 @@ function showSlides(index) {
     carName[mainSlideIndex - 1].classList.remove(`clipInLeft`);
   }, false);
 
-  mainSlides[mainSlideIndex - 1].addEventListener("animationend", () => {
-    
-    setTimeout(() => {
-      mainSlides.forEach(slide => slide.classList.remove(`clipInLeft`));
-      isMainAnimFinish = true;
-    }, 500);
-  }, false);
 
   timerAnim = setTimeout(() => {
+    mainSlides.forEach(slide => slide.classList.remove(`clipInLeft`));
+    isMainAnimFinish = true;
+
     mainSlides[mainSlideIndex - 1].classList.add('clipOutRight');
     carName[mainSlideIndex - 1].classList.add('clipOutRight');
 
@@ -128,7 +124,7 @@ function showSlides(index) {
       mainSlides[mainSlideIndex - 1].classList.remove(`clipOutRight`);
       carName[mainSlideIndex - 1].classList.remove(`clipOutRight`);
     }, false);
-  }, 4400);
+  }, 5400);
 
   
 
