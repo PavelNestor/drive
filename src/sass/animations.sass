@@ -54,11 +54,27 @@
   to
     clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)
 
+@keyframes clip-out-right-scaleout
+  from
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)
+  90%
+    clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)
+  to
+    transform: scale(1)
+
 @keyframes clip-in-left
   from
     clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)
   to
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)
+
+@keyframes clip-in-left-scaleup
+  from
+    clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)
+  90%
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)
+  to
+    transform: scale(1.4)
 
 @keyframes clip-in-right
   from
@@ -95,6 +111,14 @@
 
 .clipInLeft
   animation: clip-in-left 2s
+  animation-fill-mode: both
+
+.clipInLeftScaleUp
+  animation: clip-in-left-scaleup 2.5s
+  animation-fill-mode: both
+
+.clipOutRightScaleOut
+  animation: clip-out-right-scaleout 2.5s
   animation-fill-mode: both
 
 .clipInRight
@@ -161,3 +185,12 @@
       transform: translateY(0) scale(1.25)
       z-index: 2
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%)
+
+.scaleUp
+  @media #{$media-sm}
+    transform: scale(1.4)
+    transition: .5s
+
+.scaleDowm
+  transform: scale(.8)
+  transition: .5s
