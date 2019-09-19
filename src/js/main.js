@@ -406,3 +406,18 @@ function addSlideDownAnimation() {
 };
 
 window.addEventListener('scroll', addSlideDownAnimation);
+
+// menu-togler
+const burger = $('#burger');
+const menuMobile = $('#menu-mobile');
+
+console.log('burger',burger);
+
+
+burger.addEventListener('click', toogleMenu);
+
+function toogleMenu() {
+  console.log('click');
+  
+  menuMobile.classList.add('menu-mobile_visible clipInLeft')
+}

@@ -5,7 +5,7 @@
   padding: 2rem $padding-navbar 1rem 0
   position: absolute
   width: 100%
-  
+  z-index: 998
 
   @media #{$media-sm}
     justify-content: center
@@ -13,12 +13,18 @@
   &__logo
     
 
+  &__burger
+    height: 2rem
+    left: 2.1rem
+    position: absolute
+    top: 2.1rem
+
   &_active
     position: fixed
     top: 0
     left: 0
     right: 0
-    padding: 2rem $padding-navbar 1rem $padding-navbar
+    padding: 1.5rem $padding-navbar 1.5rem $padding-navbar
     background: linear-gradient(180deg, $white_primary 0%, $white_secondary 100%)
     z-index: 200
     transition: 1s
