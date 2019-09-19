@@ -2,14 +2,31 @@
   align-items: flex-start
   display: flex
   justify-content: space-between
-  padding: 2.7rem $padding-navbar 2.7rem 0
+  padding: 2rem $padding-navbar 1rem 0
+  position: absolute
   width: 100%
+  
 
   @media #{$media-sm}
     justify-content: center
 
   &__logo
     
+
+  &_active
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    padding: 2rem $padding-navbar 1rem $padding-navbar
+    background: linear-gradient(180deg, $white_primary 0%, $white_secondary 100%)
+    z-index: 200
+    transition: 1s
+    display: flex
+    align-items: center
+
+    .navbar__logo
+      transform: scale(.7)
 
   &__contact-info
     @media #{$media-sm}
@@ -21,3 +38,7 @@
   &__tel
     font-size: 1.8rem
     color: #333333
+
+.nav-wrap
+   position: relative
+   height: 10rem

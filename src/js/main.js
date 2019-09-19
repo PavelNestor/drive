@@ -140,10 +140,19 @@ function showSlides(index) {
 prevSlide.addEventListener('click', () => prewSlides(0));
 nextSlide.addEventListener('click', () => nextSlides(0));
 
+const navEl = $('.navbar');
 // show navbar
 function onScroll() {
   const scrollPosition = document.body.getBoundingClientRect().top;
   const testSectionTop = testSection.getBoundingClientRect().top;
+  const isScrollDirectionBackwards = lastScrollPosition < scrollPosition;
+
+  if (isScrollDirectionBackwards && testSectionTop < 0) {
+    navEl.classList.add('navbar_active');
+  } else {
+    navEl.classList.remove('navbar_active');
+  }
+  
 
   carMenu.classList.add('car-list-menu__active');
   if (testSectionTop + 100 < 0) {
