@@ -21,6 +21,7 @@ let welcomeSection = $('.welcome-screen');
 let carsMenu = $('.cars-menu');
 let testSection = $('.test-drive');
 let animTimerElem = $('.anim-timer');
+let isMainAnimFinish = true;
 const wrappers = $$('.sliders');
 
 const cards = $$('.card');
@@ -39,30 +40,48 @@ slidersElements.forEach((sliderElem, index) => {
     prev: $(`#prev-${name}-slide`),
     next: $(`#next-${name}-slide`),
     wrapper: wrappers[index],
-    animClass: name === 'ford' ? 'clipInLeft': 'clipInRight'
+    animClass: name == 'ford' ? 'clipInLeft': 'clipInRight'
   });
 });
 
 showSlides(1);
 
 function nextSlides() {
+  if (!isMainAnimFinish) {
+    return;
+  };
+
   clearTimeout(timer);
   clearTimeout(timerAnim);
   showSlides(mainSlideIndex += 1);
 }
 
 function currentSlide(index) {
+  if (!isMainAnimFinish) {
+    return;
+  };
+
   let res = mainSlideIndex = index + 1;
   showSlides(res);
 }
 
 function prewSlides() {
+  if (!isMainAnimFinish) {
+    return;
+  };
+
   clearTimeout(timer);
   clearTimeout(timerAnim);
   showSlides(mainSlideIndex += -1);
 }
 
 function showSlides(index) {
+  if (!isMainAnimFinish) {
+    return;
+  };
+
+  isMainAnimFinish = false;
+
   if (index > mainSlides.length) {
     mainSlideIndex = 1;
   } else if (index < 1){
@@ -97,6 +116,7 @@ function showSlides(index) {
     
     setTimeout(() => {
       mainSlides.forEach(slide => slide.classList.remove(`clipInLeft`));
+      isMainAnimFinish = true;
     }, 500);
   }, false);
 
@@ -109,6 +129,8 @@ function showSlides(index) {
       carName[mainSlideIndex - 1].classList.remove(`clipOutRight`);
     }, false);
   }, 4400);
+
+  
 
   timer = setTimeout(() => {
     showSlides(mainSlideIndex + 1);
@@ -262,13 +284,18 @@ class Slider {
       prev: null,
       next: null,
       wrapper: null,
-      animClass: ''
+      animClass: '',
+      isAnimFinish: true
     }
     options = Object.assign({}, DEFAULT_OPTIONS, options);
     Object.assign(this, options);
   }
 
   prevSlide() {
+    if (!this.isAnimFinish) {
+      return;
+    };
+
     this.currentSlide--
     if (this.currentSlide < 0){
       this.currentSlide = this.slides.length - 1;
@@ -277,6 +304,10 @@ class Slider {
   }
 
   nextSlide() {
+    if (!this.isAnimFinish) {
+      return;
+    };
+
     this.currentSlide++
     if (this.currentSlide > this.slides.length - 1) {
       this.currentSlide = 0;
@@ -289,11 +320,20 @@ class Slider {
   }
 
   toSlide(index) {
+    if (!this.isAnimFinish) {
+      return;
+    };
     this.currentSlide = index;
     this.showSlide(this.currentSlide);
   }
 
   showSlide() {
+    if (!this.isAnimFinish) {
+      return;
+    };
+
+    this.isAnimFinish = false;
+
     const url = this.slides[this.currentSlide].querySelector('img').getAttribute('srcset');
     
     this.slides.forEach(slide => slide.classList.add('hidden'));
@@ -303,11 +343,12 @@ class Slider {
     
     this.slides[this.currentSlide].addEventListener("animationend", () => {
       this.slides[this.currentSlide].classList.remove(this.animClass);
-      if (this.currentSlide === 0) {
+      if (this.currentSlide == 0) {
         this.wrapper.style.background  = `url(${url}) no-repeat center center / 112% 100%`;
       } else {
         this.wrapper.style.background  = `url(${url}) no-repeat center center / cover`;
       }
+      this.isAnimFinish = true;
     }, false);
 
     this.links.forEach(link => link.classList.remove(`${this.name}-slides_active`));
