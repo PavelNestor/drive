@@ -416,7 +416,7 @@ function addSlideDownAnimation() {
   if (isScrollDirectionBackwards) {
     priceEl.forEach(element =>{
       let top = element.getBoundingClientRect().top;
-      let offset = window.innerHeight/2;
+      let offset = (window.innerHeight/4)*3;
       element.classList.remove('visible');
 
       if ( top < offset) {
