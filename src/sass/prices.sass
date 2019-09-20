@@ -61,6 +61,7 @@
     height: 8rem
     margin-top: 2rem
     margin-left: 1rem
+    z-index: 2
 
     @media #{$media-sm-plus-up}
       left: -3vw
@@ -80,11 +81,19 @@
     @media #{$media-sm-plus-up}
       padding: 1rem 0 1rem 4rem
 
+    &-one
+      z-index: 1
+    &-two
+      z-index: 1
+    &-tree
+      z-index: 1
+
   &__title
     letter-spacing: -0.04em
     margin-bottom: 2rem
     min-height: auto
     padding-left: $padding-navbar
+    z-index: 2
 
     @media #{$media-sm-plus-up}
       margin-top: 0 !important
@@ -116,6 +125,10 @@
 
 .price-anim
   visibility: hidden
+  transition: .2s .5s
+  z-index: 1
+  opacity: 0
 
 .visible
   visibility: visible
+  opacity: 1

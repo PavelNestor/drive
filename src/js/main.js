@@ -407,6 +407,7 @@ function cardOnMouseOver(index) {
 
 // Price Animation
 const priceEl = $$('.price-anim');
+const priceCard = $$('.price-card__image-wrap');
 let windowLastScrollPosition = 0;
 
 function addSlideDownAnimation() {
@@ -416,7 +417,7 @@ function addSlideDownAnimation() {
   if (isScrollDirectionBackwards) {
     priceEl.forEach(element =>{
       let top = element.getBoundingClientRect().top;
-      let offset = window.innerHeight/2;
+      let offset = (window.innerHeight/10)*9;
       element.classList.remove('visible');
 
       if ( top < offset) {
