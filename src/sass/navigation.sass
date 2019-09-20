@@ -1,23 +1,72 @@
 .navbar
-  align-items: flex-start
+  align-items: center
   display: flex
-  justify-content: space-between
-  padding: 2rem $padding-navbar 1rem 0
+  justify-content: center
+  padding: 1.5rem $padding-navbar 1.5rem 0
   position: absolute
   width: 100%
   z-index: 998
 
-  @media #{$media-sm}
-    justify-content: center
+  @media #{$media-sm-plus-up}
+    justify-content: space-between
+
 
   &__logo
-    
+
+  &__lang-item
+    font-size: 1.2rem
+    line-height: 1.5em
+    color: $primary
+
+  &__lang-wrap
+    display: none
+
+    @media #{$media-sm-plus-up}
+      display: flex
+      align-items: center
+      cursor: pointer
+      position: relative
+      width: 6rem
+      height: 3rem
+
+  &__lang-item-wrap
+    display: flex
+    flex-direction: column
+    height: 2rem
+    overflow: hidden
+    transition: .4s
+    position: absolute
+    top: .5rem
+    width: 5rem
+    left: 0
+    padding: .5rem
+
+    &_visible
+      height: 6rem
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15)
+
+      .navbar__lang-wrap
+        pointer-events: none
+
+
+  &__lang-img
+    margin: .5rem
+    position: absolute
+    top: .8rem
+    right: 1rem
+    width: 1rem
+    height: 1rem
 
   &__burger
+    display: block
     height: 2rem
-    left: 2.1rem
+    left: -1.2rem
     position: absolute
     top: 2.1rem
+    cursor: pointer
+
+    @media #{$media-sm-plus-up}
+      display: none
 
   &_active
     position: fixed
@@ -27,23 +76,44 @@
     padding: 1.5rem $padding-navbar 1.5rem $padding-navbar
     background: linear-gradient(180deg, $white_primary 0%, $white_secondary 100%)
     z-index: 200
-    transition: 1s
+    transition: padding 1s
     display: flex
     align-items: center
+
+    .navbar__lang-wrap
+      display: none
+
+    .navbar__burger
+      // height: 3rem
+      display: block
+      height: 2rem
+      left: 2.1rem
+      position: absolute
+      top: 2.1rem
+      cursor: pointer
+      z-index: 1000
+
+      @media #{$media-sm-plus-up}
+        display: none
+
 
     .navbar__logo
       height: 3rem
 
   &__contact-info
-    @media #{$media-sm}
-      display: none
+    display: none
+
+    @media #{$media-sm-plus-up}
+      display: block
+      margin-left: auto
+      margin-right: 3rem
 
   &__item
     margin-right: 3rem
 
   &__tel
     font-size: 1.8rem
-    color: #333333
+    color: $primary
 
 .nav-wrap
    position: relative

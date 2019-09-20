@@ -1,8 +1,29 @@
+include mixins
+
 #menu-mobile.container.menu-mobile
   include grid-view
   .menu-mobile__header
-    img#burger.navbar__burger(src="/img/icons/menu.svg",, alt="menu")
+    img#burger-close.menu-mobile__burger(src="/img/icons/menu.svg", alt="menu")
     img.menu-mobile__logo(src="/img/logo.svg",, alt="logo")
 
   .menu-mobile__content
-    p Lamborghini Huracan
+    ul.menu-mobile__list
+      li.menu-mobile__item
+        a.menu-mobile__link(href="#lamborghini") Lamborghini Huracan
+      li.menu-mobile__item
+        a.menu-mobile__link(href="#mustang") Ford Mustang 67 coupe
+      li.menu-mobile__item
+        a.menu-mobile__link(href="#nissan") Nissan GTR
+      li.menu-mobile__item
+        a.menu-mobile__link(href="#services") Наши услуги
+      li.menu-mobile__item
+        a.menu-mobile__link(href="#prices") Цены
+      li.menu-mobile__item
+        a.menu-mobile__link(href="#map") Маршруты тест-драйва
+
+  +gradient-btn()(href='#', class='margin-auto')
+
+  .menu-mobile__lang-wrap
+    a.menu-mobile__lang(href="#") ENG
+    a.menu-mobile__lang(href="#") РУС
+    a.menu-mobile__lang(href="#") УКР

@@ -105,8 +105,11 @@ picture
 .image-cover
   height: 100%
   width: 100%
-  object-fit: none
+  object-fit: cover
   object-position: top
+
+  @media #{$media-sm-plus-up}
+    object-fit: none
 
 // GRID
 .container
