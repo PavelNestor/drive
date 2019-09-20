@@ -21,10 +21,36 @@ let welcomeSection = $('.welcome-screen');
 let carsMenu = $('.cars-menu');
 let testSection = $('.test-drive');
 let animTimerElem = $('.anim-timer');
-let isMainAnimFinish = true;
 const wrappers = $$('.sliders');
-
 const cards = $$('.card');
+const navLangWrap = $('.navbar__lang-wrap');
+const navLangItemWrap = $('.navbar__lang-item-wrap');
+let isMainAnimFinish = true;
+
+
+//toogle lang
+const toogleLang = () => {
+  navLangItemWrap.classList.toggle('navbar__lang-item-wrap_visible');
+}
+
+navLangWrap.addEventListener('click', toogleLang);
+
+// menu-togler
+const burgerOpen = $('#burger');
+const burgerClose = $('#burger-close');
+const menuMobile = $('#menu-mobile');
+const menuMobileLinks = $$('.menu-mobile__link');
+
+const openMenu = () => {
+  menuMobile.classList.add('menu-mobile_visible');
+};
+
+const closeMenu = () => {
+  // navEl.classList.remove('navbar_active');
+  menuMobile.classList.remove('menu-mobile_visible');
+};
+
+menuMobileLinks.forEach(link => link.addEventListener('click', closeMenu));
 
 // Sliders
 const slidersElements = $$('.sliders');
@@ -80,8 +106,6 @@ function showSlides(index) {
     return;
   };
 
-  isMainAnimFinish = false;
-
   if (index > mainSlides.length) {
     mainSlideIndex = 1;
   } else if (index < 1){
@@ -90,33 +114,37 @@ function showSlides(index) {
     mainSlideIndex = index;
   }
 
+  isMainAnimFinish = false;
+
   //Animation for slide line Start
-  animTimerElem.classList.add('clipInRightForLine');
-  animTimerElem.addEventListener("animationend", () => {
-    animTimerElem.classList.remove(`clipInRightForLine`);
-  }, false);
+  animTimerElem.classList.remove(`clipInRightForLine`);
+  setTimeout(() => {
+    animTimerElem.classList.add('clipInRightForLine');
+  }, 100);
   //Animation for slide line End
 
   mainSlides.forEach(slide => slide.classList.add('hidden'));
   carName.forEach(slide => slide.classList.add('hidden'));
+
   mainSlides[mainSlideIndex - 1].classList.remove('hidden');
-  
   mainSlides[mainSlideIndex - 1].classList.add('clipInLeft');
 
   setTimeout(() => {
     carName[mainSlideIndex - 1].classList.remove('hidden');
     carName[mainSlideIndex - 1].classList.add('clipInLeft');
-  }, 600);
-
-  carName[mainSlideIndex - 1].addEventListener("animationend", () => {
-    carName[mainSlideIndex - 1].classList.remove(`clipInLeft`);
     isMainAnimFinish = true;
-  }, false);
+  }, 1000);
+
+  // carName[mainSlideIndex - 1].addEventListener("animationend", () => {
+  //   carName[mainSlideIndex - 1].classList.remove(`clipInLeft`);
+  //   console.log('isMainAnimFinish', isMainAnimFinish);
+    
+  // }, false);
 
 
   timerAnim = setTimeout(() => {
-    mainSlides.forEach(slide => slide.classList.remove(`clipInLeft`));
-    
+    mainSlides[mainSlideIndex - 1].classList.remove(`clipInLeft`);
+    carName[mainSlideIndex - 1].classList.remove(`clipInLeft`);
 
     mainSlides[mainSlideIndex - 1].classList.add('clipOutRight');
     carName[mainSlideIndex - 1].classList.add('clipOutRight');
@@ -138,6 +166,7 @@ prevSlide.addEventListener('click', () => prewSlides(0));
 nextSlide.addEventListener('click', () => nextSlides(0));
 
 const navEl = $('.navbar');
+
 // show navbar
 function onScroll() {
   const winHeight = window.innerHeight;
@@ -151,7 +180,6 @@ function onScroll() {
   } else {
     navEl.classList.remove('navbar_active');
   }
-  
 
   carMenu.classList.add('car-list-menu__active');
   
@@ -160,17 +188,14 @@ function onScroll() {
   }
 
   lastScrollPosition = scrollPosition;
-}
-
+};
 
 function onResize() {
   isMobie = document.documentElement.clientWidth < 1024;
-}
+};
 
 window.addEventListener('resize', onResize);
-
 window.addEventListener('scroll', onScroll);
-
 
 // loading status
 const loading = {
@@ -278,6 +303,9 @@ ready(() => {
   });
 
   carMenu.classList.add('car-list-menu__active');
+
+  burgerOpen.addEventListener('click', openMenu);
+  burgerClose.addEventListener('click', closeMenu);
 
 });
 

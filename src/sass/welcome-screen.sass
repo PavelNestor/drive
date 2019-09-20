@@ -51,17 +51,12 @@
   justify-content: space-between
 
   @media #{$media-sm-plus-down}
-    -webkit-flex-direction: column
     flex-direction: column
-  
-  @media #{$media-sm}
-    -webkit-flex-direction: column
-    flex-direction: column
-    justify-content: space-around
+    justify-content: flex-end
+    min-height: 49vh
 
   &__info
     padding: 0 6%
-    width: 34%
     flex: 0 0 34%
 
     @media #{$media-sm-plus-up}

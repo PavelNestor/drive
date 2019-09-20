@@ -1,0 +1,72 @@
+.menu-mobile
+  position: fixed
+  top: -100%
+  left: 0
+  right: 0
+  z-index: 999
+  background: #FFFFFF
+  // display: none
+  opacity: 0
+  transition: .4s
+
+  @media #{$media-sm-plus-up}
+    display: none
+
+  &_visible
+    top: 0
+    bottom: 0
+    opacity: 1
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    overflow: scroll
+
+    &::-webkit-scrollbar
+      width: 0 !important
+      display: none
+
+  &__burger
+    height: 2rem
+    left: 2.1rem
+    position: absolute
+    top: 2.1rem
+    cursor: pointer
+    z-index: 1000
+
+  &__header
+    padding: 1.6rem 0 0
+
+  &__list
+    list-style-type: none
+    text-align: center
+    padding: 0 $padding-navbar
+
+  &__item
+    margin: 1rem
+
+  &__lang-wrap
+    display: flex
+    justify-content: center
+    padding-bottom: 2rem
+
+  &__lang
+    color: $primary
+    font-size: 2rem
+    line-height: 1.5em
+    margin: 1rem
+
+  &__link
+    color: $primary
+    font-size: 2.6rem
+    font-weight: 600
+    letter-spacing: -0.03em
+    line-height: 1.1em
+
+  &__logo
+    max-width: 22rem
+    margin: 0 auto
+    display: block
+
+    @media #{$media-sm-plus-up}
+      display: none
