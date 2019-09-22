@@ -1,0 +1,39 @@
+include mixins
+
+block vars
+  - 
+    var cars = [
+      {
+        src: '/img/card/card11',
+        title: 'Прокатиться с инструктором',
+        text1: '«Проезд с инструктором». Тест-драйв - машину ведет инструктор, клиент на пассажирском сидении',
+        text2: 'Требования: Наличие водительского удостоверения НЕ обязательно. Возраст - любой.',
+        class: 'card__content-test'
+      },
+      {
+        src: '/img/card/card21',
+        title: 'Фотосессия',
+        text1: '«Проезд с инструктором». Тест-драйв - машину ведет инструктор, клиент на пассажирском сидении',
+        text2: 'Требования: Наличие водительского удостоверения НЕ обязательно. Возраст - любой.',
+        class: 'card__content-foto'
+      },
+      {
+        src: '/img/card/card31',
+        title: 'Подарочный сертификат на тест-драйв',
+        text1: 'Тест-драйв - «клиент» сам за рулем суперкара, рядом с инструктором.',
+        text2: 'Требования: возраст 22+, обязательно наличие  водительского удостоверения с опытом, не менее 2х лет.',
+        class: 'card__content-gift'
+      },
+    ]
+ 
+#services.container.container__left.services
+  .services__title-wrap
+    h1.info__title Наши услуги
+
+  .services__card-wrap
+    each car in cars
+      +card(car)(class='card__image')
+
+  .services__button
+    .test-btn
+      +gradient-btn()(href='#')

@@ -1,0 +1,134 @@
+.prices__title-wrap
+  @media #{$media-sm-plus-up}
+    padding-top: 0
+
+.prices
+  padding-bottom: 4rem
+
+  @media #{$media-sm-plus-up}
+    padding-bottom: 0
+
+
+.price-card-desktop
+  display: flex
+  flex-direction: column
+  padding-bottom: 10rem
+
+  &__row
+    background: white
+    display: flex
+    margin: 1rem 0
+    padding: .5rem 0
+    z-index: 101
+
+    @media #{$media-sm-plus-up}
+      z-index: 100
+
+    &:nth-child(1)
+      background: transparent
+      margin: 0
+      padding: 0 0 4rem 0
+
+  &__title
+    align-items: flex-end
+    font-size: 2rem
+    padding-left: 0
+
+    @media #{$media-sm-plus-up}
+      min-height: 10rem
+
+  &__header
+    margin-bottom: 0
+
+  &__col
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    width: 16.5vw
+
+    &:nth-child(1)
+      padding-left: $padding-navbar
+      width: 33vw
+
+.price-card
+  margin-bottom: 2rem
+  z-index: 3
+
+  @media #{$media-sm-plus-up}
+   width: 24vw
+
+  &__image
+    height: 8rem
+    margin-top: 2rem
+    margin-left: 1rem
+    z-index: 2
+
+    @media #{$media-sm-plus-up}
+      left: -3vw
+      margin-left: 0
+      object-fit: contain
+      position: relative
+      width: 100%
+
+  &__col
+    background: white
+    display: flex
+    padding: 0 0 0 $padding-navbar
+    position: relative
+    margin-bottom: 1rem
+    z-index: 101
+
+    @media #{$media-sm-plus-up}
+      padding: 1rem 0 1rem 4rem
+
+    &-one
+      z-index: 1
+    &-two
+      z-index: 1
+    &-tree
+      z-index: 1
+
+  &__title
+    letter-spacing: -0.04em
+    margin-bottom: 2rem
+    min-height: auto
+    padding-left: $padding-navbar
+    z-index: 2
+
+    @media #{$media-sm-plus-up}
+      margin-top: 0 !important
+      min-height: 6rem
+      margin-bottom: 0
+      padding-left: 0
+      padding-right: 3rem
+      
+
+  &__content
+    @media #{$media-sm-plus-up}
+      padding: 0 !important
+
+  &__text
+    line-height: 1.3em
+
+    &:nth-child(1)
+      flex: 4
+      padding-right: 1rem
+      margin: 1.2rem 0
+      
+
+    &:nth-child(2)
+      flex: 2
+      padding-right: 2rem
+      display: flex
+      align-items: center
+      justify-content: flex-end
+
+.price-anim
+  visibility: hidden
+  transition: .2s .5s
+  z-index: 1
+  opacity: 0
+
+.visible
+  visibility: visible
+  opacity: 1

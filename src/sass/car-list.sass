@@ -1,0 +1,54 @@
+.placeholder
+  height: 10rem
+
+.car-list-menu
+  display: none
+  
+  @media #{$media-sm-plus-up} 
+    display: flex
+    height: 10rem
+    background-color: $white_secondary
+    position: static
+    justify-content: space-between
+    align-items: center
+    z-index: 200
+
+  &__active
+    position: fixed
+    left: 0
+    right: 0
+    bottom: 0
+
+  &__wrap
+    display: flex
+    flex: 0 0 99%
+    position: relative
+    left: -5px
+
+  &__item
+    align-items: center
+    color: $primary
+    cursor: pointer
+    display: flex
+    flex: 0 0 35.3%
+    font-size: 1.6rem
+    font-weight: bold
+    justify-content: flex-start
+    letter-spacing: 0px
+    line-height: 1em
+    padding: 3.5rem 1rem 3.5rem 0
+    position: relative
+    text-align: center
+
+    @media #{$media-sm-plus-down} 
+      flex-direction: column
+
+  &__img
+    width: 40%
+    margin-right: 10px
+  
+  &__scroll
+    position: relative
+    right: 5.7rem
+    top: -3px
+    cursor: pointer

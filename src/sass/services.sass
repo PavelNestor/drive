@@ -1,0 +1,35 @@
+.services
+  background: #F2F2F2
+  &__title-wrap
+    padding-top: 5rem
+    padding-left: $padding-navbar
+
+    @media #{$media-sm-plus-up}
+      padding-top: 10.5rem
+
+  &__card-wrap
+    display: flex
+    flex-direction: column
+    padding-right: $padding-navbar
+
+    @media #{$media-sm-plus-up}
+      flex-direction: row
+
+  &__button
+    position: relative
+    height: auto
+    z-index: 102
+
+    @media #{$media-sm-plus-up}
+      height: 6rem
+
+.test-btn
+  padding: 3.3rem 0 3.3rem 1rem
+  position: static
+  text-align: center
+
+  @media #{$media-sm-plus-up}
+    position: absolute
+    right: 0
+    text-align: right
+    top: -50rem

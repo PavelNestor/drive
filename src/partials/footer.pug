@@ -1,2 +1,36 @@
-// footer
-.footer
+include mixins
+
+.container.footer
+  include grid-view-white
+  .footer__content
+    .footer__col
+      h2.footer__title Нас легко найти
+
+      p.white.footer__text-p.mb-0 Украина, Киевская область, с. Пролиски, ул. Кольцевая 7,  08322
+      p.white.footer__text-p.mt-0 На территории Загородного ресторанного комплекса «Crazy BBQ»
+
+      h4.footer__subtitle.mb-0 Ждем вас
+
+      p.white.footer__text-p.mt-1.mb-5 с 11:00 до 18:00 (Без выходных)
+
+    .footer__col
+      h4.footer__subtitle Присоединяйтесь
+
+      .footer__contact-wrap
+        +gradient-btn-round-tel('tel:+380665737232', '/img/icons/c-phone.svg', 'phone number')
+        a.white.footer__text(href="tel:+380665737232") +380 66 573-72-32
+      .footer__contact-wrap
+        +gradient-btn-round('tel:+380665737232', '/img/icons/c-telegram.svg', 'telegram')
+        a.white.footer__text(href="tel:+380665737232") +380 66 573-72-32
+      .footer__contact-wrap
+        +gradient-btn-round('tel:+380665737232', '/img/icons/c-viber.svg', 'viber')
+        a.white.footer__text(href="tel:+380665737232") +380 66 573-72-32
+      .footer__contact-wrap
+        +gradient-btn-round('/', '/img/icons/c-instagram.svg', 'instagram')
+        a.white.footer__text(href="/") @adrenaline-drive
+      .footer__contact-wrap
+        +gradient-btn-round('/', '/img/icons/c-facebook.svg', 'facebook')
+        a.white.footer__text(href="/") @adrenaline-drive
+      .footer__contact-wrap
+        +gradient-btn-round('mail:+380665737232', '/img/icons/c-mail.svg', 'e-mail')
+        a.white.footer__text(href="mail:+380665737232") info@a-drive.com.ua

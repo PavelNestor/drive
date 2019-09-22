@@ -1,0 +1,37 @@
+.test-drive
+  min-height: 100vh
+  width: 100%
+  background:url(/img/mask-test-drive.png) center center  no-repeat, url(/img/bg-test-drive.jpg) center center no-repeat
+  background-size: cover
+  padding-top: 3.8rem
+
+  @media #{$media-sm-plus-up}
+    // padding: 3.8rem percentage(1/12) 0
+
+  &__content
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100%
+    width: 100%
+    padding: 30vh 0
+    flex-direction: column
+
+    @media #{$media-sm-plus-up}
+      padding: 30vh percentage(1/12)
+
+  &__text
+    font-weight: 300
+    font-size: 3rem
+    line-height: 1.1em
+    text-align: center
+    letter-spacing: -0.03em
+    color: $white_primary
+    letter-spacing: -0.5px
+    margin-bottom: 6.3rem
+
+    @media #{$media-sm-plus-up} 
+      font-size: 4rem
+
+    &_bold
+      font-weight: bold

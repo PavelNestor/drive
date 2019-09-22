@@ -1,0 +1,37 @@
+.main-slides
+
+  &_1
+    background: #d8cc29
+  &_2
+    background: #d41515
+  &_3
+    background: #10ce4f
+
+.slider__wrap
+  cursor: pointer
+  display: flex
+  height: 50rem
+  position: relative
+
+.slide__button
+  position: absolute
+  top: 50%
+
+  &_prev
+    left: 0
+
+  &_next
+    right: 0
+
+.car__wrapp
+  display: flex
+  justify-content: space-around
+
+.main-links
+  cursor: pointer
+  // filter: grayscale(1)
+  transition: 1s
+
+  &_active
+    cursor: initial
+    filter: grayscale(0)

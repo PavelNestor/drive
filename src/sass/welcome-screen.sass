@@ -1,0 +1,297 @@
+.content
+  background: linear-gradient(180deg, $white_primary 0%, $white_secondary 100%)
+  display: -webkit-box
+  display: -webkit-flex
+  display: flex
+  -webkit-flex-direction: column
+  flex-direction: column
+  justify-content: space-between
+  min-height: 100vh
+
+  @media #{$media-sm-plus-up}
+
+  &__btn
+    display: none
+
+    @media #{$media-sm-plus-up}
+      align-items: center
+      display: flex
+      flex-direction: row
+      justify-content: flex-end
+      margin-top: 1rem
+      padding-right: calc(33.4vw - 34rem)
+      width: 100%
+
+  &__car-name
+    font-size: 3rem
+    color: $primary
+    letter-spacing: -0.03em
+    display: flex
+
+    @media #{$media-sm-plus-down} 
+      display: none
+
+  &-wrap
+    display: -webkit-box
+    display: -webkit-flex
+    display: flex
+    -webkit-flex-direction: column
+    flex-direction: column
+
+    @media #{$media-sm-plus-up}
+      -webkit-flex-direction: row
+      flex-direction: row
+
+.slide
+  align-items: center
+  display: -webkit-box
+  display: -webkit-flex
+  display: flex
+  height: 100%
+  justify-content: space-between
+
+  @media #{$media-sm-plus-down}
+    flex-direction: column
+    justify-content: flex-end
+    min-height: 49vh
+
+  &__info
+    padding: 0 6%
+    flex: 0 0 34%
+
+    @media #{$media-sm-plus-up}
+      padding: 0
+      display: flex
+      -webkit-flex-direction: column
+      flex-direction: column
+      justify-content: center
+
+    &-text
+      display: none
+
+      @media #{$media-sm-up}
+        display: block
+        margin: 0
+        width: 71%
+
+  &__picture
+    position: relative
+    display: -webkit-box
+    display: -webkit-flex
+    display: flex
+    -webkit-flex-direction: column
+    flex-direction: column
+    align-items: flex-end
+    left: 1rem
+
+    @media #{$media-sm-plus-up}
+      top: -5px
+      left: -13px
+      width: 100%
+
+    &-img
+      position: relative
+      z-index: 2
+      width: 100%
+
+      @media #{$media-sm}
+        left: 0
+        transform: scale(1.4)
+
+    &-bgText
+      position: absolute
+      color: $white_secondary
+      font-size: 10rem
+      font-weight: 900
+      left: 1.8vw
+      letter-spacing: -0.4rem
+      line-height: 25.1rem
+      pointer-events: none
+      top: -16rem
+      white-space: nowrap
+      z-index: 1
+
+      @media #{$media-sm-plus-up}
+        font-size: 20rem
+        top: -5rem
+
+  &__wrap
+    align-items: center
+    display: -webkit-box
+    display: -webkit-flex
+    display: flex
+    -webkit-flex-direction: column
+    flex-direction: column
+    justify-content: center
+    margin-top: 3.3rem
+    min-height: 6rem
+    padding-right: 12rem
+    text-align: right
+
+    @media #{$media-sm-plus-up}
+      display: flex
+      flex-direction: row
+      justify-content: flex-end
+      margin-top: 1rem
+      padding-right: 8.6vw
+      width: 100%
+
+    &_pagination
+      bottom: 5.5rem
+      display: flex
+      flex-direction: row
+      justify-content: flex-end
+      padding-right: 0
+      position: relative
+
+      @media #{$media-sm-plus-up}
+        bottom: 0
+        padding-right: calc(33.4vw)
+
+      &-reverse
+        justify-content: flex-start
+
+  &__car-name
+    font-size: 3rem
+    color: $primary
+    letter-spacing: -0.03em
+
+    @media #{$media-sm-plus-down} 
+      display: flex
+      -webkit-flex-direction: row
+      flex-direction: row
+      text-align: end
+
+    @media #{$media-sm}
+      display: flex
+      align-items: center
+      font-size: 2.4rem
+      line-height: 1.1em
+  
+  &__buy
+    display: none
+
+    @media #{$media-sm-plus-up}
+      background: linear-gradient(90deg, #EB5757 0%, #E62887 100%)
+      box-shadow: 0px 5px 15px rgba(230, 40, 135, 0.5)
+      color: $white_primary
+      display: block
+      font-size: 1.8rem
+      font-weight: 600
+      margin-left: 5rem
+      // max-width: 22vw
+      padding: 2.1rem 4.7rem
+      text-transform: uppercase
+      transform: matrix(0.98, 0, -0.18, 1, 0, 0)
+      // width: 100%
+    
+    &_mobile
+      display: block
+      margin: 1.8rem auto 7rem
+      padding: 1.4rem 3rem
+      position: relative
+
+      @media #{$media-sm-plus-up}
+        display: none
+
+    &_text
+      font-size: 1.8rem
+      line-height: 1em
+
+      @media #{$media-sm-up} 
+        display: block
+        text-align: center
+        transform: matrix(0.98, 0, 0.18, 1, 0, 0)
+
+
+  &__pagination
+    width: 5rem
+    height: 5rem
+    background-color: $primary
+    background-position: center center
+    cursor: pointer
+    opacity: 1
+    transition: .3s
+    z-index: 3
+
+    &:hover
+      opacity: 0.9
+
+    &_prev
+      background: url(/img/icons/arrow-prev.svg) center center no-repeat $primary
+    
+    &_next
+      background: url(/img/icons/arrow-next.svg) center center no-repeat $primary
+
+.car-list
+  display: none
+
+  @media #{$media-sm-plus-up}
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  &__wrap
+    display: flex
+    flex: 0 0 99%
+    left: -5px
+    position: relative
+
+  &__item
+    align-items: center
+    color: $primary
+    cursor: pointer
+    display: flex
+    flex: 0 0 32%
+    font-size: 1.6rem
+    font-weight: bold
+    justify-content: flex-start
+    letter-spacing: 0px
+    padding: 1rem 1rem 1rem 0
+    position: relative
+
+  &__img
+    height: auto
+    margin-right: 10px
+    width: 40%
+  
+  &__scroll
+    cursor: pointer
+    position: relative
+    right: 5.7rem
+    top: -3px
+
+.active
+  background: linear-gradient(90deg, $grad-start 0%, $grad-end 100%)
+  height: 2px
+  position: absolute
+  top: 0
+  width: 100%
+
+.slide-conteiner
+  margin-top: 0
+
+  @media #{$media-sm-plus-up}
+    margin-top: 0
+
+.cars-menu
+  position: static
+  z-index: -1
+  &__active
+    display: none
+
+    @media #{$media-sm-plus-up}
+      display: flex
+      position: fixed
+      left: 0
+      right: 0
+      bottom: 0
+
+.placeholder-welcome
+  height: 11rem
+  padding-right: $padding-navbar
+
+.anim-timer
+  height: 3px
+  width: 100%
+  background: linear-gradient(90deg, $grad-start 0%, $grad-end 100%)

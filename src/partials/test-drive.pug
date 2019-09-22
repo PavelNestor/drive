@@ -1,0 +1,13 @@
+include mixins
+
+.test-drive
+  .container
+    img.sm-hidden.z-3(src="img/logo.svg", alt="logo")
+    .test-drive__content
+      .test-drive__text Если вы хотите понять, что такое 
+        span.test-drive__text_bold роскошный спортивный автомобиль, с невероятной мощностью 
+        | - вам, определенно, к нам!
+      +gradient-btn()(href='#')
+
+  .placeholder
+    include car-list

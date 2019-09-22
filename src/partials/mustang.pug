@@ -1,0 +1,53 @@
+include mixins
+
+#mustang.container.container__left.car-container.lamborghini.mustang
+  .container__col.zi-3
+    //- .slide__item.slide__main
+    .lamborghini__image-wrap.sliders(data-slider='ford')
+      +picture('/img/mustang/main-slide22', 'Ford Mustang 67 coupe', 'cover')(class="ford-slides lamb-slides_main")
+      +picture('/img/mustang/mustang-slide3', 'Ford Mustang 67 coupe', 'cover')(class="ford-slides")
+      +picture('/img/mustang/mustang-slide4', 'Ford Mustang 67 coupe', 'cover')(class="ford-slides")
+      +picture('/img/mustang/mustang-slide5', 'Ford Mustang 67 coupe', 'cover')(class="ford-slides")
+      .mustang__box
+    .slide__item.slide__secondary.sm-plus-down-hidden
+      .slide-hover.ford-links
+        +picture('/img/mustang/main-slide', 'Ford Mustang 67 coupe', 'cover')
+      .slide-hover.ford-links
+        +picture('/img/mustang/mustang-slide3', 'Ford Mustang 67 coupe', 'cover')
+      .slide-hover.ford-links
+        +picture('/img/mustang/mustang-slide4', 'Ford Mustang 67 coupe', 'cover')
+      .slide-hover.ford-links
+        +picture('/img/mustang/mustang-slide5', 'Ford Mustang 67 coupe', 'cover')
+
+    +control-btn('prev-ford-slide', 'next-ford-slide')(class='sm-plus-up-hidden p-static slide__wrap_pagination-reverse')
+  
+
+  .container__col.info
+    h1.info__title Ford Mustang 67 coupe
+    
+    p.info__text Культовый автомобиль Ford Mustang,  который был создан концерном Ford в стремлении обогнать своего главного конкурента Chevrolet и склонить симпатии клиентов на свою сторону. И уже за первые полтора года на рынке концерну удалось продать более миллиона авто под маркой Mustang. Автомобиль со спортивными чертами но рассчитанный на широкого потребителя, который пришелся по вкусу не только американскому, но и европейскому рынкам, и по праву считается гордостью Американского автопрома.
+
+    .info__specifications.col-6
+      .info__specifications-wrap
+        .info__specifications-item
+          p.small.bold.info__specifications-title год выпуска
+          p.small 1967
+
+        .info__specifications-item
+          p.small.bold.info__specifications-title трансмиссия
+          p.small полный привод
+
+        .info__specifications-item
+          p.small.bold.info__specifications-title Коробка передач
+          p.small механическая
+
+      .info__specifications-wrap
+        .info__specifications-item
+          p.small.bold.info__specifications-title двигатель
+          p.small 347сi
+
+        .info__specifications-item
+          p.small.bold.info__specifications-title мощность двигателя
+          p.small 420 л/с
+
+    +gradient-btn()(href='#', class='margin-auto')

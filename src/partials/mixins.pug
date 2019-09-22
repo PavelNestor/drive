@@ -1,0 +1,46 @@
+mixin picture(path, alt='', style='cover')
+  picture.w-100.cover(id!=attributes.id)&attributes(attributes)
+    source.w-100.cover(srcset=`${path}.webp` type="image/webp")
+    source.w-100.cover(srcset=`${path}.jpg` type="image/jpeg")
+    img.w-100.cover(srcset=`${path}.jpg`)
+
+mixin picture-png(path, alt='', style='cover')
+  picture.w-100.cover(id!=attributes.id)&attributes(attributes)
+    source.w-100.cover(srcset=`${path}.webp` type="image/webp")
+    source.w-100.cover(srcset=`${path}.png` type="image/png")
+    img.w-100.cover(srcset=`${path}.png`)
+
+mixin picture-card(path, alt='', style='cover')
+  picture(id!=attributes.id)&attributes(attributes)
+    source.image-cover(srcset=`${path}.webp` type="image/webp")
+    source.image-cover(srcset=`${path}.jpg` type="image/jpeg")
+    img.image-cover(srcset=`${path}.jpg`)
+
+mixin gradient-btn()
+  //- a.main-button_wrap(class!=attributes.class)&attributes(attributes)
+  a.main-button(class!=attributes.class)&attributes(attributes)
+    span.main-button__text Заказать 
+      span.no-wrap тест-драйв
+
+mixin gradient-btn-round(href, src, alt)
+  a(href= href).round-button
+    img.round-button__img(src= src, alt= alt)
+
+mixin gradient-btn-round-tel(href, src, alt)
+  a(href= href).round-button.round-button__tel
+    img.round-button__img(src= src, alt= alt)
+
+mixin control-btn(idPrev, idNext)
+  .slide__wrap_pagination(class!=attributes.class)
+    .slide__pagination.slide__pagination_prev(id= idPrev)
+    .slide__pagination.slide__pagination_next(id= idNext)
+
+mixin card(item)
+  .card(class= item.class)
+    .card__image-wrap
+      +picture-card(item.src, item.title)(class!=attributes.class)
+    .card__content.pr-col
+      h3.card__title= item.title
+      p.card__text= item.text1
+      p.card__text= item.text2
+        a.card__link(href="#") Terms and Conditions

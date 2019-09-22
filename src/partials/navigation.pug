@@ -1,4 +1,22 @@
-block vars
-  //- - var navigation = 'home'
 block navigation
-  .navbar
+  nav.navbar
+    span#burger
+      img.navbar__burger(src="/img/icons/menu.svg", alt="menu")
+    img.navbar__logo(src="/img/logo.svg",, alt="logo")
+    .navbar__contact-info
+      a.navbar__item(href="#")
+        img(src="/img/icons/facebook.svg", alt="facebook")
+      a.navbar__item(href="#")
+        img(src="img/icons/twitter.svg", alt="twitter")
+      a.navbar__item(href="#")
+        img(src="img/icons/telegram.svg", alt="telegram")
+      a.navbar__item(href="#")
+        img(src="img/icons/viber.svg", alt="viber")
+      a.navbar__tel(href="tel:+380976543210")
+        | +38 097 6543 210
+    .navbar__lang-wrap
+      .navbar__lang-item-wrap
+        a.navbar__lang-item(href="#") ENG
+        a.navbar__lang-item(href="#") РУС
+        a.navbar__lang-item(href="#") УКР
+      img.navbar__lang-img(src="/img/icons/lang.svg", alt="Change Language")

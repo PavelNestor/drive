@@ -1,0 +1,88 @@
+.lamborghini
+  background-color: $white_secondary
+  display: block
+  padding-top: 3.1rem
+  padding-bottom: 6.8rem
+  flex-direction: column
+
+  @media #{$media-sm-plus-up} 
+    display: flex
+    padding-top: 10.5rem
+    padding-bottom: 0
+    flex-direction: row-reverse
+
+  &__image-wrap
+    position: relative
+    z-index: 101
+
+  &__box
+    display: none
+
+    @media #{$media-sm-plus-up}
+      background-color: $white_secondary
+      bottom: -3px
+      display: block
+      height: 6vw
+      left: -2px
+      position: absolute
+      width: $padding-navbar
+
+    @media #{$media-lg-up}
+      height: 6.25vw
+
+  .info
+    padding-right: 8.4vw
+    justify-content: flex-start
+
+    &__title
+      margin-bottom: 3rem
+      margin-top: 3rem
+
+      @media #{$media-sm-plus-up} 
+        margin-bottom: 2.4rem
+        margin-top: 0
+
+    &__text
+      margin-bottom: 3rem
+
+      @media #{$media-sm-plus-up} 
+        margin-bottom: 1.5rem
+
+    &__specifications
+      display: flex
+      margin-bottom: 4.3rem
+
+      @media #{$media-sm-plus-up} 
+        margin-bottom: 3rem
+
+      &-wrap
+        flex: 0 0 50%
+        padding-right: .5rem
+        
+      &-item
+        margin-bottom: 2rem
+
+        .small
+          margin: 0.8rem 0
+
+      &-title
+        text-transform: uppercase
+        margin-bottom: 0.5rem
+
+  .slide
+    align-items: flex-end
+
+    &__main
+      width: 97%
+
+    &__secondary
+      display: none
+
+      @media #{$media-sm-plus-up}
+        display: flex
+
+    &__item
+      display: flex
+      justify-content: flex-end
+      margin-bottom: 60px
+      padding-top: 1rem

@@ -1,0 +1,118 @@
+.map
+  padding-top: 8rem
+
+  &__top-white
+    width: 41.66667%
+
+  &__bottom-grey
+    background: #758595
+    width: 58.33333%
+
+  &__one
+    position: relative
+    padding: 3rem 0
+
+    @media #{$media-sm-plus-up}
+      padding: 3rem $padding-navbar
+
+    &::before
+      display: none
+
+      @media #{$media-sm-plus-up}
+        color: #758595
+        content: '1'
+        font-size: 10rem
+        font-weight: bold
+        left: 0
+        line-height: 1em
+        position: absolute
+        display: block
+
+    &_mobile
+      padding-top: 3rem
+
+      &::before
+        display: block
+        color: #758595
+        content: '1'
+        font-size: 8rem
+        font-weight: bold
+        left: $padding-navbar
+        line-height: 1em
+        position: absolute
+
+        @media #{$media-sm-plus-up}
+          display: none
+
+  &__two
+    position: relative
+    padding: 3rem 0
+
+    @media #{$media-sm-plus-up}
+      padding: 3rem 0 3rem $padding-navbar*2
+
+    &::before
+      display: none
+
+      @media #{$media-sm-plus-up}
+        color: #758595
+        content: '2'
+        font-size: 10rem
+        font-weight: bold
+        left: $padding-navbar
+        line-height: 1em
+        position: absolute
+        display: block
+
+    &_mobile
+
+      &::before
+        display: block
+        color: #758595
+        content: '2'
+        font-size: 8rem
+        font-weight: bold
+        left: $padding-navbar
+        line-height: 1em
+        position: absolute
+
+        @media #{$media-sm-plus-up}
+          display: none
+
+  &__title
+    order: 1
+    font-size: 3rem
+
+    @media #{$media-sm-plus-up}
+      font-size: 4rem
+      order: initial
+
+  &__image
+    object-fit: cover
+    width: 100%
+
+    @media #{$media-sm-plus-up}
+      width: 41vw
+
+  &__text-wrap
+
+  &__btn-wrap
+    align-self: center
+    padding: 0
+    z-index: 101
+    width: 100%
+
+    @media #{$media-sm-plus-up}
+      align-self: flex-start
+      padding: 3.5rem 0 0 $padding-navbar*2
+
+  &__col
+    align-items: flex-start
+    flex-direction: column
+
+    &:nth-child(1)
+      padding-right: 0
+      flex-direction: column-reverse
+
+      @media #{$media-sm-plus-up}
+        flex-direction: column

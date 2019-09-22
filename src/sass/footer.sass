@@ -1,1 +1,70 @@
 .footer
+  background: #758595
+
+  &__content
+    display: flex
+    flex-direction: column
+    padding: 8rem 0
+
+    @media #{$media-sm-plus-up}
+      flex-direction: row
+      justify-content: center
+
+  &__col
+    &:nth-child(1)
+      flex-basis: 40%
+      padding-right: $padding-navbar
+
+    &:nth-child(2)
+      display: flex
+      flex-basis: 60%
+      flex-wrap: wrap
+      padding-top: 1.5rem
+
+  &__contact-wrap
+    align-items: center
+    display: flex
+    flex-direction: row
+    min-width: 100%
+    padding-bottom: 1.5rem
+
+    @media #{$media-xs-up}
+      min-width: 50%
+
+    @media #{$media-sm-plus-up}
+      flex-direction: column
+      min-width: 50%
+      padding: 0 1rem
+
+    @media #{$media-1240-up}
+      min-width: 33%
+
+  &__title
+    font-size: 3rem
+    font-weight: 600
+    line-height: 1.1em
+    letter-spacing: -0.03em
+
+    @media #{$media-sm-plus-up}
+      font-size: 4rem
+
+  &__subtitle
+    flex-basis: 100%
+    font-size: 2rem
+    line-height: 1.1em
+    letter-spacing: -0.03em
+
+  &__text-p
+    font-size: 1.6rem
+
+    @media #{$media-sm-plus-up}
+      font-size: 1.8rem
+
+  &__text
+    font-size: 1.8rem
+    line-height: 1.5em
+    margin-right: 1rem
+    white-space: nowrap
+
+    @media #{$media-sm-plus-up}
+      margin-right: 0
