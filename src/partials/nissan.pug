@@ -1,7 +1,7 @@
 include mixins
 
-#nissan.container.container__right.car-container.lamborghini
-  .container__col.zi-3
+#nissan.container.container__right.car-container.lamborghini.nissan-anim
+  .container__col.zi-3(data-aos="fade-right", data-aos-anchor=".nissan-anim")
     .lamborghini__image-wrap.sliders(data-slider='nissan')
       +picture('/img/nissan/main-slide21', 'Nissan GTR', 'cover')(class="nissan-slides lamb-slides_main")
       +picture('/img/nissan/nissan-slide3', 'Nissan GTR', 'cover')(class="nissan-slides")
@@ -20,7 +20,7 @@ include mixins
 
     +control-btn('next-nissan-slide', 'prev-nissan-slide')(class='sm-plus-up-hidden p-static')
 
-  .container__col.info
+  .container__col.info( data-aos="fade-up", data-aos-anchor=".nissan-anim")
     h1.info__title Nissan GTR
     
     p.info__text В конце 2007 года один из крупнейших автопроизводителей в мире, компания Nissan Motor представила новинку, заставившую нервничать производителей суперкаров всего мира, - Nissan GT-R. Этот автомобиль стал гордостью компании  Nissan. Разрабатывался GT-R инженерами, которые использовали не стандартные технологические решения в процессе разработки. Так, например, впервые в мире в полноприводном автомобиле было принято решение расположить раздаточную коробку и коробку передач в задней части авто. Так же, для улучшения развесовкти и улучшения управляемости инженеры отошли от традиций сдвинув двигатель назад. В результате получился автомобиль универсальный автомобиль, который одинаково хорош как на обычной дороге, так и на гоночном треке.

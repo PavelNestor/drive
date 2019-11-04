@@ -5,8 +5,9 @@
   display: flex
   -webkit-flex-direction: column
   flex-direction: column
-  justify-content: space-between
+  justify-content: center
   min-height: 100vh
+  margin-top: -7px
 
   @media #{$media-sm-plus-up}
 
@@ -110,6 +111,9 @@
       top: -16rem
       white-space: nowrap
       z-index: 1
+
+      @media (min-width: 820px) and (max-width: 1023px)
+        display: none
 
       @media #{$media-sm-plus-up}
         font-size: 20rem

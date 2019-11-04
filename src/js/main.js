@@ -27,6 +27,18 @@ const navLangWrap = $('.navbar__lang-wrap');
 const navLangItemWrap = $('.navbar__lang-item-wrap');
 let isMainAnimFinish = true;
 
+AOS.init({
+  once: true,
+  mirror: true,
+  initClassName: 'aos-init',
+  animatedClassName: 'aos-animate',
+  easing: 'ease',
+  offset: 400, 
+  delay: 100, 
+  duration: 400, 
+  anchorPlacement: 'center-top', 
+});
+
 
 //toogle lang
 const toogleLang = () => {
@@ -69,7 +81,7 @@ slidersElements.forEach((sliderElem, index) => {
     animClass: name == 'ford' ? 'clipInLeft': 'clipInRight'
   });
 });
-
+AOS.refresh();
 showSlides(1);
 
 function nextSlides() {
@@ -166,7 +178,7 @@ prevSlide.addEventListener('click', () => prewSlides(0));
 nextSlide.addEventListener('click', () => nextSlides(0));
 
 const navEl = $('.navbar');
-
+AOS.refresh();
 // show navbar
 function onScroll() {
   const winHeight = window.innerHeight;
@@ -174,7 +186,7 @@ function onScroll() {
   const testSectionTop = testSection.getBoundingClientRect().top;
   const testSectionBottom = testSection.getBoundingClientRect().bottom;
   const isScrollDirectionBackwards = lastScrollPosition < scrollPosition;
-
+  AOS.refresh();
   if (isScrollDirectionBackwards && testSectionTop < 0) {
     navEl.classList.add('navbar_active');
   } else {

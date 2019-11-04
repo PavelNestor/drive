@@ -38,6 +38,7 @@
   },
   "homepage": "http://voqus.nestor.studio",
   "dependencies": {
+    "aos": "^2.3.4",
     "font-awesome": "4.7.0"
   }
 }
