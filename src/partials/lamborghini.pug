@@ -1,7 +1,8 @@
 include mixins
 
 #lamborghini.container.container__right.car-container.lamborghini
-  .container__col.zi-3(data-aos="fade-right", data-aos-anchor=".lamborghini")
+  .container__col.zi-3(data-aos="fade-right",data-aos-offset="400",
+    data-aos-delay="100", data-aos-duration="2000", data-aos-anchor=".lamborghini")
     //- .slide__item.slide__main
     .lamborghini__image-wrap.sliders(data-slider='lamb')
       +picture('/img/lamb/main-slide23', 'Lamborghini Huracan', 'cover')(class="lamb-slides lamb-slides_main")
@@ -22,12 +23,16 @@ include mixins
     +control-btn('prev-lamb-slide', 'next-lamb-slide')(class='sm-plus-up-hidden p-static')
   
 
-  .container__col.info( data-aos="fade-up", data-aos-anchor=".lamborghini")
-    h1.info__title.mt-3 Lamborghini Huracan
+  .container__col.info
+    h1.info__title.mt-3( data-aos="fade-left", data-aos-anchor=".lamborghini", data-aos-offset="200",
+    data-aos-delay="100",
+    data-aos-duration="1000") Lamborghini Huracan
     
-    p.info__text Ламборгини (Lamborghini) это особое наследие мире спортивных автомобилей. Буря эмоций, многообразие деталей, китч, а главное, это праздник, - праздник скорости! В 1963 году Фурруччио Ламборгини основывает компанию, которая станет достойным конкурентом Феррари. С тех пор имя Ламборгини прочно входит в историю, как производитель дорогих спортивных авто. Наиболее желанная и востребованная машина нашего времени. очень востребована т.к. легко поддается тюнингу. 610 сильный двигатель, робот, с двумя сцеплениями - этой коробке можно довериться. 3.4 секунды нужно Ламборгини, чтобы разогнаться до 100 км/ч. Бесшумно меняют друг друга не короткие передачи - с такой динамикой это не езда, это полет!
+    p.info__text( data-aos="fade-right", data-aos-anchor=".lamborghini", data-aos-offset="200",
+    data-aos-delay="100", data-aos-duration="1000") Ламборгини (Lamborghini) это особое наследие мире спортивных автомобилей. Буря эмоций, многообразие деталей, китч, а главное, это праздник, - праздник скорости! В 1963 году Фурруччио Ламборгини основывает компанию, которая станет достойным конкурентом Феррари. С тех пор имя Ламборгини прочно входит в историю, как производитель дорогих спортивных авто. Наиболее желанная и востребованная машина нашего времени. очень востребована т.к. легко поддается тюнингу. 610 сильный двигатель, робот, с двумя сцеплениями - этой коробке можно довериться. 3.4 секунды нужно Ламборгини, чтобы разогнаться до 100 км/ч. Бесшумно меняют друг друга не короткие передачи - с такой динамикой это не езда, это полет!
     
-    .info__specifications.col-6
+    .info__specifications.col-6( data-aos="fade-left",data-aos-offset="200",
+    data-aos-delay="100", data-aos-duration="1000", data-aos-anchor-placement="center-bottom")
       .info__specifications-wrap
         .info__specifications-item
           p.small.bold.info__specifications-title год выпуска
