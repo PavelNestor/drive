@@ -4,7 +4,9 @@ include mixins
   .container
     img.sm-hidden.z-3(src="img/logo.svg", alt="logo")
     .test-drive__content
-      .test-drive__text Если вы хотите понять, что такое 
+      .test-drive__text(data-aos="fade-up"
+        data-aos-anchor-placement="top-center"
+      ) Если вы хотите понять, что такое 
         span.test-drive__text_bold роскошный спортивный автомобиль, с невероятной мощностью 
         | - вам, определенно, к нам!
       +gradient-btn()(href='#')
