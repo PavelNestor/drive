@@ -33,10 +33,10 @@ AOS.init({
   initClassName: 'aos-init',
   animatedClassName: 'aos-animate',
   easing: 'ease',
-  offset: 400, 
-  delay: 100, 
-  duration: 400, 
-  anchorPlacement: 'center-top', 
+  offset: 400,
+  delay: 100,
+  duration: 600,
+  anchorPlacement: 'center-top',
 });
 
 
@@ -132,7 +132,7 @@ function showSlides(index) {
   animTimerElem.classList.remove(`clipInRightForLine`);
   setTimeout(() => {
     animTimerElem.classList.add('clipInRightForLine');
-  }, 100);
+  }, 1000);
   //Animation for slide line End
 
   mainSlides.forEach(slide => slide.classList.add('hidden'));
@@ -144,8 +144,11 @@ function showSlides(index) {
   setTimeout(() => {
     carName[mainSlideIndex - 1].classList.remove('hidden');
     carName[mainSlideIndex - 1].classList.add('clipInLeft');
-    isMainAnimFinish = true;
   }, 1000);
+
+  setTimeout(() => {
+    isMainAnimFinish = true;
+  }, 2000);
 
   // carName[mainSlideIndex - 1].addEventListener("animationend", () => {
   //   carName[mainSlideIndex - 1].classList.remove(`clipInLeft`);

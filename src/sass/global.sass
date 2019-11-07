@@ -292,6 +292,8 @@ picture
   top: 0
   z-index: 9999
   transition: transform 400ms
+  transition-property: width
+
 
   &::after
     background: center no-repeat url('/img/logo.svg')
@@ -315,6 +317,8 @@ picture
     top: 0
     bottom: 0
     width: 0
+    transition-property: width
+    transition: 10s
 
 .cache-images
   position: absolute
