@@ -26,6 +26,13 @@ mixin gradient-btn()
       span.main-button__text Заказать 
         span.no-wrap тест-драйв
 
+mixin gradient-btn-pdf(aClass)
+  div.main-button_pdf(class!=attributes.class)
+    a.main-button.main-button_pdf(class=aClass)&attributes(attributes)
+      img.main-button_pdf-img(src='../img/pdf.svg', alt='Правила')
+      span.main-button__text.main-button__text_pdf Правила
+      div
+
 mixin gradient-btn-round(href, src, alt)
   a(href= href).round-button
     img.round-button__img(src= src, alt= alt)
@@ -48,3 +55,6 @@ mixin card(item)
       p.card__text= item.text1
       p.card__text= item.text2
         a.card__link(href="#") Terms and Conditions
+      
+      if item.btn
+        +gradient-btn-pdf('pdf-link')(href='#', class='reverse-bottom')

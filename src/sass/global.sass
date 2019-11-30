@@ -100,7 +100,7 @@ h1, h2, h3, h4, h5, h6
     margin-top: 0
 
 picture
-  display: block
+    display: block
 
 .image-cover
   height: 100%
@@ -229,7 +229,21 @@ picture
 
   @media #{$media-sm-plus-up}
     padding: 2.1rem 5rem
-    margin: 0 0 0 1vw 
+    margin: 0 0 0 1vw
+
+  &_pdf
+    justify-content: space-between
+    display: flex
+    align-items: center
+    padding: 0.7rem 1.3rem
+
+    @media #{$media-sm-up}
+      justify-content: center
+
+    &-img
+      transform: matrix(0.98, 0, 0.18, 1, 0, 0)
+      margin-right: 1rem
+      z-index: 105
 
   &__text
     font-size: 1.8rem
@@ -240,14 +254,25 @@ picture
     text-align: center
     z-index: 102
 
+    &_pdf
+      @media #{$media-sm-down}
+        margin-right: 25px
+
 .w-100
   width: 100%
+
+.w-100_mobile
+  @media #{$media-sm-down}
+    width: 100%
 
 .reverse-top
   justify-content: flex-end
 
 .reverse-bottom
   justify-content: flex-start !important
+
+.pdf-link
+  margin: 1rem 0 0
 
 .m-0
   margin: 0
@@ -279,7 +304,6 @@ picture
 .margin-auto
   margin: 0 auto
 
-
 .mb-1
   margin-bottom: 1rem
 
@@ -293,7 +317,6 @@ picture
   z-index: 9999
   transition: transform 400ms
   transition-property: width
-
 
   &::after
     background: center no-repeat url('/img/logo.svg')
@@ -377,7 +400,7 @@ picture
   flex-basis: 33%
   display: flex
   flex-direction: column
-  
+
   @media #{$media-sm-plus-up}
     min-height: 72rem
     // width: 24.7vw
@@ -387,10 +410,10 @@ picture
   &-over
     @media #{$media-sm-plus-up}
       // width: 24.7vw + $padding-navbar
-      flex-basis: 43%      
+      flex-basis: 43%
 
       .card__content
-          transform: translateX($padding-navbar/2)
+        transform: translateX($padding-navbar/2)
 
   &-out
 
@@ -451,7 +474,6 @@ picture
   width: 5rem
   z-index: 101
 
-
   &:hover
     background: linear-gradient(90deg, #3E4E5E95 0%, #3E4E5E95 100%)
 
@@ -472,6 +494,5 @@ picture
 
 .zi-3
   z-index: 3
-
 
 //animation
